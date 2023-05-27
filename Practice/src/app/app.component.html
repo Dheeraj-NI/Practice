@@ -1,17 +1,3 @@
-<!-- <div>
-  <label>DOB :</label>
-  <input type="date" #dob (blur)="calculateAge()" />
-</div>
-<div>
-  <label>Age :</label>
-  <input type="text" #age />
-</div> -->
-<div>
-  <input type="text" #input/>
-  <button (click)="OnSubmit(input)">Submit</button>
-  <app-lifecycle  [value]="inputTExt" *ngIf="destroy" >
-    <h1>This is projected Content</h1>
-  </app-lifecycle>
-  <button (click)="DestroyComponent()">Destroy</button>
 
-</div>
+<!-- <app-parent></app-parent> -->
+<app-observable></app-observable>
