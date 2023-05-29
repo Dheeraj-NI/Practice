@@ -14,10 +14,11 @@ import { HighlightDirective } from './Directive/highlight.directive';
 import { HoverDirective } from './Directive/hover.directive';
 import { HostbindingDirective } from './Directive/hostbinding.directive';
 import { ObservableComponent } from './observable/observable.component';
+import { OperatorsComponent } from './operators/operators.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LifecycleComponent, ContentChildComponent, ViewChildComponent, ParentComponent, CustomDirectiveComponent,SetBackground, HighlightDirective, HoverDirective, HostbindingDirective, ObservableComponent ],
+  declarations: [AppComponent, LifecycleComponent, ContentChildComponent, ViewChildComponent, ParentComponent, CustomDirectiveComponent,SetBackground, HighlightDirective, HoverDirective, HostbindingDirective, ObservableComponent, OperatorsComponent ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
