@@ -19,6 +19,16 @@
       "password": "smith",
       "number": 48234978294,
       "email": "ahfjafhzlkjf"
+    },
+    {
+      "id": 3,
+      "firstName": "mick",
+      "lastName": "mess",
+      "userName": "mick",
+      "role": "user",
+      "password": "mick",
+      "number": 34712847,
+      "email": "asjdhiwuew"
     }
   ],
   "posts": [

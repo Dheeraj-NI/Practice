@@ -24,8 +24,6 @@ export class AuthService {
   login(username: any, password: any): boolean {
     this.user = username;
     this.pass = password;
-    // Make API call for authentication, validate credentials
-    // For simplicity, we'll hard-code the values
 
     this.checkCredentials()
       .pipe(tap((resp) => this.getRole(resp)))
@@ -43,55 +41,12 @@ export class AuthService {
       return false;
     }
   }
-
-  // else if (this.userRole == 'supervisor') {
-  //           this.isLoggedIn = true;
-  //           this.router.navigate(['/product']);
-  //         } else if (this.userRole == 'user') {
-  //           this.isLoggedIn = true;
-  //           this.router.navigate(['/home']);
-  //         }
-  //       } else {
-  //         this.isLoggedIn = false;
-  //         alert('Please insert valid userName and Password');
-  //       }
-  //  if (username === 'admin' && password === 'admin123') {
-  //   this.isLoggedIn = true;
-  //   this.userRole = 'admin';
-  //   return true;
-  // } else if (username === 'supervisor' && password === 'supervisor123') {
-  //   this.isLoggedIn = true;
-  //   this.userRole = 'supervisor';
-  //   return true;
-  //  }
-
-  // login() {
-  //
-
-  //       if (this.register) {
-  //         localStorage.setItem('myregis', JSON.stringify(this.register));
-  //         if (this.userRole == 'admin') {
-  //           this.isLoggedIn = true;
-  //           this.router.navigate(['/category']);
-  //         } else if (this.userRole == 'supervisor') {
-  //           this.isLoggedIn = true;
-  //           this.router.navigate(['/product']);
-  //         } else if (this.userRole == 'user') {
-  //           this.isLoggedIn = true;
-  //           this.router.navigate(['/home']);
-  //         }
-  //       } else {
-  //         this.isLoggedIn = false;
-  //         alert('Please insert valid userName and Password');
-  //       }
-  //     });
-
   getRole(data: any) {
     const user = data.find(
       (item: any) => item.userName == this.user && item.password == this.pass
     );
     this.userRole = user ? user.role : null;
-    console.log('Role is '+this.userRole);
+    console.log('Role is ' + this.userRole);
   }
 
   logout(): void {

@@ -48,21 +48,21 @@ export class AuthGuard  implements CanLoad{
   // }
   // roles: any;
 
-  // canActivate(currentUser: any) {
-  //   if (currentUser) {
-  //     return true;
-  //   }
-  //   else {
-  //     this.router.navigate(['/login']);
-  //     return false;
-  //   }
-  // }
+  canActivate(currentUser: any) {
+    if (currentUser) {
+      return true;
+    }
+    else {
+      this.router.navigate(['/login']);
+      return false;
+    }
+  }
 
   // }
 }
-// export const authenticateGuard: CanActivateFn = (route, state) => {
-//   let token = JSON.parse(localStorage.getItem('myregis') || ('' && route));
-//   const roles = route.data?.['roles'] as Array<string>;
-//   if (roles) return inject(AuthGuard).canActivate(token)
-//   return true;
-// }
+export const authenticateGuard: CanActivateFn = (route, state) => {
+  let token = JSON.parse(localStorage.getItem('myregis') || '');
+  const roles = route.data?.['roles'] as Array<string>; 
+  if (roles) return inject(AuthGuard).canActivate(token)
+  return true;
+}
