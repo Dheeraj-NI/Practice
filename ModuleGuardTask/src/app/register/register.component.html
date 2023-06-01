@@ -1,1 +1,63 @@
-<p>register works!</p>
+<div class="box">
+    <form [formGroup]="registrationForm">
+      <p class="mb-4 label">Register Form</p>
+      <div class="row">
+        <mat-form-field class="col-sm-6">
+          <mat-label>First Name</mat-label>
+          <input matInput name="firstname" formControlName="firstName" />
+        </mat-form-field>
+        <mat-form-field class="col-sm-6">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12">
+          <mat-label>User Name</mat-label>
+          <input matInput type="text"  formControlName="userName"/>
+        </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" class="col-sm-12" formControlName="role">
+            <mat-label>Role</mat-label>
+            <mat-radio-button value="admin">Admin</mat-radio-button>
+            <mat-radio-button value="supervisor">Supervisor</mat-radio-button>
+            <mat-radio-button value="user">User</mat-radio-button>
+          </mat-radio-group>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12">
+          <mat-label>Password</mat-label>
+          <input matInput type="password"  formControlName="password"/>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12">
+          <mat-label>Number</mat-label>
+          <input matInput type="number"  formControlName="number"/>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+      </div>
+      
+  
+      <div class="row">
+        <p class="register-link text-primary col-sm-4" routerLink="/login">
+          Login
+        </p>
+        <button
+          mat-raised-button
+          color="accent"
+          class="col-sm-3 button"
+          routerLink="/login" (click)="addregister()"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+  

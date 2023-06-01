@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
-import { AuthGuard,  } from './Service/auth.guard'
+import { AuthGuard,   } from './Service/auth.guard'
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },

@@ -1,0 +1,38 @@
+.box {
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .register-link {
+    font-weight: bold;
+    color: #00fff2;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+      margin-left: 16px;
+    }
+    
+  
+  form {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 7px;
+  }
+  .button{
+      align-items: center;
+      display: flex;
+      text-align: right;
+      position: absolute;
+      bottom: 27px;
+      right: 27px;
+  
+  }

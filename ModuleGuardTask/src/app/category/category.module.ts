@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,4 +14,6 @@ import { CategoryComponent } from './category.component';
     CategoryRoutingModule
   ]
 })
-export class CategoryModule { }
+export class CategoryModule { 
+
+}

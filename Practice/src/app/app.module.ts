@@ -15,10 +15,15 @@ import { HoverDirective } from './Directive/hover.directive';
 import { HostbindingDirective } from './Directive/hostbinding.directive';
 import { ObservableComponent } from './observable/observable.component';
 import { OperatorsComponent } from './operators/operators.component';
+import { CreationComponent } from './creation/creation.component';
+import { JoincreationComponent } from './joincreation/joincreation.component';
+import { UtilityoperatorComponent } from './utilityoperator/utilityoperator.component';
+import { TransformationoperatorComponent } from './transformationoperator/transformationoperator.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, LifecycleComponent, ContentChildComponent, ViewChildComponent, ParentComponent, CustomDirectiveComponent,SetBackground, HighlightDirective, HoverDirective, HostbindingDirective, ObservableComponent, OperatorsComponent ],
+  declarations: [AppComponent, LifecycleComponent, ContentChildComponent, ViewChildComponent, ParentComponent, CustomDirectiveComponent,SetBackground, HighlightDirective, HoverDirective, HostbindingDirective, ObservableComponent, OperatorsComponent, CreationComponent, JoincreationComponent, UtilityoperatorComponent, TransformationoperatorComponent ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

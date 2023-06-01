@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreationComponent } from './creation/creation.component';
+import { JoincreationComponent } from './joincreation/joincreation.component';
+import { UtilityoperatorComponent } from './utilityoperator/utilityoperator.component';
+import { TransformationoperatorComponent } from './transformationoperator/transformationoperator.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'creation', component: CreationComponent },
+  { path: 'joincreate', component: JoincreationComponent },
+  { path: 'utility', component: UtilityoperatorComponent },
+  { path: 'transform', component: TransformationoperatorComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
