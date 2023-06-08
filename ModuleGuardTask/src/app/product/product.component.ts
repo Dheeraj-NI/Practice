@@ -5,17 +5,11 @@ import { AuthService } from '../Service/auth.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
 })
 export class ProductComponent {
   constructor(private route: Router, private authservice: AuthService) {}
   logout() {
-    this.authservice.logout();
-    this.route.navigate(['/login']);
-  
-
-    // let removedata = JSON.parse(localStorage.getItem('myregis') || '')
-    localStorage.removeItem('myregis')
-    this.route.navigate(['/login']);
+    this.route.navigate(['/category']);
   }
 }

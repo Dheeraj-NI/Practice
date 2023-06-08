@@ -1,3 +1,6 @@
 <p>category works!</p>
-<button class=" btn btn-primary" (click)="logout()">Logout</button>
-
+<h3 *ngIf="Role()">
+  Let's take a look on Products
+  <button class="btn btn-primary" (click)="products()">Products</button>
+</h3>
+<button class="btn btn-primary" (click)="logout()">Logout</button>

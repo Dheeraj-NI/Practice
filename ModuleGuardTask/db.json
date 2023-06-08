@@ -2,8 +2,8 @@
   "register": [
     {
       "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
+      "firstName": null,
+      "lastName": null,
       "userName": "john",
       "role": "admin",
       "password": "john",
@@ -13,22 +13,12 @@
     {
       "id": 2,
       "firstName": "smith",
-      "lastName": "doe",
+      "lastName": "Doe",
       "userName": "smith",
       "role": "supervisor",
       "password": "smith",
-      "number": 48234978294,
-      "email": "ahfjafhzlkjf"
-    },
-    {
-      "id": 3,
-      "firstName": "mick",
-      "lastName": "mess",
-      "userName": "mick",
-      "role": "user",
-      "password": "mick",
-      "number": 34712847,
-      "email": "asjdhiwuew"
+      "number": 8273847743,
+      "email": "difaosfido"
     }
   ],
   "posts": [

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     ) {
       this.router.navigate(
         this.authService.userRole == 'admin' ? ['/category'] :
-        this.authService.userRole == 'supervisor' ? ['/product'] :
+        this.authService.userRole == 'supervisor' ? ['/category'] :
         this.authService.userRole == 'user' ? ['/home'] :
         ['/login']
       );

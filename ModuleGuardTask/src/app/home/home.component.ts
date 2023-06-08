@@ -8,7 +8,7 @@ import { AuthService } from '../Service/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private route: Router, private authservice: AuthService) {}
+  constructor(private route: Router, private authservice: AuthService,) {}
   logout() {
     this.authservice.logout();
     this.route.navigate(['/login']);

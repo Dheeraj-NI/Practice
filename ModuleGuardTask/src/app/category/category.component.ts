@@ -9,13 +9,18 @@ import { AuthService } from '../Service/auth.service';
 })
 export class CategoryComponent {
   constructor(private route: Router, private authservice: AuthService) {}
+
+  Role(): boolean {
+    return this.authservice.userRole == 'supervisor';
+  }
+
+  products() {
+    this.route.navigate(['/product'])
+  }
   logout() {
     this.authservice.logout();
-    this.route.navigate(['/login']);
-  
 
-    // let removedata = JSON.parse(localStorage.getItem('myregis') || '')
-    localStorage.removeItem('myregis')
+    localStorage.removeItem('myregis');
     this.route.navigate(['/login']);
   }
 }
