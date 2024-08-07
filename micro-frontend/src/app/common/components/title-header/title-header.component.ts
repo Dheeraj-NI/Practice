@@ -21,6 +21,7 @@ export class TitleHeaderComponent {
     @Input() isShowExportButton = false;
     @Input() isShowPrintButton = false;
     @Input() isShowSaveButton = false;
+    @Input() isShowCreateButton = false;
     @Input() isShowClearDataButton = false;
 
     constructor(private router: Router) {}

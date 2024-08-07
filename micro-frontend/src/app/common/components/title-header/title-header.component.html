@@ -19,6 +19,9 @@
         <button class="title-header-button" *ngIf="isShowPreviousButton">
             <div class="title-header-button-text" (click)="navigate(previousScreenUrl)"><img class="previous-icon" src="assets/Arrow Right.svg"> Previous</div> 
         </button>
+        <button class="title-header-button" *ngIf="isShowCreateButton">
+            <div class="title-header-button-text"><img src="assets/svg images/Add.svg">Create</div> 
+        </button>
         <button class="title-header-button" *ngIf="isShowImportButton">
             <div class="title-header-button-text"><img src="assets/Import.svg"> Upload</div> 
         </button>
