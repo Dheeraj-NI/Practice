@@ -1,1 +1,66 @@
-<p>doctors-sign-master works!</p>
+<div class="main-container">
+    <app-top-header></app-top-header>
+    <app-navigation-header></app-navigation-header>
+    <app-title-header
+      [title]="'LIS'"
+      [title2]="'Doctor\'s Sign Master'"
+      [isShowPrintButton]="true"
+      [isShowSaveButton]="true"
+      [isShowImportButton]="true"
+      [isShowExportButton]="true"
+      [isShowClearDataButton]="true"
+    ></app-title-header>
+  
+    <div class="filter-container">
+      <div class="filter-container-left">
+        <form [formGroup]="filterForm">
+          <div class="input-container">
+            <app-input
+              formControlName="signCode"
+              [type]="'IDInput'"
+              [title]="'Sign Code'"
+              [idPlaceholder]="'3'"
+              [placeholder]="'Dr. Laxmi Ronada'"
+              (helpButton)="openSignCodeSearch()"
+            ></app-input>
+          </div>
+          <div class="input-container">
+            <app-input
+            formControlName="userId"
+            [type]="'IDInput'"
+            [title]="'Panel'"
+            [idPlaceholder]="'Path 1'"
+            [placeholder]="'Dr. Laxmi Ronada'"
+            (helpButton)="openUserSearch()"
+          ></app-input>
+          </div>
+          <div class="input-container second">
+            <app-select
+              formControlName="component"
+              [title]="'Component'"
+              [options]="component"  
+              [placeholder]="'Select'"            
+            ></app-select>
+          </div>
+          <div class="input-container second">
+            <app-radio
+              formControlName="status"
+              [title]="'Status'"
+              [radioList]="[
+                { label: 'Active', value: 'active' },
+                { label: 'Inactive', value: 'inactive' }
+              ]"
+            ></app-radio>
+          </div>
+          <div class="input-container mt-9">
+              <!-- formControlName="digi_sign"             -->
+            <app-file
+            [title]="'Add Digital Signature'"           
+          ></app-file>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </div>
+  

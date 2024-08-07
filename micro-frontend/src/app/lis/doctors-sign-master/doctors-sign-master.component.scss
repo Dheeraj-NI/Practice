@@ -1,0 +1,43 @@
+.main-container {
+    padding: 10px;
+}
+
+.filter-container {
+    margin-top: 12px;
+}
+
+.filter-container .filter-container-left {
+    width: 90%;
+    display: inline-block;
+}
+
+.filter-container .filter-container-left .input-container {
+    width: 28%;
+    display: inline-block;
+    margin-right: 12px;
+    vertical-align: bottom;
+}
+.d-inlineBlock{
+    display: inline-block;
+    vertical-align: bottom;
+}
+.filter-container .filter-container-left .input-container.second {
+    width: 16%;
+}
+.mt-9{
+    margin-top: 9px;
+}
+
+.filter-container .filter-container-right {
+    width: 10%;
+    display: inline-block;
+    text-align: right;
+}
+
+.padding-left-12 {
+    padding-left: 12px;
+}
+
+.padding-right-12 {
+    padding-right: 12px;
+}
