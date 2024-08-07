@@ -85,3 +85,36 @@
     background-color: #9333EA1A;
     color: #9333EA;
 }
+
+.custom-active-inactive {
+    width: fit-content;
+    padding: 0px 4px 0px 4px;
+    font-size: 12px;
+    line-height: 18px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.custom-active-inactive-container {
+    display: inline-block;
+}
+
+.custom-active-inactive.green {
+    border: 1px solid #4ADE80;
+    color: #4ADE80;
+}
+
+.custom-active-inactive.green.active {
+    background-color:#4ADE80;
+    color: #FFF;
+}
+
+.custom-active-inactive.red {
+    border: 1px solid #F87171;
+    color: #F87171;
+}
+
+.custom-active-inactive.red.active {
+    background-color:#F87171;
+    color: #FFF;
+}
