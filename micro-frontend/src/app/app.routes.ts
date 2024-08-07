@@ -5,6 +5,7 @@ import { EquipmentTestLinkComponent } from './lis/equipment-test-link/equipment-
 import { MastersComponent } from './masters/masters.component';
 import { OrganismMasterComponent } from './lis/organism-master/organism-master.component';
 import { NoteMasterComponent } from './lis/note-master/note-master.component';
+import { DoctorsSignMasterComponent } from './lis/doctors-sign-master/doctors-sign-master.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'note-master',
     component: NoteMasterComponent,
+  },
+  {
+    path: 'doctors-sign-master',
+    component: DoctorsSignMasterComponent,
   },
   {
     path: 'master',
