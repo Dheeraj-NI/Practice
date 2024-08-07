@@ -114,13 +114,17 @@ table {
 }
 
 .table-input-container {
-    padding: 0px 10px 0px 10px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    height: 40px;
+    border-bottom: 1px solid #E3E3E3;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-
-.table-input-container.sort-order {
-    width: 15%;
-}
 
 .table-input-container.add-button {
     text-align: start;
@@ -134,4 +138,28 @@ table {
 
 .img-button {
     cursor: pointer;
+}
+//=======================================
+
+
+::ng-deep table tbody tr:first-child td {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+::ng-deep table tbody tr:first-child td .td-container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.first-td-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.table-input-container app-badges:first-child, .td-container app-badges:first-child, .badge-container app-badges:first-child {
+    margin-right: 8px;
 }

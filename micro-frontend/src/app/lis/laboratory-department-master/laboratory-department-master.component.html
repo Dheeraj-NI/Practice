@@ -23,17 +23,7 @@
             [idPlaceholder]="'V20'"
             [placeholder]="'Charge Code'"
           ></app-input>
-        </div>
-        <div class="input-container">
-          <app-radio
-            formControlName="status"
-            [title]="'Charge Code Status'"
-            [radioList]="[
-              { label: 'Active', value: 'active' },
-              { label: 'Inactive', value: 'inactive' }
-            ]"
-          ></app-radio>
-        </div>
+        </div>       
       </form>
     </div>
   </div>
@@ -48,24 +38,104 @@
       >
         <ng-container matColumnDef="sectionCode">
           <th mat-header-cell *matHeaderCellDef>Section Code</th>
-          <td mat-cell *matCellDef="let element">{{ element.sectionCode }}</td>
-          <td mat-footer-cell *matFooterCellDef class="code" [attr.colspan]="2">
-            <form [formGroup]="labDeptMaster">
-              <app-input
-                formControlName="sectionCode"
-                [type]="'IDInput'"
-                [idPlaceholder]="'V20'"
-                [placeholder]="'Section Name'"
-              ></app-input>
-            </form>
+          <td mat-cell *matCellDef="let element; let i = index">
+            @if(i === 0){
+            <ng-container>
+              <form [formGroup]="labDeptMaster" class="table-input-container">
+                <app-input formControlName="sectionCode"></app-input>
+              </form>
+            </ng-container>
+            }
+            <div class="td-container">
+              @if(element.isEdit){
+                <ng-container>
+                 
+                    <app-input [(ngModel)]="element.sectionCode"></app-input>
+                 
+                </ng-container>
+                }@else{
+
+                  {{ element.sectionCode }}
+                }
+            </div>
           </td>
         </ng-container>
 
         <ng-container matColumnDef="sectionName">
           <th mat-header-cell *matHeaderCellDef>Section Name</th>
-          <td mat-cell *matCellDef="let element">
+          <td mat-cell *matCellDef="let element; let i = index">
             <ng-container>
-              {{ element.sectionName }}
+              @if(i === 0){
+              <ng-container>
+                <form [formGroup]="labDeptMaster" class="table-input-container">
+                  <app-input formControlName="sectionName"></app-input>
+                </form>
+              </ng-container>
+              }
+              <div class="td-container">
+                @if(element.isEdit){
+                  <ng-container>
+                   
+                      <app-input [(ngModel)]="element.sectionName"></app-input>
+                   
+                  </ng-container>
+                  }@else{
+  
+                    {{ element.sectionName }}
+                  }
+                
+              </div>
+            </ng-container>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Charge Code Status</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            <ng-container>
+              @if(i === 0){
+              <ng-container>
+                <form [formGroup]="labDeptMaster" class="table-input-container">
+                  <app-badges
+                    (click)="setActiveInactive('active')"
+                    [type]="3"
+                    [badgeClass]="
+                      'green' +
+                      (labDeptMaster.value.status === 'active' ? ' active' : '')
+                    "
+                    [title]="'Active'"
+                  ></app-badges>
+                  <app-badges
+                    (click)="setActiveInactive('inactive')"
+                    [type]="3"
+                    [badgeClass]="
+                      'red' +
+                      (labDeptMaster.value.status === 'inactive'
+                        ? ' active'
+                        : '')
+                    "
+                    [title]="'Inactive'"
+                  ></app-badges>
+                </form>
+              </ng-container>
+              }
+              <div class="td-container">
+                <app-badges
+                  (click)=" editActiveInactive('active',element)"
+                  [type]="3"
+                  [badgeClass]="
+                    'green' + (element.status === 'active' ? ' active' : '')
+                  "
+                  [title]="'Active'"
+                ></app-badges>
+                <app-badges
+                  (click)="editActiveInactive('inactive' ,element)"
+                  [type]="3"
+                  [badgeClass]="
+                    'red' + (element.status === 'inactive' ? ' active' : '')
+                  "
+                  [title]="'Inactive'"
+                ></app-badges>
+              </div>
             </ng-container>
           </td>
         </ng-container>
@@ -73,31 +143,35 @@
         <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let element; let i = index">
-            <!-- <img
-              class="img-button"
-              *ngIf="!element.isNew && !element.isEdit"
-              (click)="editRow(element)"
-              src="assets/Pen 2.png"
-            /> -->
-            <img
-              class="img-button"
-              *ngIf="element.isNew"
-              (click)="deleteRow(i)"
-              src="assets/Trash Bin Trash.png"
-            />
-            <!-- <img
-              class="img-button"
-              *ngIf="!element.isNew && element.isEdit"
-              (click)="saveRow(element)"
-              src="assets/SIM Card Minimalistic.png"
-            /> -->
-          </td>
-          <td
-            mat-footer-cell
-            *matFooterCellDef
-            class="table-input-container add-button"
-          >
-            <i class="fa-solid fa-plus" (click)="addData()"></i>
+            @if(i === 0){
+            <div class="table-input-container">
+              <img
+                class="img-button"
+                (click)="addData()"
+                src="assets/svg images/Add.svg"
+              />
+            </div>
+            }
+            <div class="td-container">
+              <img
+                class="img-button"
+                *ngIf="!element.isNew && !element.isEdit"
+                (click)="editRow(element)"
+                src="assets/svg images/Pen 2.svg"
+              />
+              <img
+                class="img-button"
+                *ngIf="element.isNew"
+                (click)="deleteRow(i)"
+                src="assets/svg images/Trash Bin Trash.svg"
+              />
+              <img
+                class="img-button"
+                *ngIf="!element.isNew && element.isEdit"
+                (click)="saveRow(element)"
+                src="assets/svg images/save.svg"
+              />
+            </div>
           </td>
         </ng-container>
 
@@ -107,7 +181,6 @@
           [hidden]="i % 2 !== 0"
           *matRowDef="let row; columns: displayColumns; let i = index"
         ></tr>
-        <tr mat-footer-row *matFooterRowDef="displayFooterColumns"></tr>
       </table>
     </div>
 
@@ -120,34 +193,79 @@
       >
         <ng-container matColumnDef="sectionCode">
           <th mat-header-cell *matHeaderCellDef>Section Code</th>
-          <td mat-cell *matCellDef="let element">{{ element.sectionCode }}</td>
+          <td mat-cell *matCellDef="let element">@if(element.isEdit){
+            <ng-container>
+             
+                <app-input [(ngModel)]="element.sectionCode"></app-input>
+             
+            </ng-container>
+            }@else{
+
+              {{ element.sectionCode }}
+            }</td>
         </ng-container>
 
         <ng-container matColumnDef="sectionName">
           <th mat-header-cell *matHeaderCellDef>Section Name</th>
-          <td mat-cell *matCellDef="let element">{{ element.sectionName }}</td>
-        </ng-container>
+          <td mat-cell *matCellDef="let element">  @if(element.isEdit){
+            <ng-container>
+             
+                <app-input [(ngModel)]="element.sectionName"></app-input>
+             
+            </ng-container>
+            }@else{
 
+              {{ element.sectionName }}
+            }</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Charge Code Status</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            <ng-container>
+              <div class="td-container">
+                <app-badges
+                (click)=" editActiveInactive('active',element)"
+                [type]="3"
+                [badgeClass]="
+                  'green' + (element.status === 'active' ? ' active' : '')
+                "
+                [title]="'Active'"
+              ></app-badges>
+              <app-badges
+                (click)="editActiveInactive('inactive' ,element)"
+                [type]="3"
+                [badgeClass]="
+                  'red' + (element.status === 'inactive' ? ' active' : '')
+                "
+                [title]="'Inactive'"
+              ></app-badges>
+              </div>
+            </ng-container>
+          </td>
+        </ng-container>
         <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let element; let i = index">
-            <img
-              class="img-button"
-              (click)="deleteRow(i)"
-              src="assets/Trash Bin Trash.png"
-            />
-            <!-- <img
-              class="img-button"
-              *ngIf="!element.isNew && !element.isEdit"
-              (click)="editRow(element)"
-              src="assets/Pen 2.png"
-            />
-            <img
-              class="img-button"
-              *ngIf="!element.isNew && element.isEdit"
-              (click)="saveRow(element)"
-              src="assets/SIM Card Minimalistic.png"
-            /> -->
+            <div class="td-container">
+              <img
+                class="img-button"
+                *ngIf="!element.isNew && !element.isEdit"
+                (click)="editRow(element)"
+                src="assets/svg images/Pen 2.svg"
+              />
+              <img
+                class="img-button"
+                *ngIf="element.isNew"
+                (click)="deleteRow(i)"
+                src="assets/svg images/Trash Bin Trash.svg"
+              />
+              <img
+                class="img-button"
+                *ngIf="!element.isNew && element.isEdit"
+                (click)="saveRow(element)"
+                src="assets/svg images/save.svg"
+              />
+            </div>
           </td>
         </ng-container>
 
