@@ -1,0 +1,31 @@
+<div class="form-container main-input" *ngIf="type === 'simpleInput'">
+    <div class="input-title" *ngIf="title">{{ title }}</div>
+    <input type="text" [ngClass]="extraClass ? extraClass : ''" [(ngModel)]="value" (ngModelChange)="onModelChange(value)" [placeholder]="placeholder">
+</div>
+
+<div class="form-container id-input" *ngIf="type === 'IDInput'">
+    <div class="input-title">{{ title }}</div>
+    <form [formGroup]="idValueForm">
+        <div class="input-container">
+            <img (click)="showHelp()" src="../../../assets/Magnifer.png">
+            <input formControlName="id" class="id-input" type="text" [placeholder]="idPlaceholder">
+            <input formControlName="value" class="simple-input" type="text" [placeholder]="placeholder">
+        </div>
+    </form>
+</div>
+
+<div class="form-container id-input" *ngIf="type === 'mobile'">
+    <div class="input-title">{{ title }}</div>
+    <form [formGroup]="mobileNumberForm">
+        <div class="input-container">
+            <select formControlName="id" class="mobile-select">
+                <option value="+91">+91</option>
+            </select>
+            <input formControlName="value" class="mobile-select-input" type="text" [placeholder]="placeholder">
+        </div>
+    </form>
+</div>
+
+<!-- <div class="form-container" *ngIf="type === 'input'"> -->
+<!-- <input class="simple-input" type="text" [placeholder]="placeholder" *ngIf="type === 'input'"> -->
+<!-- </div> -->

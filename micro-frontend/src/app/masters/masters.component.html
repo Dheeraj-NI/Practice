@@ -1,0 +1,474 @@
+<div class="main-container">
+    <app-top-header></app-top-header>
+    <app-navigation-header></app-navigation-header>
+    <app-title-header [title]="'User Rights'" [isShowImportButton]="true" [isShowExportButton]="true" [isShowSaveButton]="true" [isShowClearDataButton]="true"></app-title-header>
+    
+    <div class="top-details-container">
+        <div class="user-info-container">
+            <img src="../../assets/user.jpeg"> User ID: 457831 User Name: Akhilesh Sanjay Sharma
+        </div>
+
+        <div class="master-select-container">
+            <app-select [options]="options" [selectClass]="'select-height-34'" [placeholder]="'Select Hospital Branch'" [(ngModel)]="selectHospital"></app-select>
+        </div>
+    </div>
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="ADT">Content 1</mat-tab>
+        <mat-tab label="Billing & Cash Handling">Content 2</mat-tab>
+        <mat-tab label="Nurse Station">Content 3</mat-tab>
+        <mat-tab label="Laboratory">
+            <div class="accoridion-container">
+                <mat-accordion class="example-headers-align" multi>
+                    <mat-expansion-panel expanded="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="mat-title"> Basic Access </mat-panel-title>
+                        </mat-expansion-panel-header>
+                  
+                        <div class="basic-access-list first-row">
+                            <div class="first-inputs">
+                                <div class="input-container">
+                                    <app-radio [title]="'Account Status'" [radioList]="accountStatusRadio"></app-radio>
+                                </div>
+
+                                <div class="input-container second padding-left-12">
+                                    <app-checkbox [title]="'Authorisation'" [type]="'inlineMultiple'" [checkboxes]="[{ label: 'Authorize Flag' }, { label: 'Chief Technician' }, { label: 'Consultant' }, { label: 'Re-run' }]"></app-checkbox>
+                                </div>
+                            </div>
+                            <div class="second-inputs">
+                                <div class="input-container padding-left-12">
+                                    <app-checkbox [title]="'Lab Authorisation'" [type]="'inlineMultiple'" [checkboxes]="[{label: 'Normal Value'}, {label: 'Abnormal Value'}, {label: 'Lab Authorisation'}]"></app-checkbox>
+                                </div>
+                                <div class="input-container padding-left-12">
+                                    <app-radio [title]="'System Rules'" [radioList]="systemRulesRadio"></app-radio>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basic-access-list second-row">
+                            <div class="first-inputs">
+                                <div class="input-container">
+                                    <app-input [type]="'IDInput'" [title]="'Department'" [idPlaceholder]="'247'" [placeholder]="'Department'"></app-input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-title">
+                            <div class="accordion-title-label"> <input type="checkbox"> Sensitive Services</div>
+                            <hr>
+                        </div>
+
+                        <div class="department">
+                            <div class="table-left">
+                                <table mat-table [dataSource]="sensitiveServiceData" class="mat-elevation-z8">
+
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.srNo }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Service Column -->
+                                    <ng-container matColumnDef="service">
+                                        <th mat-header-cell *matHeaderCellDef> Service </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.service }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsSensitiveServices"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumnsSensitiveServices;"></tr>
+                                </table>
+                            </div>
+
+                            <div class="table-right">
+                                <table mat-table [dataSource]="sensitiveServiceData" class="mat-elevation-z8">
+
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.srNo }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Service Column -->
+                                    <ng-container matColumnDef="service">
+                                        <th mat-header-cell *matHeaderCellDef> Service </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.service }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsSensitiveServices"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumnsSensitiveServices;"></tr>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-title">
+                            <div class="accordion-title-label">Department</div>
+                            <hr>
+                        </div>
+
+                        <div class="department">
+                            <div class="table-left">
+                                <table mat-table [dataSource]="departments" class="mat-elevation-z8">
+
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox" [checked]="departmentTableChecked('even', departments)" (change)="departmentTableCheckboxChange('even', $event, departments)"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let i = index"> {{ i + 1 }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Department Column -->
+                                    <ng-container matColumnDef="department">
+                                        <th mat-header-cell *matHeaderCellDef> Department </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.department }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsDepartments"></tr>
+                                    <tr mat-row [hidden]="i % 2 !== 0" *matRowDef="let row; columns: displayedColumnsDepartments; let i = index"></tr>
+                                </table>
+                            </div>
+
+                            <div class="table-right">
+                                <table mat-table [dataSource]="departments" class="mat-elevation-z8">
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox" [checked]="departmentTableChecked('odd', departments)" (change)="departmentTableCheckboxChange('odd', $event, departments)"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let i = index;"> {{ i + 1 }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Department Column -->
+                                    <ng-container matColumnDef="department">
+                                        <th mat-header-cell *matHeaderCellDef> Department </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.department }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsDepartments"></tr>
+                                    <tr mat-row [hidden]="i % 2 === 0" *matRowDef="let row; columns: displayedColumnsDepartments; let i = index"></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="accordion-title">
+                            <div class="accordion-title-label">Department Authorisation Rights</div>
+                            <hr>
+                        </div>
+
+                        <div class="department">
+                            <div class="table-left">
+                                <table mat-table [dataSource]="departmentsAuthorisation" class="mat-elevation-z8">
+
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox" [checked]="departmentTableChecked('even', departmentsAuthorisation)" (change)="departmentTableCheckboxChange('even', $event, departmentsAuthorisation)"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let i = index"> {{ i + 1 }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Department Column -->
+                                    <ng-container matColumnDef="department">
+                                        <th mat-header-cell *matHeaderCellDef> Department </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.department }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsDepartments"></tr>
+                                    <tr mat-row [hidden]="i % 2 !== 0" *matRowDef="let row; columns: displayedColumnsDepartments; let i = index"></tr>
+                                </table>
+                            </div>
+
+                            <div class="table-right">
+                                <table mat-table [dataSource]="departmentsAuthorisation" class="mat-elevation-z8">
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox" [checked]="departmentTableChecked('odd', departmentsAuthorisation)" (change)="departmentTableCheckboxChange('odd', $event, departmentsAuthorisation)"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let i = index;"> {{ i + 1 }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Department Column -->
+                                    <ng-container matColumnDef="department">
+                                        <th mat-header-cell *matHeaderCellDef> Department </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.department }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumnsDepartments"></tr>
+                                    <tr mat-row [hidden]="i % 2 === 0" *matRowDef="let row; columns: displayedColumnsDepartments; let i = index"></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="accordion-title">
+                            <div class="accordion-title-label">Code Decode Type</div>
+                            <hr>
+                        </div>
+
+                        <div class="department">
+                            <div class="table-left">
+                                <table mat-table [dataSource]="codeDecodeTypeData" class="mat-elevation-z8">
+
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox" [checked]="departmentTableChecked('even', departmentsAuthorisation)" (change)="departmentTableCheckboxChange('even', $event, departmentsAuthorisation)"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let i = index"> {{ i + 1 }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Type No Column -->
+                                    <ng-container matColumnDef="typeNo">
+                                        <th mat-header-cell *matHeaderCellDef> Type No </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.typeNo }} </td>
+                                    </ng-container>
+
+                                    <!-- Type Description Column -->
+                                    <ng-container matColumnDef="typeDescription">
+                                        <th mat-header-cell *matHeaderCellDef> Type Description </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.typeDescription }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayColumnCodeDecodeType"></tr>
+                                    <tr mat-row [hidden]="i % 2 !== 0" *matRowDef="let row; columns: displayColumnCodeDecodeType; let i = index"></tr>
+                                </table>
+                            </div>
+
+                            <div class="table-right">
+                                <table mat-table [dataSource]="codeDecodeTypeData" class="mat-elevation-z8">
+
+                                    <!-- Action Column -->
+                                    <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef> <input type="checkbox" [checked]="departmentTableChecked('even', departmentsAuthorisation)" (change)="departmentTableCheckboxChange('even', $event, departmentsAuthorisation)"> </th>
+                                        <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                                    </ng-container>
+                            
+                                    <!-- Sr. No. Column -->
+                                    <ng-container matColumnDef="srNo">
+                                        <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                        <td mat-cell *matCellDef="let i = index"> {{ i + 1 }} </td>
+                                    </ng-container>
+                            
+                                    <!-- Type No Column -->
+                                    <ng-container matColumnDef="typeNo">
+                                        <th mat-header-cell *matHeaderCellDef> Type No </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.typeNo }} </td>
+                                    </ng-container>
+
+                                    <!-- Type Description Column -->
+                                    <ng-container matColumnDef="typeDescription">
+                                        <th mat-header-cell *matHeaderCellDef> Type Description </th>
+                                        <td mat-cell *matCellDef="let element"> {{ element.typeDescription }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayColumnCodeDecodeType"></tr>
+                                    <tr mat-row [hidden]="i % 2 !== 0" *matRowDef="let row; columns: displayColumnCodeDecodeType; let i = index"></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="accordion-title">
+                            <div class="accordion-title-label">Setup Rules</div>
+                            <hr>
+                        </div>
+
+                        <table mat-table [dataSource]="setupRules" class="mat-elevation-z8">
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="name">
+                                <th mat-header-cell *matHeaderCellDef> Rule Name </th>
+                                <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+                            </ng-container>
+                    
+                            <!-- Description Column -->
+                            <ng-container matColumnDef="description">
+                                <th mat-header-cell *matHeaderCellDef> Rule Description </th>
+                                <td mat-cell *matCellDef="let element"> {{ element.description }} </td>
+                            </ng-container>
+                    
+                            <!-- Settings1 Column -->
+                            <ng-container matColumnDef="settings1">
+                                <th mat-header-cell *matHeaderCellDef> Settings1 </th>
+                                <td mat-cell *matCellDef="let element"> {{ element.settings1 }} </td>
+                            </ng-container>
+
+                            <!-- Settings2 Column -->
+                            <ng-container matColumnDef="settings2">
+                                <th mat-header-cell *matHeaderCellDef> Settings2 </th>
+                                <td mat-cell *matCellDef="let element"> {{ element.settings1 }} </td>
+                            </ng-container>
+
+                            <!-- Action Column -->
+                            <ng-container matColumnDef="action">
+                                <th mat-header-cell *matHeaderCellDef>  </th>
+                                <td mat-cell *matCellDef="let element"> <img src="../../assets/Pen 2.png"> </td>
+                            </ng-container>
+                        
+                            <tr mat-header-row *matHeaderRowDef="displayColumnSetupRules"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayColumnSetupRules; let i = index"></tr>
+                        </table>
+
+                    </mat-expansion-panel>
+                    
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="mat-title"> Module Access </mat-panel-title>
+                        </mat-expansion-panel-header>
+                  
+                        <div class="expansion-header">
+                            <div class="input-container">
+                                <app-input [type]="'IDInput'" [title]="'Copy Rights from User'" [idPlaceholder]="'247'" [placeholder]="'User'"></app-input>
+                            </div>
+                            <div class="input-container">
+                                <app-button [title]="'Add User'" [type]="'primarySmallButton'" [extraClass]="'width-fit-content'"></app-button>
+                            </div>
+                        </div>
+
+                        <table mat-table [dataSource]="hospitalData" class="mat-elevation-z8">
+
+                            <!-- Action Column -->
+                            <ng-container matColumnDef="action">
+                                <th mat-header-cell *matHeaderCellDef> <input type="checkbox"> </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [checked]="checkIfRowIsSelected(element)" (change)="checkRow(element, $event)"> </td>
+                            </ng-container>
+                    
+                            <!-- Sr. No. Column -->
+                            <ng-container matColumnDef="srNo">
+                                <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+                                <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+                            </ng-container>
+                    
+                            <!-- Module Name Column -->
+                            <ng-container matColumnDef="moduleName">
+                                <th mat-header-cell *matHeaderCellDef> Module Name </th>
+                                <td mat-cell *matCellDef="let element"> {{ element.moduleName }} </td>
+                            </ng-container>
+                        
+                            <!-- Sub Module Name Column -->
+                            <ng-container matColumnDef="subModuleName">
+                                <th mat-header-cell *matHeaderCellDef> Sub Module Name </th>
+                                <td mat-cell *matCellDef="let element"> {{ element.subModuleName }} </td>
+                            </ng-container>
+                        
+                            <!-- Access Column -->
+                            <ng-container matColumnDef="access">
+                                <th mat-header-cell *matHeaderCellDef> 
+                                    <div class="table-header-title">
+                                        <input id="forAccess" [checked]="checkIfAllSelected('access')" (change)="selectCheckbox('access', $event)" class="table-checkbox" type="checkbox">
+                                        <label for="forAccess" class="table-checkbox-title">Access</label> 
+                                    </div>
+                                </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.access"> </td>
+                            </ng-container>
+                        
+                            <!-- Save Column -->
+                            <ng-container matColumnDef="save">
+                                <th mat-header-cell *matHeaderCellDef> 
+                                    <div class="table-header-title">
+                                        <input id="forSave" [checked]="checkIfAllSelected('save')" (change)="selectCheckbox('save', $event)" class="table-checkbox" type="checkbox">
+                                        <label for="forSave" class="table-checkbox-title">Save</label>
+                                    </div>
+                                </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.save"> </td>
+                            </ng-container>
+                    
+                            <!-- Print Column -->
+                            <ng-container matColumnDef="print">
+                                <th mat-header-cell *matHeaderCellDef> 
+                                    <div class="table-header-title">
+                                        <input id="forPrint" [checked]="checkIfAllSelected('print')" (change)="selectCheckbox('print', $event)" class="table-checkbox" type="checkbox">
+                                        <label for="forPrint" class="table-checkbox-title">Print</label>
+                                    </div>
+                                </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.print"></td>
+                            </ng-container>
+                    
+                            <!-- SMS Column -->
+                            <ng-container matColumnDef="sms">
+                                <th mat-header-cell *matHeaderCellDef> 
+                                    <div class="table-header-title">
+                                        <input id="forSMS" [checked]="checkIfAllSelected('sms')" (change)="selectCheckbox('sms', $event)" class="table-checkbox" type="checkbox">
+                                        <label for="forSMS" class="table-checkbox-title">SMS</label>
+                                    </div>
+                                </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.sms"></td>
+                            </ng-container>
+                    
+                            <!-- Email Column -->
+                            <ng-container matColumnDef="email">
+                                <th mat-header-cell *matHeaderCellDef> 
+                                    <div class="table-header-title">
+                                        <input id="forEmail" [checked]="checkIfAllSelected('email')" (change)="selectCheckbox('email', $event)" class="table-checkbox" type="checkbox">
+                                        <label for="forEmail" class="table-checkbox-title">Email</label>
+                                    </div>
+                                </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.email"></td>
+                            </ng-container>
+                    
+                            <!-- Export Column -->
+                            <ng-container matColumnDef="export">
+                                <th mat-header-cell *matHeaderCellDef> 
+                                    <div class="table-header-title">
+                                        <input id="forExport" [checked]="checkIfAllSelected('export')" (change)="selectCheckbox('export', $event)" class="table-checkbox" type="checkbox">
+                                        <label for="forExport" class="table-checkbox-title">Export</label>
+                                    </div>
+                                </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.export"></td>
+                            </ng-container>
+                    
+                            <!-- Import Column -->
+                            <ng-container matColumnDef="import">
+                                <th mat-header-cell *matHeaderCellDef> 
+                                    <div class="table-header-title">
+                                        <input id="forImport" [checked]="checkIfAllSelected('import')" (change)="selectCheckbox('import', $event)" class="table-checkbox" type="checkbox">
+                                        <label for="forImport" class="table-checkbox-title">Import</label>
+                                    </div>
+                                </th>
+                                <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.import"></td>
+                            </ng-container>
+                        
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </mat-expansion-panel>
+                    
+                </mat-accordion>
+            </div>
+
+        </mat-tab>
+        <mat-tab label="Purchase Order/Inventory">Content 4</mat-tab>
+        <mat-tab label="Financial Accounting">Content 6</mat-tab>
+        <mat-tab label="Equipment">Content 7</mat-tab>
+        <mat-tab label="Reports (MIS)">Content 8</mat-tab>
+    </mat-tab-group>
+</div>

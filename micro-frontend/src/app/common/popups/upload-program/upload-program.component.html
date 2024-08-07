@@ -1,0 +1,33 @@
+<div class="main-container">
+    <div class="dialog-header">
+        <div class="dialog-header-left">
+            <div class="icon-container">
+                <img src="assets/Upload Minimalistic.png">
+            </div>
+            <div class="dialog-title">Upload Program</div>
+        </div>
+        <div class="dialog-header-right">
+            <img (click)="closeDialog()" src="assets/Close Square.png">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="dialog-body">
+        <input #fileInput (change)="fileHandle($event)" type="file" class="display-none">
+        <div class="file-upload-container">
+            <div class="input-container">
+                <img src="assets/File.png">
+                <div class="label">{{ label }}</div>
+            </div>
+            <button (click)="selectFile()">Browse</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="dialog-footer">
+        <app-button (click)="closeDialog()" [type]="'secondaryButton'" [title]="'Cancel'"></app-button>
+        <app-button class="padding-left-12" [title]="'Select'"></app-button>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+<div class="main-container">
+  <app-top-header></app-top-header>
+  <app-navigation-header></app-navigation-header>
+  <app-title-header
+    [title]="'LIS'"
+    [title2]="'Equipment Test Link'"
+    [isShowPrintButton]="true"
+    [isShowSaveButton]="true"
+    [isShowImportButton]="true"
+    [isShowExportButton]="true"
+    [isShowClearDataButton]="true"
+  ></app-title-header>
+
+  <div class="filter-container">
+    <div class="filter-container-left">
+      <div class="input-container">
+        <app-input
+          [type]="'IDInput'"
+          [title]="'Machine ID'"
+          [idPlaceholder]="'12'"
+          [placeholder]="'Machine ID'"
+        ></app-input>
+      </div>
+      <div class="input-container">
+        <app-input
+          [type]="'IDInput'"
+          [title]="'Department'"
+          [idPlaceholder]="'12'"
+          [placeholder]="'Department'"
+        ></app-input>
+      </div>
+      <div class="input-btn">
+        <app-button
+          [title]="'Show'"
+          [type]="'primarySmallButton'"
+          [extraClass]="'width-fit-content'"
+        ></app-button>
+      </div>
+      <div class="input-btn">
+        <app-button
+          [type]="'secondarySmallButton'"
+          [title]="'Copy From'"
+          [extraClass]="'width-fit-content'"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <div class="table-left padding-right-12">
+      <table
+        mat-table
+        #table1
+        [dataSource]="EquipmentTestLinkData"
+        class="mat-elevation-z8"
+      >
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>
+            <input
+              type="checkbox"
+              [checked]="serviceTableChecked('even', EquipmentTestLinkData)"
+              (change)="
+                serviceTableCheckboxChange(
+                  'even',
+                  $event,
+                  EquipmentTestLinkData
+                )
+              "
+            />
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <input type="checkbox" [(ngModel)]="element.isChecked" />
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="serviceCode">
+          <th mat-header-cell *matHeaderCellDef>Service Code</th>
+          <td mat-cell *matCellDef="let element">{{ element.serviceCode }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="serviceName">
+          <th mat-header-cell *matHeaderCellDef>Service Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.serviceName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="analyzer_code">
+          <th mat-header-cell *matHeaderCellDef>Analyzer Code</th>
+          <td mat-cell *matCellDef="let element">
+            <div style="width: 101px">
+              <app-input></app-input>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr
+          mat-row
+          [hidden]="i % 2 !== 0"
+          *matRowDef="let row; columns: displayColumns; let i = index"
+        ></tr>
+      </table>
+    </div>
+
+    <div class="table-right padding-left-12">
+      <table
+        mat-table
+        #table2
+        [dataSource]="EquipmentTestLinkData"
+        class="mat-elevation-z8"
+      >
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>
+            <input
+              type="checkbox"
+              [checked]="serviceTableChecked('odd', EquipmentTestLinkData)"
+              (change)="
+                serviceTableCheckboxChange(
+                  'odd',
+                  $event,
+                  EquipmentTestLinkData
+                )
+              "
+            />
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <input type="checkbox" [(ngModel)]="element.isChecked" />
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="serviceCode">
+          <th mat-header-cell *matHeaderCellDef>Service Code</th>
+          <td mat-cell *matCellDef="let element">{{ element.serviceCode }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="serviceName">
+          <th mat-header-cell *matHeaderCellDef>Service Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.serviceName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="analyzer_code">
+          <th mat-header-cell *matHeaderCellDef>Analyzer Code</th>
+          <td mat-cell *matCellDef="let element">
+            <div style="width: 101px">
+              <app-input></app-input>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr
+          mat-row
+          [hidden]="i % 2 === 0"
+          *matRowDef="let row; columns: displayColumns; let i = index"
+        ></tr>
+      </table>
+    </div>
+  </div>
+</div>

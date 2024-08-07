@@ -1,0 +1,98 @@
+.main-container {
+    padding: 10px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-header .dialog-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.dialog-header .dialog-header-left .icon-container {
+    border: 1px solid #E3E3E3;
+    display: inline-block;
+    padding: 6px;
+    margin-right: 10px;
+}
+
+.dialog-header .dialog-header-left .icon-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.dialog-header .dialog-header-left .dialog-title {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 19.36px;
+    font-weight: 600;
+}
+
+.dialog-header .dialog-header-right img {
+    cursor: pointer;
+}
+
+.main-container hr {
+    border: 1px solid #E3E3E3;
+}
+
+.dialog-footer {
+    text-align: right;
+}
+
+.file-upload-container {
+    
+}
+
+.file-upload-container .input-container {
+    height: 44px;
+    width: 250px;
+    border: 1px solid #E3E3E3;
+    display: inline-block;
+    vertical-align: top;
+    border-right: none;
+    position: relative;
+}
+
+.file-upload-container .input-container img {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 10px;
+}
+
+.file-upload-container .input-container .label {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 45px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #868C98;
+    width: 70%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.file-upload-container button {
+    height: 44px;
+    border: 1px solid #E3E3E3;
+    border-left: none;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0px 20px;
+}
+
+.padding-left-12 {
+    padding-left: 12px;
+}
+
+.display-none {
+    display: none;
+}

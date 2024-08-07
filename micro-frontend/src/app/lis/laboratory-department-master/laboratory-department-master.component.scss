@@ -1,0 +1,137 @@
+.main-container {
+    padding: 10px;
+}
+
+.filter-container {
+    margin-top: 12px;
+}
+
+.filter-container .filter-container-left {
+    width: 80%;
+    display: inline-block;
+}
+
+.filter-container .filter-container-left .input-container {
+    width: 30%;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.filter-container .filter-container-left .input-container.second {
+    width: 20%;
+}
+
+.filter-container .filter-container-right {
+    width: 20%;
+    display: inline-block;
+    text-align: right;
+}
+
+.padding-left-12 {
+    padding-left: 12px;
+}
+
+.padding-right-12 {
+    padding-right: 12px;
+}
+
+// Mat table CSS Start
+
+table {
+    border: 1px solid #E3E3E3;
+}
+
+::ng-deep table thead {
+    background-color: #EEF2FF !important;
+    color: #525866;
+    font-size: 12px;
+}
+
+::ng-deep table thead tr, ::ng-deep table tbody tr {
+    height: 40px !important;
+}
+
+::ng-deep table thead tr th {
+    color: #525866;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+::ng-deep table tbody tr td {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.table-checkbox {
+    padding-right: 5px;
+}
+
+.table-checkbox-title {
+    padding-left: 5px;
+}
+
+.table-header-title {
+    display: flex;
+    align-items: center;
+}
+
+table {
+    box-shadow: none;
+}
+
+// Mat table CSS End
+
+.table-container {
+    margin-top: 12px;
+}
+
+.table-container .table-left {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px dashed #E3E3E3;
+}
+
+.table-container .table-right {
+    width: 50%;
+    display: inline-block;
+    padding-left: 12px;
+    vertical-align: top;
+}
+
+.table-input-container {
+    padding: 0px 10px 0px 10px;
+}
+
+
+.table-input-container.sort-order {
+    width: 15%;
+}
+
+.table-input-container.add-button {
+    text-align: start;
+}
+
+.table-input-container.add-button i {
+    text-align: start;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.img-button {
+    cursor: pointer;
+}

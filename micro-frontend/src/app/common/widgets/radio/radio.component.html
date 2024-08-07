@@ -1,0 +1,9 @@
+<div class="form-container">
+    <div class="input-label">{{ title }}</div>
+    <div class="inputs inputs-radio">
+        <ng-container *ngFor="let radio of radioList; let i = index;">
+            <input [name]="title + uniueName" [(ngModel)]="value" (ngModelChange)="onModelChange(value)" class="input-radio" type="radio" [id]="title + radio.label + i + uniueName" [value]="radio.value">
+            <label [for]="title + radio.label + i + uniueName">{{ radio.label }}</label>
+        </ng-container>
+    </div>
+</div>

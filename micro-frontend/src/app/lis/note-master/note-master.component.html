@@ -1,0 +1,134 @@
+<div class="main-container">
+  <app-top-header></app-top-header>
+  <app-navigation-header></app-navigation-header>
+  <app-title-header
+    [title]="'LIS'"
+    [title2]="'Note Master'"
+    [isShowPrintButton]="true"
+    [isShowSaveButton]="true"
+    [isShowImportButton]="true"
+    [isShowExportButton]="true"
+    [isShowClearDataButton]="true"
+  ></app-title-header>
+
+  <div class="filter-container">
+    <form [formGroup]="filterForm">
+      <div class="filter-container-left">
+        <div class="input-container">
+          <app-input
+            formControlName="helpCode"            
+            [title]="'Help No.'"
+            [placeholder]="'-'"
+          ></app-input>
+        </div>
+        <div class="input-container second">
+          <app-select
+            formControlName="noteType"
+            [title]="'Notes Type'"
+            [options]="noteType"
+            [placeholder]="'Select'"
+          ></app-select>
+        </div>
+        <div class="input-container second">
+          <app-select
+            formControlName="dept"
+            [title]="'Department'"
+            [options]="dept"
+            [placeholder]="'Select'"
+          ></app-select>
+        </div>
+        <div class="input-container second">
+          <app-input
+            formControlName="sortOrder"
+            [title]="'Sort Order'"
+          ></app-input>
+        </div>
+        <div class="input-container second">
+          <app-radio
+            formControlName="status"
+            [title]="'Status'"
+            [radioList]="[
+              { label: 'Active', value: 'active' },
+              { label: 'Inactive', value: 'inactive' }
+            ]"
+          ></app-radio>
+        </div>
+      </div>
+      <div class="filter-container-right">
+        <div class="d-inlineBlock">
+          <app-button [title]="'+ Add'"> </app-button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-container">
+    <div class="table-full padding-right-12">
+      <table
+        mat-table
+        #table1
+        [dataSource]="noteMasterData"
+        class="mat-elevation-z8"
+      >
+        <ng-container matColumnDef="helpCode">
+          <th mat-header-cell *matHeaderCellDef>Help Code</th>
+          
+          <td mat-cell *matCellDef="let element;let i=index">
+            <ng-container *ngIf="i ==0">
+              
+
+            </ng-container>
+
+            {{ element.helpCode }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="code">
+          <th mat-header-cell *matHeaderCellDef>Code</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container>
+              {{ element.code }}
+            </ng-container>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="codeDesc">
+          <th mat-header-cell *matHeaderCellDef>Code Description</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container>
+              {{ element.codeDesc }}
+            </ng-container>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="sortOrder">
+          <th mat-header-cell *matHeaderCellDef>Sort Order</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container>
+              <app-input [placeholder]="'Sort Order'"></app-input>
+            </ng-container>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element">
+
+            <ng-container> 
+              <app-badges [title]="element.status == 'active' ? 'Active' : 'Inactive'" [badgeClass]="element.status == 'active' ? 'dark-green' : 'red'"></app-badges>
+            </ng-container>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element; let i = index;">
+            <img class="img-button"  (click)="deleteRow(i)" src="assets/Trash Bin Trash.png"> 
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayColumns; let i = index"
+        ></tr>
+      </table>
+    </div>
+  </div>
+</div>

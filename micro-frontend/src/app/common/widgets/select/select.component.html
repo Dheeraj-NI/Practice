@@ -1,0 +1,26 @@
+<div class="input-text input-area" *ngIf="type === 'normal'">
+    <div class="input-label" *ngIf="title">{{ title }}</div>
+    <div class="inputs">
+        <select class="input-select placeholder-color" [(ngModel)]="value" (ngModelChange)="onModelChange(value)" [ngClass]="selectClass">
+            <option value="" selected="selected" disabled>{{ placeholder }}</option>
+            <option *ngFor="let opt of options" [value]="opt.value">{{ opt.label }}</option>
+        </select>
+        <img class="icon-image down-arrow" src="../../assets/Alt Arrow Down.png">
+    </div>
+</div>
+
+<div class="input-text input-area" *ngIf="type === 'multiple'">
+    <div class="multi-select">
+        <div class="multi-select-header" (click)="toggleDropdown()">
+          {{ getSelectedItems() }}
+
+          <img src="../../../assets/Alt Arrow Down.png">
+        </div>
+        <div class="multi-select-dropdown" *ngIf="isDropdownOpen">
+          <label *ngFor="let option of options">
+            <input type="checkbox" [checked]="isSelected(option)" (change)="onCheckboxChange(option, $event)">
+            {{ option.label }}
+          </label>
+        </div>
+      </div>
+</div>

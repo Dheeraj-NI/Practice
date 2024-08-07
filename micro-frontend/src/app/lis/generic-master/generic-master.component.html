@@ -1,0 +1,139 @@
+<div class="main-container">
+    <app-top-header></app-top-header>
+    <app-navigation-header></app-navigation-header>
+    <app-title-header [title]="'LIS'" [title2]="'Generic Master'" [isShowPrintButton]="true" [isShowSaveButton]="true" [isShowClearDataButton]="true"></app-title-header>
+
+    <div class="filter-container">
+        <div class="filter-container-left">
+            <div class="input-container">
+                <app-input [type]="'IDInput'" [title]="'Group Code'" [idPlaceholder]="'247'" [placeholder]="'Group Code'"></app-input>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="table-container">
+        <div class="table-left padding-right-12">
+            <table mat-table #table1 [dataSource]="genericMasterData" class="mat-elevation-z8">
+        
+                <!-- Code Column -->
+                <ng-container matColumnDef="code">
+                    <th mat-header-cell *matHeaderCellDef> Code </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.code }} </td>
+                    <td mat-footer-cell *matFooterCellDef class="table-input-container code">
+                        <form [formGroup]="genericMaster">
+                            <app-input formControlName="code" [placeholder]="'Code'"></app-input>
+                        </form>
+                    </td>
+                </ng-container>
+        
+                <!-- Code Description Column -->
+                <ng-container matColumnDef="codeDescription">
+                    <th mat-header-cell *matHeaderCellDef> Code Description </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.codeDescription }} </td>
+                    <td mat-footer-cell *matFooterCellDef class="table-input-container"> 
+                        <form [formGroup]="genericMaster">
+                            <app-input formControlName="codeDescription" [placeholder]="'Code Description'"></app-input>
+                        </form>
+                    </td>
+                </ng-container>
+
+                <!-- Sort Order Column -->
+                <ng-container matColumnDef="sortOrder">
+                    <th mat-header-cell *matHeaderCellDef> Sort Order </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.sortOrder }} </td>
+                    <td mat-footer-cell *matFooterCellDef class="table-input-container sort-order">
+                        <form [formGroup]="genericMaster">
+                            <app-input formControlName="order" [placeholder]="'Order'"></app-input>
+                        </form>
+                    </td>
+                </ng-container>
+
+                <!-- Status Column -->
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let element; let i = index;"> 
+                        <ng-container *ngIf="!element.isEdit;">
+                            <app-badges [title]="element.status === 'active' ? 'Active' : 'Inactive'" [badgeClass]="element.status === 'active' ? 'dark-green' : 'red'"></app-badges> 
+                        </ng-container>
+                        <ng-container *ngIf="element.isEdit">
+                            <app-radio [(ngModel)]="element.status" [uniueName]="'editRadio' + i" [radioList]="[{ label: 'Active', value: 'active' }, { label: 'Inactive', value: 'inactive' }]"></app-radio>
+                        </ng-container>
+                    </td>
+                    <td mat-footer-cell *matFooterCellDef class="table-input-container"> 
+                        <form [formGroup]="genericMaster">
+                            <app-radio formControlName="status" [radioList]="[{ label: 'Active', value: 'active' }, { label: 'Inactive', value: 'inactive' }]"></app-radio>
+                        </form>
+                    </td>
+                </ng-container>
+
+                <!-- Delete Column -->
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element; let i = index;"> 
+                        <img class="img-button" *ngIf="element.isNew" (click)="deleteRow(i)" src="assets/Trash Bin Trash.png"> 
+                        <img class="img-button" *ngIf="!element.isNew && !element.isEdit" (click)="editRow(element)" src="assets/Pen 2.png"> 
+                        <img class="img-button" *ngIf="!element.isNew && element.isEdit" (click)="saveRow(element)" src="assets/SIM Card Minimalistic.png">
+                    </td>
+                    <td mat-footer-cell *matFooterCellDef class="table-input-container add-button">
+                        <i class="fa-solid fa-plus" (click)="addData()"></i>
+                    </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+                <tr mat-row [hidden]="i % 2 !== 0" *matRowDef="let row; columns: displayColumns; let i = index;"></tr>
+                <tr mat-footer-row *matFooterRowDef="displayFooterColumns"></tr>
+
+            </table>
+        </div>
+
+        <div class="table-right padding-left-12">
+            <table mat-table #table2 [dataSource]="genericMasterData" class="mat-elevation-z8">
+        
+                <!-- Code Column -->
+                <ng-container matColumnDef="code">
+                    <th mat-header-cell *matHeaderCellDef> Code </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.code }} </td>
+                </ng-container>
+        
+                <!-- Code Description Column -->
+                <ng-container matColumnDef="codeDescription">
+                    <th mat-header-cell *matHeaderCellDef> Code Description </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.codeDescription }} </td>
+                </ng-container>
+
+                <!-- Sort Order Column -->
+                <ng-container matColumnDef="sortOrder">
+                    <th mat-header-cell *matHeaderCellDef> Sort Order </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.sortOrder }} </td>
+                </ng-container>
+
+                <!-- Status Column -->
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let element; let i = index;"> 
+                        <ng-container *ngIf="!element.isEdit">
+                            <app-badges [title]="element.status === 'active' ? 'Active' : 'Inactive'" [badgeClass]="element.status === 'active' ? 'dark-green' : 'red'"></app-badges> 
+                        </ng-container>
+                        <ng-container *ngIf="element.isEdit">
+                            <app-radio [(ngModel)]="element.status" [uniueName]="'editRadio' + i" [radioList]="[{ label: 'Active', value: 'active' }, { label: 'Inactive', value: 'inactive' }]"></app-radio>
+                        </ng-container>
+                    </td>
+                </ng-container>
+
+                <!-- Delete Column -->
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef>  </th>
+                    <td mat-cell *matCellDef="let element; let i = index">
+                        <img class="img-button" *ngIf="element.isNew" (click)="deleteRow(i)" src="assets/Trash Bin Trash.png"> 
+                        <img class="img-button" *ngIf="!element.isNew && !element.isEdit" (click)="editRow(element)" src="assets/Pen 2.png"> 
+                        <img class="img-button" *ngIf="!element.isNew && element.isEdit" (click)="saveRow(element)" src="assets/SIM Card Minimalistic.png">
+                    </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+                <tr mat-row [hidden]="i % 2 === 0" *matRowDef="let row; columns: displayColumns; let i = index"></tr>
+            </table>
+        </div>
+    </div>
+</div>

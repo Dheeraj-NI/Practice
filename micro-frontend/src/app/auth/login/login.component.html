@@ -1,0 +1,173 @@
+<div>
+  @if(status == 'login'){
+
+  <ng-container>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="jc-center">
+        <img src="assets/media/login/hospital.svg" alt="" />
+      </div>
+      <div class="l-title jc-center">Welcome back!</div>
+      <div class="l-subtitle jc-center">Login to your dashboard</div>
+
+      <div class="input-container">
+        <input
+          class="user-input"
+          type="text"
+          formControlName="userName"
+          placeholder="User ID"
+        />
+        <img src="assets/media/login/profile.svg" alt="" class="u-icon" />
+      </div>
+      <div class="input-container">
+        <input
+          [type]="loginpassType"
+          placeholder="Password"
+          formControlName="password"
+          class="pass-input"
+        />
+        <img src="assets/media/login/key.svg" class="p_k-icon" alt="" />
+        @if(loginpassType == 'password'){
+
+        <img
+          src="assets/media/login/closed-eye.svg"
+          alt=""
+          class="p_e-icon"
+          (click)="loginPasswordVisibility()"
+        />
+        }@else if(loginpassType == 'text'){
+
+        <img
+          src="assets/media/login/opened-eye.svg"
+          alt=""
+          class="p_e-icon"
+          style="cursor: pointer"
+          (click)="loginPasswordVisibility()"
+        />
+        }
+      </div>
+      <div class="t-forget jc-end" (click)="openDialog()">
+        <p class="m-0" style="cursor: pointer">Forgot Password?</p>
+      </div>
+      <div style="width: 300px">
+        <app-button title="Login" [extraClass]="w_100"></app-button>
+      </div>
+    </form>
+  </ng-container>
+  } @else if(status == 'reset_password'){
+  <ng-container>
+    <!-- <form> -->
+    <div class="jc-center">
+      <img src="assets/media/login/hospital.svg" alt="" />
+    </div>
+    <div class="l-title jc-center">Welcome back!</div>
+    <div class="l-subtitle jc-center">Change Password</div>
+
+    <!-- <div class="password-field">
+            <input
+              type="text"
+              [value]="passwordValue"
+              (input)="onInput($event)"
+              placeholder="Enter your password"
+              aria-label="Password"
+            />
+            <span>{{ starsDisplay }}</span>
+          </div> -->
+    <!-- <div class="input-container">
+      <input class="user-input" type="text" placeholder="User ID" />
+      <img src="assets/media/login/profile.svg" alt="" class="u-icon" />
+    </div> -->
+    <div class="input-container">
+      <input
+        [type]="newpassType"
+        placeholder="Enter new Password"
+        class="pass-input"
+      />
+      <img src="assets/media/login/key.svg" class="p_k-icon" alt="" />
+      @if(newpassType == 'password'){
+
+      <img
+        src="assets/media/login/closed-eye.svg"
+        alt=""
+        class="p_e-icon"
+        (click)="NewPasswordVisibility()"
+      />
+      }@else if(newpassType == 'text'){
+
+      <img
+        src="assets/media/login/opened-eye.svg"
+        alt=""
+        class="p_e-icon"
+        style="cursor: pointer"
+        (click)="NewPasswordVisibility()"
+      />
+      }
+    </div>
+    <div class="input-container">
+      <input
+        [type]="renewpassType"
+        placeholder="Re-enter new Password"
+        class="pass-input"
+      />
+      <img src="assets/media/login/key.svg" class="p_k-icon" alt="" />
+      @if(renewpassType == 'password'){
+
+      <img
+        src="assets/media/login/closed-eye.svg"
+        alt=""
+        class="p_e-icon"
+        (click)="reNewPasswordVisibility()"
+      />
+      }@else if(renewpassType == 'text'){
+
+      <img
+        src="assets/media/login/opened-eye.svg"
+        alt=""
+        class="p_e-icon"
+        style="cursor: pointer"
+        (click)="reNewPasswordVisibility()"
+      />
+      }
+    </div>
+    <div style="width: 300px">
+      <app-button
+        title="Confirm Password"
+        [extraClass]="w_100"
+        (click)="status = 'login'"
+      ></app-button>
+    </div>
+    <!-- </form> -->
+  </ng-container>
+  }@else if(status =='b_confirm'){
+  <ng-container>
+    <div class="jc-center">
+      <img src="assets/media/login/hospital.svg" alt="" />
+    </div>
+    <div class="l-title jc-center">Welcome back!</div>
+    <div class="l-subtitle jc-center">Select Hospital Branch</div>
+<div class="mt-2">
+    <mat-radio-group>
+        <mat-list>
+          <mat-list-item *ngFor="let item of items" class="mb-2"  [ngClass]="{'selected': isSelected(item.value)}"
+          (click)="selectedValue = item.value">
+            <mat-radio-button [value]="item.value">
+                <img src="assets/media/login/hosp_branches.svg" alt="" srcset="">
+              <span class="r-label" [ngClass]="{'selected-label': isSelected(item.value)}">{{ item.label }}</span>
+            </mat-radio-button>
+          </mat-list-item>
+        </mat-list>
+      </mat-radio-group>
+</div>
+    <div style="width: 300px">
+      <button class="primaryButton" (click)="onSubmit()">Confirm</button>
+    </div>
+    <div style="width: 300px">
+      <app-button
+        type="secondaryButton"
+        title="Go Back"
+        [extraClass]="w_100"
+        (click)="status = 'login'"
+      ></app-button>
+    </div>
+  </ng-container>
+  }
+</div>

@@ -1,0 +1,23 @@
+<div class="input-text input-checkbox" *ngIf="type === 'block'">
+    <div class="input-label">{{ title }}</div>
+    <div class="inputs">
+        <input class="id-input" [(ngModel)]="value" (ngModelChange)="onModelChange(value)" type="checkbox">
+    </div>
+</div>
+
+<div class="input-text input-checkbox" *ngIf="type === 'inline'">
+    <div class="inputs inputs-checkbox">
+        <input class="id-input" [(ngModel)]="value" (ngModelChange)="onModelChange(value)" type="checkbox">
+        <div class="input-label input-label-title">{{ title }}</div>
+    </div>
+</div>
+
+<div class="input-text input-checkbox" *ngIf="type === 'inlineMultiple'">
+    <div class="input-label">{{ title }}</div>
+    <div class="inputs inputs-checkbox">
+        <ng-container *ngFor="let checkbox of checkboxes; let i = index">
+            <input class="input-checkbox-multiple" [id]="checkbox.label + i" type="checkbox">
+            <label class="input-label input-label-title" [for]="checkbox.label + i">{{ checkbox.label }}</label>
+        </ng-container>
+    </div>
+</div>

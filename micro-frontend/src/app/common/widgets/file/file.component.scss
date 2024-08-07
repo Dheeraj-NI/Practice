@@ -1,0 +1,82 @@
+input[type=file] {
+    display: none;
+}
+
+input[type=text] {
+    border: 1px solid #DDDDDD;
+    border-right: none;
+    background-color: transparent;
+    padding: 7px;
+    height: 32px;
+    width: 80%;
+}
+
+button {
+    border: 1px solid #DDDDDD;
+    border-left: none;
+    height: 32px;
+    width: 30%;
+}
+
+.camera {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 10px;
+}
+
+.photo-select-container {
+    width: 100%;
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 70%;
+}
+
+.input-container input {
+    width: 100%;
+}
+
+.input-title {
+    font-size: 13px;
+    line-height: 16px;
+    text-align: left;
+    color: #525866;
+    margin-bottom: 8px;
+}
+
+.close-circle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 35px;  
+}
+
+.close-circle2 {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 10px;  
+}
+
+.selected-image {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+input[type=text].file-selected {
+    padding-left: 30px;
+}
+
+.hint {
+    color: #8B8B8B;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 2px;
+}

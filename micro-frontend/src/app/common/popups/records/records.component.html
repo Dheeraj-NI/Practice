@@ -1,0 +1,42 @@
+<div class="main-container">
+    <div class="dialog-header">
+        <div class="dialog-header-left">
+            <div class="icon-container">
+                <img src="assets/Database.png">
+            </div>
+            <div class="dialog-title">{{ title }}</div>
+        </div>
+        <div class="dialog-header-right">
+            <img (click)="closeDialog()" src="assets/Close Square.png">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="dialog-body">
+        <div class="search-container" *ngIf="isShowSearch">
+            <app-search-bar [title]="'Search'"></app-search-bar>
+        </div>
+        <table mat-table [dataSource]="records" class="mat-elevation-z8">
+            <!-- Component Code Column -->
+            <ng-container *ngFor="let column of displayColumns; let i = index;">
+                <ng-container matColumnDef="action" *ngIf="column === 'action'">
+                    <th mat-header-cell *matHeaderCellDef> <input type="checkbox"> </th>
+                    <td mat-cell *matCellDef="let element"> <input type="checkbox" [(ngModel)]="element.isChecked"> </td>
+                </ng-container>
+                <ng-container [matColumnDef]="column" *ngIf="column !== 'action'">
+                    <th mat-header-cell *matHeaderCellDef> {{ displayColumnsValues[i] }} </th>
+                    <td mat-cell *matCellDef="let element"> {{ element[column] }} </td>
+                </ng-container>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="dialog-footer">
+        <app-button [title]="'Select'"></app-button>
+    </div>
+</div>

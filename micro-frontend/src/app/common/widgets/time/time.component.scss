@@ -1,0 +1,19 @@
+.input-title {
+    font-size: 13px;
+    line-height: 16px;
+    text-align: left;
+    color: #525866;
+    margin-bottom: 5px;
+}
+
+input {
+    border: 1px solid #DDDDDD;
+    background-color: transparent;
+    padding: 7px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    width: 16px;
+    height: 16px;
+    color: #344054;
+}

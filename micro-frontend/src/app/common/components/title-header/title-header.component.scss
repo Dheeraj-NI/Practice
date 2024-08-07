@@ -1,0 +1,73 @@
+.title-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.title-header .title-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.title-header h2 {
+    margin-bottom: 0px;
+}
+.t-header{
+    color: #000;
+
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 22px; /* 122.222% */
+letter-spacing: -0.108px;
+}
+.header-hr {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.title-header .title-header-left .left-icon {
+    // font-size: 20px;
+    margin-right: 8px;
+}
+
+.title-header-left .left-icon img {
+    // transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.title-header .title-header-left .navigation-area {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.title-header .title-header-left .navigation-font {
+    font-size: 12px;
+    color: #777;
+    margin-right: 5px;
+}
+
+.title-header-right .title-header-button {
+    background: none;
+    margin: 0px 5px;
+    padding: 4px 8px 4px 8px;
+    cursor: pointer;
+    border: 1px solid #D0D5DD;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.title-header-right .title-header-button .title-header-button-text {
+    display: flex;
+    align-items: center;
+}
+
+.title-header-right .title-header-button .title-header-button-text img {
+    margin-right: 5px;
+}
+
+.title-header .navigation-area a.remove-link-css {
+    text-decoration: none;
+}

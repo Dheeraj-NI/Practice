@@ -1,0 +1,185 @@
+.l-title {
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.l-subtitle {
+  color: #939393;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 8px;
+}
+.user-input {
+  width: 300px;
+  padding: 8px 8px 8px 40px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+}
+.input-container {
+  position: relative;
+  margin-top: 8px;
+}
+.u-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.pass-input {
+  width: 300px;
+  padding: 8px 40px 8px 40px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+}
+.p_k-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.p_e-icon {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.t-forget {
+  color: #525866;
+  text-align: right;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 8px;
+  text-decoration-line: underline;
+}
+.jc-center {
+  display: flex;
+  justify-content: center;
+}
+.jc-end {
+  display: flex;
+  justify-content: end;
+}
+.posi {
+  position: fixed;
+}
+.primaryButton {
+  background-color: #6366f1;
+  border: 1px solid #6366f1;
+  color: #fff;
+  width: 100%;
+  font-size: 15px;
+  padding: 8px 12px 8px 12px;
+  font-weight: 500;
+}
+::ng-deep.mdc-radio__inner-circle{
+  border-width: 6px !important;
+}
+::ng-deep.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__outer-circle {
+  border-color: #6366f1 !important;
+}
+::ng-deep.mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled
+  + .mdc-radio__background
+  .mdc-radio__inner-circle {
+  border-color: #6366f1 !important;
+}
+::ng-deep.mat-mdc-radio-button.mat-mdc-radio-checked .mat-ripple-element {
+  background-color: #6366f1 !important;
+}
+::ng-deep.mat-mdc-radio-button.mat-accent {
+  --mat-radio-checked-ripple-color: none;
+}
+::ng-deep.mat-mdc-list-item {
+  border: 1px solid #e3e3e3 !important;
+}
+::ng-deep.mdc-list-item.mdc-list-item--with-one-line{
+  height: 36px !important;
+}
+::ng-deep.mdc-list-item.mdc-list-item--with-one-line.selected{
+  display: flex;
+}
+::ng-deep.mdc-list-item{
+  padding-left:0!important;
+}
+::ng-deep.mat-mdc-radio-button .mdc-radio{
+  display: flex !important;
+  align-items: center !important;
+    padding-right: 0 !important;
+}
+::ng-deep.mat-mdc-list-item.selected {
+  border: 1px solid #6366f1 !important;
+}
+::ng-deep.mdc-radio__background{
+  height: 12px !important;
+  width: 12px !important;
+}
+.r-label {
+  overflow: hidden;
+  color: #888;
+  text-overflow: ellipsis;
+  margin-left: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.selected-label {
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;  
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+// .password-field {
+//     position: relative;
+//     width: 100%;
+//   }
+
+//   .password-field input {
+//     width: 100%;
+//     padding: 8px;
+//     font-size: 16px;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background: transparent;
+//     color: transparent;
+//   }
+
+//   .password-field span {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     line-height: 1.5em;
+//     color: black;
+//     font-size: 16px;
+//     padding: 8px;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     background-color: #fff;
+//     pointer-events: none;
+//   }

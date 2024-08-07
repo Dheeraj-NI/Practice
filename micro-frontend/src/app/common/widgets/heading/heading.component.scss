@@ -1,0 +1,70 @@
+.primary-heading {
+    background-color: #EFF0FE;
+    font-size: 14px;
+    line-height: 18px;
+    color: #6366F1;
+    padding: 8px 12px 8px 12px;
+    width: fit-content;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.secondary-heading {
+    background-color: #EFF0FE;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    padding: 8px 12px 8px 12px;
+    width: fit-content;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.tertiary-heading {
+    background-color: #FFFFFF;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    padding: 8px 12px 8px 12px;
+    width: fit-content;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.accordion-title {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.accordion-title .accordion-title-label {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px 8px 12px;
+    background-color: #F1E2FF;
+    color: #000000;
+}
+
+.accordion-title hr {
+    flex: 1;
+    margin-left: 12px;
+    border: 1px solid #6366F1;
+}
+
+.padding-left-0 {
+    padding-left: 0;
+}
+
+.accordion-title.tertiary-heading-with-line .accordion-title-label {
+    background-color: #FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px 0px 8px 0px;
+    width: fit-content;
+    font-weight: 600;   
+}

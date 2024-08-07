@@ -1,0 +1,18 @@
+<p>Ng container</p>
+
+
+<!-- 
+  <div *ngIf="adminRole;else notAdmin">User is a admin</div>
+  
+    
+  
+  <ng-template #notAdmin>
+    User is not a admin
+  </ng-template> -->
+  
+  <ng-template  #myTemplate>
+   <div > User is not a admin</div>
+  </ng-template>
+<ng-container *ngTemplateOutlet="myTemplate">
+
+</ng-container>

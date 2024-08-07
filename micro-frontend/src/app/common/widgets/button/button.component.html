@@ -1,0 +1,7 @@
+<button *ngIf="type === 'primaryButton'" class="primary-button" [ngClass]="extraClass ? extraClass : ''">{{ title }}</button>
+<button *ngIf="type === 'primarySmallButton'" class="primary-small-button" [ngClass]="extraClass ? extraClass : ''">{{ title }}</button>
+<button *ngIf="type === 'secondaryButton'" class="secondary-button" [ngClass]="extraClass ? extraClass : ''">{{ title }}</button>
+<button *ngIf="type === 'secondarySmallButton'" class="secondary-small-button" [ngClass]="extraClass ? extraClass : ''">{{ title }}</button>
+
+<button *ngIf="type === 'primaryIconButton'" class="primary-icon-button" [ngClass]="extraClass ? extraClass : ''"> <div class="button-container"><img src="../../../assets/Add Circle.png"> {{ title }}</div> </button>
+<button *ngIf="type === 'primaryIconSmallButton'" class="primary-icon-small-button" [ngClass]="extraClass ? extraClass : ''"> <div class="button-container"><img src="../../../assets/Add Circle.png"> {{ title }}</div> </button>

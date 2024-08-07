@@ -1,0 +1,110 @@
+.main-container {
+    padding: 10px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-header .dialog-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.dialog-header .dialog-header-left .icon-container {
+    border: 1px solid #E3E3E3;
+    display: inline-block;
+    padding: 6px;
+    margin-right: 10px;
+}
+
+.dialog-header .dialog-header-left .icon-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.dialog-header .dialog-header-left .dialog-title {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 19.36px;
+    font-weight: 600;
+}
+
+.dialog-header .dialog-header-right img {
+    cursor: pointer;
+}
+
+// Mat table CSS Start
+
+table {
+    border: 1px solid #E3E3E3;
+}
+
+::ng-deep table thead {
+    background-color: #EEF2FF !important;
+    color: #525866;
+    font-size: 12px;
+}
+
+::ng-deep table thead tr, ::ng-deep table tbody tr {
+    height: 40px !important;
+}
+
+::ng-deep table thead tr th {
+    color: #525866;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+::ng-deep table tbody tr td {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.table-checkbox {
+    padding-right: 5px;
+}
+
+.table-checkbox-title {
+    padding-left: 5px;
+}
+
+.table-header-title {
+    display: flex;
+    align-items: center;
+}
+
+table {
+    box-shadow: none;
+}
+
+// Mat table CSS End
+
+.main-container hr {
+    border-bottom: 1px solid #E3E3E3;
+}
+
+.dialog-footer {
+    text-align: right;
+}
+
+.dialog-body .search-container {
+    width: 40%;
+    margin-bottom: 12px;
+}

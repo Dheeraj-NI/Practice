@@ -1,14 +1,18 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-lifecycle',
   templateUrl: './lifecycle.component.html',
   styleUrls: ['./lifecycle.component.scss']
 })
-export class LifecycleComponent implements OnInit,OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy {
+export class LifecycleComponent  {
+  // OnInit,OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy 
   @Input() value:string ='Nimap Infotech'
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
+    console.log(route.snapshot.params);
+    console.log(router + "this is running");
     console.log("Constructor")
     console.log(this.value)
   }

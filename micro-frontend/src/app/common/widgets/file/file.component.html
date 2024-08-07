@@ -1,0 +1,12 @@
+<div class="photo-select-container">
+    <div class="input-title">{{ title }}</div>
+    <input #fileInput type="file" (change)="fileHandle($event)">
+    <div class="input-container">
+        <img *ngIf="file.fileValue" class="selected-image" [src]="file.fileValue">
+        <input type="text" [ngClass]="file.fileValue ? 'file-selected' : ''" placeholder="Please select file" [(ngModel)]="file.name">
+        <img *ngIf="file.name" [ngClass]="type === 'profilePhoto' ? 'close-circle' : 'close-circle2'" (click)="clearPhoto($event)" src="../../../assets/Close Circle.png">
+        <img *ngIf="type === 'profilePhoto'" class="camera" src="../../../assets/Camera Minimalistic.png">
+    </div>
+    <button (click)="selectFile()">Browse</button>
+</div>
+<div class="hint">Upload jpg, png file only*</div>

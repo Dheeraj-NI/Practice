@@ -1,0 +1,34 @@
+.top-header-navigation {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.top-header-navigation .navigation-link {
+    padding: 4px 8px 4px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.top-header-navigation .navigation-link:first-child {
+    padding-left: 0px;
+}
+
+.top-header-navigation .navigation-link.active {
+    background: #6366F11A;
+    color: #6366F1;
+}
+
+.header-hr {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 1px solid #E3E3E3
+}

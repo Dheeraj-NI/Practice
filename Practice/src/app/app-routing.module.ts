@@ -10,6 +10,11 @@ const routes: Routes = [
   { path: 'joincreate', component: JoincreationComponent },
   { path: 'utility', component: UtilityoperatorComponent },
   { path: 'transform', component: TransformationoperatorComponent },
+  {
+    path: '',
+    redirectTo: 'parent',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

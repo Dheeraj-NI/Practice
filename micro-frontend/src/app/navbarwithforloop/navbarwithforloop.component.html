@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <aside id="sidebar">
+      <div class="d-flex">
+        <button class="toggle-btn" (click)="isExpanded = !isExpanded" type="button">
+          <i class="lni lni-grid-alt"></i>
+        </button>
+      </div>
+      <ul class="sidebar-nav">
+        <li class="sidebar-item" *ngFor="let item of menuItems">
+          <a  class="sidebar-link"
+          style="position: relative;"
+            [class.collapsed]="item.children && !isExpanded"
+            (click)="toggleMenu(item)">
+            <i class="lni" [class]="item.icon"></i>
+            <span>{{item.title}}</span>
+            <i *ngIf="item.children" class="lni lni-chevron-down ms-auto"></i>
+          </a>
+          <!-- Nested Dropdown Menu -->
+          <ul class="sidebar-dropdown list-unstyled collapse"  
+          style="position: absolute; left:238px" *ngIf="item.children" [ngClass]="{'show': item.isExpanded}">
+            <li class="sidebar-item" *ngFor="let child of item.children">
+              <a  class="sidebar-link"
+                [class.collapsed]="child.children && !child.isExpanded"
+                (click)="toggleMenu(child)">
+                {{child.title}}
+                <i *ngIf="child.children" class="lni lni-chevron-down ms-auto"></i>
+              </a>
+              <!-- Sub-level Dropdown -->
+              <ul class="sidebar-dropdown list-unstyled collapse" *ngIf="child.children" [ngClass]="{'show': child.isExpanded}">
+                <li class="sidebar-item" *ngFor="let subChild of child.children">
+                  <a href="{{subChild.link}}" class="sidebar-link">{{subChild.title}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-exit"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+    <div class="main p-3">
+      <div class="text-center">
+        <h1>
+          Sidebar Bootstrap 5
+        </h1>
+      </div>
+    </div>
+  </div>
+  

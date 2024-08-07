@@ -1,0 +1,13 @@
+<div class="primary-heading" [ngClass]="extraClass ? extraClass : ''" *ngIf="type === 'primary'">{{ title }}</div>
+<div class="secondary-heading" [ngClass]="extraClass ? extraClass : ''" *ngIf="type === 'secondary'">{{ title }}</div>
+<div class="tertiary-heading" [ngClass]="extraClass ? extraClass : ''" *ngIf="type === 'tertiary'">{{ title }}</div>
+
+<div class="accordion-title" [ngClass]="extraClass ? extraClass : ''" *ngIf="type === 'accordionTitle'">
+    <div class="accordion-title-label"> {{ title }} </div>
+    <hr>
+</div>
+
+<div class="accordion-title tertiary-heading-with-line" [ngClass]="extraClass ? extraClass : ''" *ngIf="type === 'titleWithLine'">
+    <div class="accordion-title-label"> {{ title }} </div>
+    <hr>
+</div>

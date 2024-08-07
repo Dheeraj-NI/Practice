@@ -1,0 +1,92 @@
+.top-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-header .top-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.top-header .top-header-left img {
+    width: 35%;
+    margin-right: 20px;
+}
+
+.top-header .top-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.select-container {
+    position: relative;
+}
+
+.top-header .top-header-left .select-container .icon-image, .top-header .top-header-right .select-container .icon-image {
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 10px;
+}
+
+.select-container select {
+    padding-left: 35px;
+}
+
+.top-header .top-header-right .user-icon {
+    background-color: #6366F1;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    position: relative;
+    margin-left: 10px;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.top-header .top-header-right .user-icon .name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-header .top-header-right .question {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 1px solid;
+    border-radius: 100%;
+    margin-left: 10px;
+}
+
+.top-header .top-header-right .question .fa-question {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-select {
+    padding: 8px 40px;
+    border: 1px solid #DDDDDD;
+    background: none;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.top-header .top-header-left .select-container .icon-image.down-arrow, .top-header .top-header-right .select-container .icon-image.down-arrow {
+    left: auto;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+}

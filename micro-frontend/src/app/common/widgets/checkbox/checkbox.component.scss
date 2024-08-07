@@ -1,0 +1,50 @@
+.input-text {
+    width: fit-content;
+}
+
+.input-text .input-label {
+    color: #525866;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 8px;
+}
+
+.input-text .input-label.input-label-title {
+    color: #000000;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.inputs {
+    text-align: center;
+    min-height: 30px;
+}
+
+.inputs.inputs-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.inputs.inputs-checkbox .input-label {
+    margin-bottom: 0px;
+    // font-size: 13px;
+}
+
+.inputs.inputs-checkbox input {
+    margin: 0px;
+    margin-right: 5px;
+}
+
+input {
+    width: 16px;
+    height: 16px;
+}
+
+.inputs.inputs-checkbox .input-checkbox-multiple {
+    margin-left: 12px;
+}
+
+.inputs.inputs-checkbox .input-checkbox-multiple:first-child {
+    margin-left: 0px;
+}
