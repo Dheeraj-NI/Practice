@@ -6,11 +6,16 @@ import { MastersComponent } from './masters/masters.component';
 import { OrganismMasterComponent } from './lis/organism-master/organism-master.component';
 import { NoteMasterComponent } from './lis/note-master/note-master.component';
 import { DoctorsSignMasterComponent } from './lis/doctors-sign-master/doctors-sign-master.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
   },
   {
     path: 'generic-master',

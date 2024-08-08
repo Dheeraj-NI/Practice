@@ -18,6 +18,7 @@ export class TitleHeaderComponent {
     @Input() isShowNextButton = false;
     @Input() isShowPreviousButton = false;
     @Input() isShowImportButton = false;
+    @Input() isShowNewServiceButton = false;
     @Input() isShowExportButton = false;
     @Input() isShowPrintButton = false;
     @Input() isShowSaveButton = false;

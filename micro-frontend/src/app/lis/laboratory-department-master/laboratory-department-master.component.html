@@ -47,16 +47,9 @@
             </ng-container>
             }
             <div class="td-container">
-              @if(element.isEdit){
-                <ng-container>
-                 
-                    <app-input [(ngModel)]="element.sectionCode"></app-input>
-                 
-                </ng-container>
-                }@else{
-
+             
                   {{ element.sectionCode }}
-                }
+             
             </div>
           </td>
         </ng-container>
@@ -193,16 +186,9 @@
       >
         <ng-container matColumnDef="sectionCode">
           <th mat-header-cell *matHeaderCellDef>Section Code</th>
-          <td mat-cell *matCellDef="let element">@if(element.isEdit){
-            <ng-container>
-             
-                <app-input [(ngModel)]="element.sectionCode"></app-input>
-             
-            </ng-container>
-            }@else{
-
+          <td mat-cell *matCellDef="let element">
               {{ element.sectionCode }}
-            }</td>
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="sectionName">

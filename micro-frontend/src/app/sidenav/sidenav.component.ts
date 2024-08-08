@@ -8,7 +8,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 interface NavItem {
   title: string;
@@ -31,6 +31,7 @@ interface NavItem {
     RouterOutlet,
     RouterLink,
     MatInputModule,
+    
   ],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',
@@ -38,7 +39,7 @@ interface NavItem {
 export class SidenavComponent  {
   isOpened = true; 
   isCollapsed = false; 
-  
+  constructor(private router : Router){}
   navItems: NavItem[] = [
     { title: 'Home' },
     { title: 'About' },
@@ -1124,5 +1125,9 @@ export class SidenavComponent  {
       this.showIcon = true;
       this.filterMenuList = this.menuItems;
     }
+  }
+  logout() {
+    debugger
+    this.router.navigate(['auth']);
   }
 }

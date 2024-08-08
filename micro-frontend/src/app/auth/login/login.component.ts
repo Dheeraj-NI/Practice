@@ -12,6 +12,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
   isSelected(value: string): boolean {
     return this.selectedValue === value;
   }
-  constructor(private formBuilder: FormBuilder, public dialog: MatDialog) {}
+  constructor(private formBuilder: FormBuilder, public dialog: MatDialog,private router:Router) {}
   ngOnInit(): void {
     this.createForm();
   }
@@ -68,6 +69,9 @@ export class LoginComponent implements OnInit {
     }
     this.status = 'b_confirm';
     console.log(this.loginForm.value);
+  }
+  onDashboardPage() {
+    this.router.navigate(['dashboard']);
   }
   loginPasswordVisibility(): void {
     this.loginpassType =

@@ -105,6 +105,15 @@
       <span class="full-width custom-icon">Settings</span>
       }
     </mat-list-item>
+    <mat-list-item>
+      <span [ngStyle]="{ 'margin-right': isShowing ? '12px' : 0 }">
+        <img src="assets/media/icons/settings-icon.svg" alt="" />
+      </span>
+      @if( isShowing){
+
+      <span class="full-width custom-icon"  click="logout()" >LogOut</span>
+      }
+    </mat-list-item>
   </mat-nav-list>
 </mat-sidenav>
 
