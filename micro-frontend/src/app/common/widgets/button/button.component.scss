@@ -1,89 +1,109 @@
 .primary-button {
-    background-color: #6366F1;
-    border: none;
-    color: #FFF;
-    font-size: 15px;
-    line-height: 20px;
-    padding: 8px 12px 8px 12px;
-    font-weight: 500;
-    border: 1px solid #6366F1;
+  background-color: #6366f1;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 8px 12px 8px 12px;
+  font-weight: 500;
+  border: 1px solid #6366f1;
 }
 
 .primary-small-button {
-    background-color: #6366F1;
-    border: none;
-    color: #FFF;
-    font-size: 13px;
-    line-height: 16px;
-    padding: 8px 12px 8px 12px;
-    font-weight: 500;
-    width: 100%;
+  background-color: #6366f1;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 8px 12px 8px 12px;
+  font-weight: 500;
+  width: 100%;
 }
 
 .secondary-button {
-    border: 1px solid #6366F1;
-    font-size: 15px;
-    background-color: transparent;
-    color: #6366F1;
-    padding: 8px 12px 8px 12px;
-    font-weight: 500;
+  border: 1px solid #6366f1;
+  font-size: 15px;
+  background-color: transparent;
+  color: #6366f1;
+  padding: 8px 12px 8px 12px;
+  font-weight: 500;
 }
 
 .secondary-small-button {
-    background-color: transparent;
-    border: 1px solid #6366F1;
-    color: #6366F1;
-    font-size: 13px;
-    line-height: 16px;
-    padding: 7px 12px 7px 12px;
-    font-weight: 500;
-    width: 100%;
+  background-color: transparent;
+  border: 1px solid #6366f1;
+  color: #6366f1;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 7px 12px 7px 12px;
+  font-weight: 500;
+  width: 100%;
 }
 
 .primary-icon-button {
-    background-color: #6366F1;
-    border: none;
-    color: #FFF;
-    font-size: 15px;
-    line-height: 20px;
-    padding: 8px 12px 8px 12px;
-    font-weight: 500;
+  background-color: #6366f1;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 8px 12px 8px 12px;
+  font-weight: 500;
 }
 
 .primary-icon-button .button-container img {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
 }
 
-.primary-icon-button .button-container, .primary-icon-small-button .button-container {
-    display: flex;
-    align-items: center;
+.primary-icon-button .button-container,
+.primary-icon-small-button .button-container {
+  display: flex;
+  align-items: center;
 }
 
 .primary-icon-small-button {
-    background-color: #6366F1;
-    border: none;
-    color: #FFF;
-    font-size: 13px;
-    line-height: 16px;
-    padding: 8px 12px 8px 12px;
-    font-weight: 500;
+  background-color: #6366f1;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 8px 12px 8px 12px;
+  font-weight: 500;
 }
 
 .primary-icon-small-button .button-container img {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
 }
 
 .upload-photo-button {
-    font-size: 12px;
-    line-height: 15px;
-    height: 28px;
-    padding: 0px;
+  font-size: 12px;
+  line-height: 15px;
+  height: 28px;
+  padding: 0px;
 }
 
 .width-fit-content {
-    width: fit-content;
+  width: fit-content;
+}
+.h-36 {
+  height: 36px;
+}
+.f-email-btns {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+.l-bConfirm-btns {
+
+  padding: 0 12px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 }

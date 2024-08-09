@@ -22,6 +22,7 @@
           placeholder="Search Module"
           (keyup)="filterMenuItems(searchInput.value)"
         />
+        <p class="m-0 slash">/</p>
       </div>
       }
     </div>
@@ -30,19 +31,19 @@
     <div>
       @for (menu of filterMenuList; track menu;let i = $index) {
       <mat-list-item
-        class="parent"
+        class="parent"        
         (click)="toggleSubmenu(i)"
         [matMenuTriggerFor]="menu.submenu ? subMenu : null"
-      >
+        >
         <span [ngStyle]="{ 'margin-right': isShowing ? '12px' : 0 }">
           <img src="assets/media/icons/icon.svg" alt="" />
         </span>
         @if( isShowing){
         <span class="full-width custom-icon">{{ menu.name }}</span>
-        } @if(( isShowing) && menu?.submenu){
-        <mat-icon class="custom-icon rotated"
+      } @if(( isShowing) && menu?.submenu){          
+        <mat-icon class="custom-icon rotated" 
         [ngClass]="{'rotated' : submenuVisibility[i] }"
-        >chevron_right</mat-icon>
+        >keyboard_arrow_down</mat-icon>
         }
       </mat-list-item>
 
@@ -51,7 +52,7 @@
         <button
           mat-menu-item
           [matMenuTriggerFor]="submenu.childmenu ? childMenu : null"
-        >
+          >
           <span
             [ngStyle]="{
               'margin-right': isShowing ? '12px' : 0
@@ -65,7 +66,7 @@
         </button>
         <mat-menu #childMenu="matMenu">
           @if(submenu.childmenu){ @for(child of submenu.childmenu;track child){
-          <mat-list-item>
+          <mat-list-item [routerLink]="child.link">
             <span
               [ngStyle]="{
                 'margin-right': isShowing ? '12px' : 0
@@ -117,151 +118,3 @@
   </mat-nav-list>
 </mat-sidenav>
 
-<!-- ====================================================================== -->
-<!-- <aside id="sidebar">
-  <div
-    class="d-flex"
-    [ngStyle]="{
-      'justify-content': isExpanded ? 'around' : 'center'
-    }"
-  >
-    <button mat-icon-button class="toggle-btn" (click)="open()">
-      <mat-icon class="custom-icon">menu</mat-icon>
-    </button>
-    @if( isExpanded){
-    <div class="input-group">
-      <input
-        type="text"
-        class="searchText"
-        #searchInput
-        placeholder="Search Module"
-        (keyup)="filterMenuItems(searchInput.value)"
-      />
-      @if(showIcon){
-
-      <i class="fas fa-search"></i>
-      }
-    </div>
-    }
-  </div>
-  @if(filterMenuList.length > 0){ @for (menu of filterMenuList; track menu;let i
-  = $index) {
-
-  <ul class="sidebar-nav">
-    <li class="sidebar-item">
-      <a
-        href="#"
-        class="sidebar-link"
-        [ngClass]="{
-          'collapsed': menu?.submenu,
-          'has-dropdown': menu?.submenu,
-        }"
-        data-bs-toggle="collapse"
-        data-bs-target="#submenu"
-        aria-expanded="false"
-        aria-controls="submenu"
-      >
-        <img src="assets/media/icons/icon.svg" alt="" />
-        @if(isExpanded){
-        <span>{{ menu.name }}</span>
-        }
-      </a>
-
-      <ul
-        id="submenu"
-        class="sidebar-dropdown list-unstyled collapse"
-        data-bs-parent="#sidebar"
-      >
-        @for(submenu of menu.submenu;track submenu){
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link">
-            @if(submenu.name){
-            <span>{{ submenu.name }}</span>
-            }
-          </a>
-        </li>
-        }
-      </ul>
-    </li>
-  </ul>
-  } }
-
-  <ul class="sidebar-nav">
-    <li class="sidebar-item">
-      <a
-        href="#"
-        class="sidebar-link collapsed has-dropdown"
-        data-bs-toggle="collapse"
-        data-bs-target="#auth"
-        aria-expanded="false"
-        aria-controls="auth"
-      >
-        <i class="lni lni-protection"></i>
-        <span>Auth</span>
-      </a>
-      <ul
-        id="auth"
-        class="sidebar-dropdown list-unstyled collapse"
-        data-bs-parent="#sidebar"
-      >
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link"><span>Login</span></a>
-        </li>
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link"><span>Register</span></a>
-        </li>
-      </ul>
-    </li>
-    <li class="sidebar-item">
-      <a
-        href="#"
-        class="sidebar-link collapsed has-dropdown"
-        data-bs-toggle="collapse"
-        data-bs-target="#multi"
-        aria-expanded="false"
-        aria-controls="multi"
-      >
-        <i class="lni lni-layout"></i>
-        <span>Multi Level</span>
-      </a>
-      <ul
-        id="multi"
-        class="sidebar-dropdown list-unstyled collapse"
-        data-bs-parent="#sidebar"
-      >
-        <li class="sidebar-item">
-          <a
-            href="#"
-            class="sidebar-link collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#multi-two"
-            aria-expanded="false"
-            aria-controls="multi-two"
-          >
-            <span>Two Links</span>
-          </a>
-          <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">Link 1</a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">Link 2</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="sidebar-item">
-      <a href="#" class="sidebar-link">
-        <i class="lni lni-popup"></i>
-        <span>Notification</span>
-      </a>
-    </li>
-    <li class="sidebar-item">
-      <a href="#" class="sidebar-link">
-        <i class="lni lni-cog"></i>
-        <span>Setting</span>
-      </a>
-    </li>
-  </ul>
-</aside> -->

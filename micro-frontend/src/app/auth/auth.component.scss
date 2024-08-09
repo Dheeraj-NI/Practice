@@ -5,15 +5,14 @@
 .row {
   --bs-gutter-x: 0;
 }
+
 .grid {
   border-right: 1px solid grey;
 }
 .updates {
-  align-items: center;
-  width: 252px;
   border: 8px solid #eef2ff;
   padding: 0 8px 18px 8px;
-  margin-left: 20px;
+  margin-left: 1%;
 }
 .t-label {
   color: #6366f1;
@@ -34,8 +33,10 @@
 letter-spacing: -0.24px;
 }
 .image-row {
-  width: 540px;
   margin-top: 20px;
+}
+.w-78{
+  width: 78%;
 }
 .jc-center{
     display: flex;
@@ -44,4 +45,7 @@ letter-spacing: -0.24px;
 .jc-end{
     display: flex;
     justify-content: end;
+}
+.fest-pic{
+margin-right:1%;
 }

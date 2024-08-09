@@ -34,9 +34,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   passwordValue: string = '';
   starsDisplay: string = '';
-  loginForm!: FormGroup;
-  w_100 = 'w-100 mt-2';
-  status = 'login';
+  loginForm!: FormGroup;  
+  status = 'b_confirm';
   loginpassType:string = 'password'
   newpassType: string = 'password';
   renewpassType: string = 'password';
@@ -87,12 +86,11 @@ export class LoginComponent implements OnInit {
   }
   openDialog() {
     const openedDialog = this.dialog.open(ForgotPasswordComponent, {
-      width: '332px',
+      width: '24%',      
       position: {
-        right: '234px',
-        top: '200px',
-      },
-      panelClass: 'posi',
+        right: '12%',
+        top: '14%',
+      },      
       disableClose: true,
     });
 

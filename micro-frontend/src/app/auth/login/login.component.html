@@ -48,8 +48,8 @@
       <div class="t-forget jc-end" (click)="openDialog()">
         <p class="m-0" style="cursor: pointer">Forgot Password?</p>
       </div>
-      <div style="width: 300px">
-        <app-button title="Login" [extraClass]="w_100"></app-button>
+      <div>
+        <app-button title="Login" [extraClass]="'w-100 mt-2 h-36'"></app-button>
       </div>
     </form>
   </ng-container>
@@ -61,21 +61,6 @@
     </div>
     <div class="l-title jc-center">Welcome back!</div>
     <div class="l-subtitle jc-center">Change Password</div>
-
-    <!-- <div class="password-field">
-            <input
-              type="text"
-              [value]="passwordValue"
-              (input)="onInput($event)"
-              placeholder="Enter your password"
-              aria-label="Password"
-            />
-            <span>{{ starsDisplay }}</span>
-          </div> -->
-    <!-- <div class="input-container">
-      <input class="user-input" type="text" placeholder="User ID" />
-      <img src="assets/media/login/profile.svg" alt="" class="u-icon" />
-    </div> -->
     <div class="input-container">
       <input
         [type]="newpassType"
@@ -131,7 +116,7 @@
     <div style="width: 300px">
       <app-button
         title="Confirm Password"
-        [extraClass]="w_100"
+        [extraClass]="'w-100 mt-2 h-36'"
         (click)="status = 'login'"
       ></app-button>
     </div>
@@ -157,14 +142,19 @@
         </mat-list>
       </mat-radio-group>
 </div>
-    <div style="width: 300px">
-      <button class="primaryButton" (click)="onDashboardPage()">Confirm</button>
-    </div>
-    <div style="width: 300px">
+    <div>
+
       <app-button
-        type="secondaryButton"
-        title="Go Back"
-        [extraClass]="w_100"
+        [title]="'Confirm'"
+        [extraClass]="'w-100 mt-2 l-bConfirm-btns h-36'"
+        (click)="onDashboardPage()"
+      ></app-button>      
+    </div>
+    <div>
+      <app-button
+        [type]="'secondaryButton'"
+        [title]="'Go Back'"
+        [extraClass]="'w-100 mt-2 l-bConfirm-btns h-36'"
         (click)="status = 'login'"
       ></app-button>
     </div>

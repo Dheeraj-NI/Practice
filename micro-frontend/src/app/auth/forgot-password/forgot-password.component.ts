@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ButtonComponent } from '../../common/widgets/button/button.component';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { InputComponent } from '../../common/widgets/input/input.component';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
-  imports: [ButtonComponent,ReactiveFormsModule,FormsModule],
+  imports: [ButtonComponent,ReactiveFormsModule,FormsModule,InputComponent,CommonModule],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss'
 })
@@ -15,6 +17,8 @@ export class ForgotPasswordComponent implements OnInit {
   status = 'f-email'
   private timer: any;
   countdown: number = 60;
+  w_otp: boolean = false;
+  r_otp: boolean = false;
   constructor(public dialogRef: MatDialogRef<ForgotPasswordComponent>,private formBuilder:FormBuilder){}
   ngOnInit(): void {
     this.createForm();
