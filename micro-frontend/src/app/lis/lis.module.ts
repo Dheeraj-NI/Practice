@@ -10,6 +10,7 @@ import { NoteMasterComponent } from './note-master/note-master.component';
 import { OrganismMasterComponent } from './organism-master/organism-master.component';
 import { EquipmentParaCompLinkComponent } from './equipment-para-comp-link/equipment-para-comp-link.component';
 import { ControlCodeMasterComponent } from './control-code-master/control-code-master.component';
+import { ReviewQCComponent } from './review-qc/review-qc.component';
 
 export const routes: Routes = [
   {
@@ -43,6 +44,10 @@ export const routes: Routes = [
   {
     path: 'control-code-master',
     component: ControlCodeMasterComponent,
+  },
+  {
+    path: 'review-qc',
+    component: ReviewQCComponent,
   },
   {
     path: 'master',
