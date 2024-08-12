@@ -9,6 +9,7 @@ import { LaboratoryDepartmentMasterComponent } from './laboratory-department-mas
 import { NoteMasterComponent } from './note-master/note-master.component';
 import { OrganismMasterComponent } from './organism-master/organism-master.component';
 import { EquipmentParaCompLinkComponent } from './equipment-para-comp-link/equipment-para-comp-link.component';
+import { ControlCodeMasterComponent } from './control-code-master/control-code-master.component';
 
 export const routes: Routes = [
   {
@@ -38,6 +39,10 @@ export const routes: Routes = [
   {
     path: 'equipment-para-comp-link',
     component: EquipmentParaCompLinkComponent,
+  },
+  {
+    path: 'control-code-master',
+    component: ControlCodeMasterComponent,
   },
   {
     path: 'master',
