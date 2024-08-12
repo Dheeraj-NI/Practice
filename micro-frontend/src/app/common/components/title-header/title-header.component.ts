@@ -22,6 +22,7 @@ export class TitleHeaderComponent {
     @Input() isShowExportButton = false;
     @Input() isShowPrintButton = false;
     @Input() isShowSaveButton = false;
+    @Input() isShowBarcodePrintButton = false;
     @Input() isShowCreateButton = false;
     @Input() isShowClearDataButton = false;
 

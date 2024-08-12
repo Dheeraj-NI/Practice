@@ -1,0 +1,143 @@
+.main-container {
+    padding: 10px;
+}
+
+.filter-container {
+    margin-top: 12px;
+}
+
+.filter-container .filter-container-left {
+    width: 80%;
+    display: inline-block;
+}
+
+.filter-container .filter-container-left .input-container {
+    width: 30%;
+    display: inline-block;
+    margin-right: 12px;
+}
+.filter-container .filter-container-left .button {
+    width: fit-content;
+    margin-top: 18px;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.filter-container .filter-container-left .second{
+    width: 22%;
+
+}
+.filter-container .filter-container-left .radio{
+    width: 15%;
+
+}
+
+.filter-container .filter-container-left  .lot {
+    width: 8%;
+}
+.padding-left-12 {
+    padding-left: 12px;
+}
+
+.padding-right-12 {
+    padding-right: 12px;
+}
+.img-button {
+    cursor: pointer;
+}
+
+table {
+    border: 1px solid #E3E3E3;
+}
+
+::ng-deep table thead {
+    background-color: #EEF2FF !important;
+    color: #525866;
+    font-size: 12px;
+}
+
+::ng-deep table thead tr, ::ng-deep table tbody tr {
+    height: 40px !important;
+}
+
+::ng-deep table thead tr th {
+    color: #525866;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+::ng-deep table tbody tr td {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.table-header-title {
+    display: flex;
+    align-items: center;
+}
+
+table {
+    box-shadow: none;
+}
+
+// Mat table CSS End
+
+.table-container {
+    margin-top: 12px;
+}
+
+.table-container .table-full {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;    
+}
+.img-button {
+    cursor: pointer;
+}
+.table-input-container {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    height: 40px;
+    border-bottom: 1px solid #E3E3E3;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+::ng-deep table tbody tr:first-child td {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+::ng-deep table tbody tr:first-child td .td-container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    min-height: 60px;
+    max-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.first-td-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+

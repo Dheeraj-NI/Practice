@@ -20,6 +20,7 @@ export class RecordsComponent implements OnInit {
     displayColumns: string[] = [];
     displayColumnsValues: string[] = [];
     title: string = '';
+    inputTitle: string = '';
     isShowSearch: boolean = false;
 
     constructor(public dialogRef: MatDialogRef<RecordsComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -29,6 +30,7 @@ export class RecordsComponent implements OnInit {
         this.title = this.data.title;
         this.isShowSearch = this.data.isShowSearch;
         this.records = this.data.records;
+        this.inputTitle = this.data.inputTitle || 'Search'
         this.displayColumnsData = this.data.displayColumnsData;
         this.displayColumns = Object.keys(this.displayColumnsData);
         this.displayColumnsValues = Object.values(this.displayColumnsData);

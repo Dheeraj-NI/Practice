@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { NavigationHeaderComponent } from '../../common/components/navigation-header/navigation-header.component';
@@ -35,7 +35,7 @@ export interface equipmentParaLink {
   templateUrl: './equipment-para-comp-link.component.html',
   styleUrl: './equipment-para-comp-link.component.scss'
 })
-export class EquipmentParaCompLinkComponent {
+export class EquipmentParaCompLinkComponent implements  OnInit {
   @ViewChild('table1') table!: MatTable<any>;
   displayColumnsData: any
   records: any;
@@ -62,7 +62,7 @@ export class EquipmentParaCompLinkComponent {
       { componentCode: 'FOX', componentDescription: 'Cefoxitin' },
       { componentCode: 'LNZ', componentDescription: 'Linezolid' }
   ];
-  this.displayColumnsData = { action:'action', componentCode: 'Component Code', componentDescription: 'Component' };
+  this.displayColumnsData = { action:'action', componentCode: 'Component Code', componentDescription: 'Component Description' };
     const dialogRef = this.dialog.open(RecordsComponent, {
       data: {
         records: this.records,
