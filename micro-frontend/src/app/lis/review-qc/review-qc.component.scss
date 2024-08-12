@@ -1,0 +1,43 @@
+.main-container {
+    padding: 10px;
+}
+
+.filter-container {
+    margin-top: 12px;
+}
+
+.filter-container .filter-container-left {
+    width: 100%;
+    display: inline-block;
+}
+
+.filter-container .filter-container-left .input-container {
+    width: 30%;
+    display: inline-block;
+    margin-right: 12px;
+}
+.filter-container .filter-container-left .button {
+    width: fit-content;
+    margin-top: 18px;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.filter-container .filter-container-left .second{
+    width: 20%;
+
+}
+
+.filter-container .filter-container-left  .lot {
+    width: 8%;
+}
+.padding-left-12 {
+    padding-left: 12px;
+}
+
+.padding-right-12 {
+    padding-right: 12px;
+}
+.img-button {
+    cursor: pointer;
+}

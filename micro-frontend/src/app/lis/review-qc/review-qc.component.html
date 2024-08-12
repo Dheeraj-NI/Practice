@@ -1,1 +1,81 @@
-<p>review-qc works!</p>
+<div class="main-container">
+    <app-top-header></app-top-header>
+    <app-navigation-header></app-navigation-header>
+    <app-title-header
+      [title]="'LIS'"
+      [title2]="'Review QC'"
+      [isShowPrintButton]="true"
+      [isShowSaveButton]="true"
+      [isShowImportButton]="true"
+      [isShowExportButton]="true"
+      [isShowClearDataButton]="true"
+    ></app-title-header>
+  
+    <div class="filter-container">
+      <div class="filter-container-left">
+        <form [formGroup]="filterForm">
+          <div class="input-container second">
+            <app-input
+              formControlName="machineCode"
+              [type]="'IDInput'"
+              [title]="'Machine Code'"
+              [idPlaceholder]="'SYSMEX2000'"
+              [placeholder]="'SYSMEX2000'"
+            ></app-input>
+          </div>
+          <div class="input-container second">
+            <app-input
+              formControlName="qcCode"
+              [type]="'IDInput'"
+              [title]="'QC Code'"
+              [idPlaceholder]="'qc-61200810'"
+              [placeholder]="'qc-61200810'"
+            ></app-input>
+          </div>
+          <div class="input-container lot">
+            <app-search-bar
+            formControlName="lotNo"            
+            [title]="'Lot No'"            
+            (click)="openLot()"
+            ></app-search-bar>
+          </div>
+          <div class="input-container second">
+            <app-date
+            formControlName="expiryDate"
+            [title]="'Expiry Date'"            
+          ></app-date>
+          </div>
+          <div class="input-container second">
+            <app-input
+              formControlName="compCode"
+              [type]="'IDInput'"
+              [title]="'Component Code'"
+              [idPlaceholder]="'-'"
+              [placeholder]="'-'"
+            ></app-input>
+          </div>
+          <div class="input-container second button">
+            <app-date
+            formControlName="fromDate"
+            [title]="'From Date'"            
+          ></app-date>
+          </div>
+          <div class="input-container second button">
+            <app-date
+            formControlName="toDate"
+            [title]="'To Date'"            
+          ></app-date>
+          </div>
+          <div class="input-container button">
+            <app-button
+            [title]="'Show'"
+            [type]="'secondarySmallButton'"                
+          >
+          </app-button>
+      </div>
+        </form>
+      </div>
+    </div>
+  
+  </div>
+  

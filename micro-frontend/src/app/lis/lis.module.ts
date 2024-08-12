@@ -11,6 +11,7 @@ import { OrganismMasterComponent } from './organism-master/organism-master.compo
 import { EquipmentParaCompLinkComponent } from './equipment-para-comp-link/equipment-para-comp-link.component';
 import { ControlCodeMasterComponent } from './control-code-master/control-code-master.component';
 import { ReviewQCComponent } from './review-qc/review-qc.component';
+import { UpdateQcComponent } from './update-qc/update-qc.component';
 
 export const routes: Routes = [
   {
@@ -48,6 +49,10 @@ export const routes: Routes = [
   {
     path: 'review-qc',
     component: ReviewQCComponent,
+  },
+  {
+    path: 'update-qc',
+    component: UpdateQcComponent,
   },
   {
     path: 'master',
