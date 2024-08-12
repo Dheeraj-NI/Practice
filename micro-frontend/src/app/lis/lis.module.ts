@@ -8,6 +8,7 @@ import { GenericMasterComponent } from './generic-master/generic-master.componen
 import { LaboratoryDepartmentMasterComponent } from './laboratory-department-master/laboratory-department-master.component';
 import { NoteMasterComponent } from './note-master/note-master.component';
 import { OrganismMasterComponent } from './organism-master/organism-master.component';
+import { EquipmentParaCompLinkComponent } from './equipment-para-comp-link/equipment-para-comp-link.component';
 
 export const routes: Routes = [
   {
@@ -33,6 +34,10 @@ export const routes: Routes = [
   {
     path: 'doctors-sign-master',
     component: DoctorsSignMasterComponent,
+  },
+  {
+    path: 'equipment-para-comp-link',
+    component: EquipmentParaCompLinkComponent,
   },
   {
     path: 'master',
