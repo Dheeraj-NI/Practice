@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="31" height="31" stroke="#E3E3E3"/>
+<path d="M21.8333 18.5001V15.948C21.8333 14.1358 20.3642 12.6667 18.552 12.6667H13.4479C11.6357 12.6667 10.1666 14.1358 10.1666 15.948V18.5001C10.1666 21.7217 12.7783 24.3334 16 24.3334C19.2216 24.3334 21.8333 21.7217 21.8333 18.5001Z" stroke="#6366F1" stroke-width="1.25"/>
+<path d="M19.75 13.0833V12.25C19.75 10.1789 18.0711 8.5 16 8.5C13.9289 8.5 12.25 10.1789 12.25 12.25V13.0833" stroke="#6366F1" stroke-width="1.25"/>
+<path d="M21.8334 17.6667H24.3334" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M10.1666 17.6667H7.66663" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M18.0834 8.91675L20.1667 7.66675" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M13.9166 8.91675L11.8333 7.66675" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M23.0833 22.6669L21.4166 22.0002" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M23.0833 12.6666L21.4166 13.3333" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M8.91671 22.6669L10.5834 22.0002" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M8.91671 12.6666L10.5834 13.3333" stroke="#6366F1" stroke-width="1.25" stroke-linecap="round"/>
+<path d="M16 23.9167V18.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

@@ -88,7 +88,7 @@
     <div class="text-center pb-2" style="color: #fff;">No records found</div>
     }
     <mat-divider class="list-divider"></mat-divider>
-    <mat-list-item>
+    <mat-list-item (click)="feedback()">
       <span [ngStyle]="{ 'margin-right': isShowing ? '12px' : 0 }">
         <img src="assets/media/icons/feedback.svg" alt="" />
       </span>

@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -8,9 +14,15 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CommonModule } from '@angular/common';
-import { NavigationEnd, NavigationStart, Router, RouterLink, RouterOutlet } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterOutlet,
+} from '@angular/router';
 import { dummy } from './dummy-sidenav';
-
+import { MatDialog } from '@angular/material/dialog';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @Component({
   selector: 'app-sidenav',
@@ -38,14 +50,24 @@ export class SidenavComponent implements OnInit {
   filterMenuList = this.menuItems;
 
   @ViewChild('sidenav') sidenav!: MatSidenav;
-  isExpanded = false;  
-  isShowing = false; 
+  isExpanded = false;
+  isShowing = false;
+  
+  constructor(private router: Router,private dialog:MatDialog) { }
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isExpanded = false;
+        this.isShowing = false;
+      }
+    });
+  }
 
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    // Check if the pressed key is '/'
+    
     if (event.key === '/') {
-      event.preventDefault(); // Prevent default action (optional)
+      event.preventDefault();
       this.focusSearchBar();
     }
   }
@@ -55,17 +77,8 @@ export class SidenavComponent implements OnInit {
       this.searchBar.nativeElement.focus();
     }
   }
-  
-  constructor(private router: Router) {}  
-  ngOnInit(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.isExpanded = false;
-      this.isShowing = false;
-      }
-    });
-  }
-  
+
+
 
   toggleSubmenu(index: number): void {
     this.submenuVisibility.length = 0;
@@ -164,7 +177,6 @@ export class SidenavComponent implements OnInit {
 
   //   },
   // ];
- 
 
   openClose() {
     if (this.isExpanded) {
@@ -180,11 +192,17 @@ export class SidenavComponent implements OnInit {
       this.filterMenuList = this.menuItems.filter((option: any) => {
         return option.name.toLowerCase().includes(searchProject.toLowerCase());
       });
-    } else {      
+    } else {
       this.filterMenuList = this.menuItems;
     }
   }
-  logout() {    
+  logout() {
     this.router.navigate(['auth']);
+  }
+  feedback() {
+
+    const dialog = this.dialog.open(FeedbackComponent, {
+      width: '300px',      
+    })
   }
 }

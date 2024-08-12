@@ -1,0 +1,199 @@
+<div class="main-container">
+  @if(status == 1){
+
+  <div class="dialog-header">
+    <div class="dialog-header-left">
+      <div class="icon-container">
+        <img src="assets/svg images/feedback.svg" />
+      </div>
+      <div class="dialog-title">Feedback</div>
+    </div>
+    <div class="dialog-header-right">
+      <img (click)="closeDialog()" src="assets/svg images/Close Square.svg" />
+    </div>
+  </div>
+
+  <hr class="hr" />
+
+  <div class="dialog-body">
+    <div class="list-container" (click)="status = 2">
+      <div class="mr-10">
+        <img src="assets/svg images/feedback_type1.svg" alt="" />
+      </div>
+      <div>
+        <div class="f-title">Report a Bug</div>
+        <div class="f-subtitle">Let us know what’s broken</div>
+      </div>
+    </div>
+    <div class="list-container" (click)="status = 3">
+      <div class="mr-10">
+        <img src="assets/svg images/feedback_type2.svg" alt="" />
+      </div>
+      <div>
+        <div class="f-title">General Feedback</div>
+        <div class="f-subtitle">Give General Feedback of this page</div>
+      </div>
+    </div>
+    <div class="list-container" (click)="status = 4">
+      <div class="mr-10">
+        <img src="assets/svg images/feedback_type3.svg" alt="" />
+      </div>
+      <div>
+        <div class="f-title">View Existing Feedback</div>
+        <div class="f-subtitle">See what’s already been submitted</div>
+      </div>
+    </div>
+  </div>
+
+  }@else if(status == 2){
+
+  <div class="dialog-header">
+    <div class="dialog-header-left">
+      <div class="icon-container">
+        <img src="assets/svg images/f-bug.svg" />
+      </div>
+      <div class="dialog-title">Tell us what’s broken</div>
+    </div>
+    <div class="dialog-header-right">
+      <img (click)="closeDialog()" src="assets/svg images/Close Square.svg" />
+    </div>
+  </div>
+
+  <hr class="hr" />
+  <form>
+    <div class="dialog-body">
+      <div>
+        <app-input [title]="'Title'" [placeholder]="'Add a title'"></app-input>
+      </div>
+      <div class="mt-2">
+        <app-textarea
+          [title]="'Describe'"
+          [placeholder]="'Describe the bug in detail'"
+        ></app-textarea>
+      </div>
+      <div class="mt-2">
+        <app-file [title]="'Add multiple Screenshots'"></app-file>
+      </div>
+    </div>
+    <hr class="hr" />
+    <div class="dialog-footer">
+      <app-button
+        [type]="'secondarySmallButton'"
+        [title]="'Go Back'"
+        (click)="status = 1"
+      ></app-button>
+      <app-button [title]="'Submit'" [type]="'primarySmallButton'"></app-button>
+    </div>
+  </form>
+  }@else if(status == 3){
+
+  <div class="dialog-header">
+    <div class="dialog-header-left">
+      <div class="icon-container">
+        <img src="assets/svg images/f-doc-text.svg" />
+      </div>
+      <div class="dialog-title">Tell us your thoughts</div>
+    </div>
+    <div class="dialog-header-right">
+      <img (click)="closeDialog()" src="assets/svg images/Close Square.svg" />
+    </div>
+  </div>
+
+  <hr class="hr" />
+  <form>
+    <div class="dialog-body">
+      <div class="text-center">How would you rate your experience?</div>
+
+      <div class="d-flex gap-20">
+        @for(star of stars;track star;let i = $index){
+        <img
+          [src]="
+            i + 1 > selected
+              ? 'assets/svg images/empty_star.svg'
+              : 'assets/svg images/filled_star.svg'
+          "
+          alt=""
+          (click)="selectRating(i)"
+        />
+        }
+      </div>
+      <div class="mt-2">
+        <app-textarea
+          [title]="'Comment'"
+          [placeholder]="'Add a comment'"
+        ></app-textarea>
+      </div>
+      <div class="mt-2">
+        <app-file [title]="'Add multiple Screenshots'"></app-file>
+      </div>
+    </div>
+    <hr class="hr" />
+    <div class="dialog-footer">
+      <app-button
+        [type]="'secondarySmallButton'"
+        [title]="'Go Back'"
+        (click)="status = 1"
+      ></app-button>
+      <app-button
+        [title]="'Send Feedback'"
+        [type]="'primarySmallButton'"
+      ></app-button>
+    </div>
+  </form>
+  }@else{
+    
+  <div class="dialog-header">
+    <div class="dialog-header-left">
+      <div class="icon-container">
+        <img src="assets/svg images/f-bug.svg" />
+      </div>
+      <div class="dialog-title">Tell us your thoughts</div>
+    </div>
+    <div class="dialog-header-right">
+      <img (click)="closeDialog()" src="assets/svg images/f-doc-text.svg" />
+    </div>
+  </div>
+
+  <hr class="hr" />
+  <form>
+    <div class="dialog-body">
+      <div class="text-center">How would you rate your experience?</div>
+
+      <div class="d-flex gap-20">
+        @for(star of stars;track star;let i = $index){
+        <img
+          [src]="
+            i + 1 > filled
+              ? 'assets/svg images/empty_star.svg'
+              : 'assets/svg images/filled_star.svg'
+          "
+          alt=""
+          
+        />
+        }
+      </div>
+      <div class="mt-2">
+        <app-textarea
+          [title]="'Comment'"
+          [placeholder]="'Add a comment'"
+        ></app-textarea>
+      </div>
+      <div class="mt-2">
+        <app-file [title]="'Add multiple Screenshots'"></app-file>
+      </div>
+    </div>
+    <hr class="hr" />
+    <div class="dialog-footer">
+      <app-button
+        [type]="'secondarySmallButton'"
+        [title]="'Go Back'"
+        (click)="status = 1"
+      ></app-button>
+      <app-button
+        [title]="'Send Feedback'"
+        [type]="'primarySmallButton'"
+      ></app-button>
+    </div>
+  </form>
+  }
+</div>
