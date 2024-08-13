@@ -19,6 +19,10 @@ input {
     font-size: 12px;
 }
 
+.invalid_input{
+border: 1px solid #DF1C41;
+}
+
 input[type=text]::placeholder {
     color: #CCCCCC;
     opacity: 1; /* Firefox */

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -20,6 +20,7 @@ export class SearchBarComponent implements ControlValueAccessor {
 
     @Input() placeholder = 'Search';
     @Input() title = '';
+    @Output() helpButton = new EventEmitter();
 
     value: any = '';
     selectedOptions: any[] = [];
@@ -53,6 +54,9 @@ export class SearchBarComponent implements ControlValueAccessor {
     // Enable or disable the element
     setDisabledState?(isDisabled: boolean): void {
         // Handle the component's disabled state
+    }
+    showHelp() {
+        this.helpButton.emit();
     }
 
 }

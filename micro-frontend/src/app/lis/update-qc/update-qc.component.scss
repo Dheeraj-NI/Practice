@@ -1,0 +1,139 @@
+.main-container {
+  padding: 10px;
+}
+
+.filter-container {
+  margin-top: 12px;
+}
+
+.filter-container .filter-container-left {
+  width: 100%;
+  display: inline-block;
+}
+
+.filter-container .filter-container-left .input-container {
+  width: 30%;
+  display: inline-block;
+  margin-right: 12px;
+}
+.filter-container .filter-container-left .button {
+  width: fit-content;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.filter-container .filter-container-left .second {
+  width: 20%;
+}
+
+.filter-container .filter-container-left .lot {
+  width: 8%;
+}
+.filter-container .filter-container-left .date {
+  width: 12%;
+}
+.padding-left-12 {
+  padding-left: 12px;
+}
+
+.padding-right-12 {
+  padding-right: 12px;
+}
+.img-button {
+  cursor: pointer;
+}
+
+table {
+  border: 1px solid #e3e3e3;
+}
+
+::ng-deep table thead {
+  background-color: #eef2ff !important;
+  color: #525866;
+  font-size: 12px;
+}
+
+::ng-deep table thead tr,
+::ng-deep table tbody tr {
+  height: 40px !important;
+}
+
+::ng-deep table thead tr th {
+  color: #525866;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+::ng-deep table tbody tr td {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.table-header-title {
+  display: flex;
+  align-items: center;
+}
+
+table {
+  box-shadow: none;
+}
+
+// Mat table CSS End
+
+.table-container {
+  margin-top: 12px;
+}
+
+.table-container .table-left {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px dashed #e3e3e3;
+}
+
+.table-input-container {
+  padding: 0px 10px 0px 10px;
+}
+
+.toastr {
+  border: 1px solid #df1c41;
+  color: #df1c41;
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(223, 28, 65, 0.1);
+  padding: 8px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+}
+.toastr img{
+    margin-right: 4px;
+}
+.w-18{
+width:18% !important;
+}
+.w-12{
+width:12% !important;
+}
+.w-6{
+    width: 6% !important;
+}
