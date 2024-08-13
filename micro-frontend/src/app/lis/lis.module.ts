@@ -12,7 +12,7 @@ import { EquipmentParaCompLinkComponent } from './equipment-para-comp-link/equip
 import { ControlCodeMasterComponent } from './control-code-master/control-code-master.component';
 import { ReviewQCComponent } from './review-qc/review-qc.component';
 import { UpdateQcComponent } from './update-qc/update-qc.component';
-import { ManualQcComponent } from '../manual-qc/manual-qc.component';
+import { ManualQcComponent } from './manual-qc/manual-qc.component';
 import { ControlCodeMasterBarcodeComponent } from './control-code-master-barcode/control-code-master-barcode.component';
 import { ReviewCumulativeQcReportComponent } from './review-cumulative-qc-report/review-cumulative-qc-report.component';
 

@@ -2,17 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTable, MatTableModule } from '@angular/material/table';
-import { NavigationHeaderComponent } from '../common/components/navigation-header/navigation-header.component';
-import { TitleHeaderComponent } from '../common/components/title-header/title-header.component';
-import { TopHeaderComponent } from '../common/components/top-header/top-header.component';
-import { ButtonComponent } from '../common/widgets/button/button.component';
-import { DateComponent } from '../common/widgets/date/date.component';
-import { InputComponent } from '../common/widgets/input/input.component';
-import { RadioComponent } from '../common/widgets/radio/radio.component';
-import { SearchBarComponent } from '../common/widgets/search-bar/search-bar.component';
+import { NavigationHeaderComponent } from '../../common/components/navigation-header/navigation-header.component';
+import { TitleHeaderComponent } from '../../common/components/title-header/title-header.component';
+import { TopHeaderComponent } from '../../common/components/top-header/top-header.component';
+import { ButtonComponent } from '../../common/widgets/button/button.component';
+import { DateComponent } from '../../common/widgets/date/date.component';
+import { InputComponent } from '../../common/widgets/input/input.component';
+import { RadioComponent } from '../../common/widgets/radio/radio.component';
+import { SearchBarComponent } from '../../common/widgets/search-bar/search-bar.component';
 import { MatDialog } from '@angular/material/dialog';
-import { TimeComponent } from '../common/widgets/time/time.component';
-import { RecordsComponent } from '../common/popups/records/records.component';
+import { TimeComponent } from '../../common/widgets/time/time.component';
+import { RecordsComponent } from '../../common/popups/records/records.component';
 
 export interface Organism {
   compCode: string;
@@ -24,7 +24,7 @@ export interface Organism {
 @Component({
   selector: 'app-manual-qc',
   standalone: true,
-  imports: [
+  imports:[
     TopHeaderComponent,
     NavigationHeaderComponent,
     TitleHeaderComponent,
