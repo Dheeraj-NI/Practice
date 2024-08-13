@@ -13,8 +13,8 @@ import { ControlCodeMasterComponent } from './control-code-master/control-code-m
 import { ReviewQCComponent } from './review-qc/review-qc.component';
 import { UpdateQcComponent } from './update-qc/update-qc.component';
 import { ManualQcComponent } from '../manual-qc/manual-qc.component';
-import { ControlCodeMasterBarcodeComponent } from '../control-code-master-barcode/control-code-master-barcode.component';
-import { ReviewCumulativeQcReportComponent } from '../review-cumulative-qc-report/review-cumulative-qc-report.component';
+import { ControlCodeMasterBarcodeComponent } from './control-code-master-barcode/control-code-master-barcode.component';
+import { ReviewCumulativeQcReportComponent } from './review-cumulative-qc-report/review-cumulative-qc-report.component';
 
 export const routes: Routes = [
   {

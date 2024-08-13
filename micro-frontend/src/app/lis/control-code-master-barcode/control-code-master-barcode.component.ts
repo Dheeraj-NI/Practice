@@ -7,13 +7,13 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
-import { NavigationHeaderComponent } from '../common/components/navigation-header/navigation-header.component';
-import { TitleHeaderComponent } from '../common/components/title-header/title-header.component';
-import { TopHeaderComponent } from '../common/components/top-header/top-header.component';
-import { ButtonComponent } from '../common/widgets/button/button.component';
-import { InputComponent } from '../common/widgets/input/input.component';
-import { RadioComponent } from '../common/widgets/radio/radio.component';
-import { SelectComponent } from '../common/widgets/select/select.component';
+import { NavigationHeaderComponent } from '../../common/components/navigation-header/navigation-header.component';
+import { TitleHeaderComponent } from '../../common/components/title-header/title-header.component';
+import { TopHeaderComponent } from '../../common/components/top-header/top-header.component';
+import { ButtonComponent } from '../../common/widgets/button/button.component';
+import { InputComponent } from '../../common/widgets/input/input.component';
+import { RadioComponent } from '../../common/widgets/radio/radio.component';
+import { SelectComponent } from '../../common/widgets/select/select.component';
 
 @Component({
   selector: 'app-control-code-master-barcode',
