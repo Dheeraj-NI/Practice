@@ -1,1 +1,192 @@
-<p>manual-qc works!</p>
+<div class="main-container">
+    <app-top-header></app-top-header>
+    <app-navigation-header></app-navigation-header>
+    <app-title-header
+      [title]="'LIS'"
+      [title2]="'Manual QC'"
+      [isShowPrintButton]="true"
+      [isShowSaveButton]="true"
+      [isShowImportButton]="true"
+      [isShowExportButton]="true"
+      [isShowClearDataButton]="true"
+    ></app-title-header>
+  
+    <div class="filter-container">
+      <div class="filter-container-left">
+        <form [formGroup]="filterForm">
+          <div class="input-container second">
+            <app-input
+              formControlName="machineCode"
+              [type]="'IDInput'"
+              [title]="'Machine Code'"
+              [idPlaceholder]="'SYSMEX2000'"
+              [placeholder]="'SYSMEX2000'"
+            ></app-input>
+          </div>
+          <div class="input-container second">
+            <app-input
+              formControlName="qcCode"
+              [type]="'IDInput'"
+              [title]="'QC Code'"
+              [idPlaceholder]="'qc-61200810'"
+              [placeholder]="'qc-61200810'"
+            ></app-input>
+          </div>
+          <div class="input-container lot">
+            <app-search-bar
+              formControlName="lotNo"
+              [title]="'Lot No'"
+              (helpButton)="openLot()"
+            ></app-search-bar>
+          </div>
+          <div class="input-container date">
+            <app-date
+              formControlName="expiryDate"
+              [title]="'Expiry Date'"
+            ></app-date>
+          </div>
+          <div class="input-container date button">
+            <app-date formControlName="date" [title]="'Date'"></app-date>
+          </div>
+          <div class="input-container date button">
+            <app-time [title]="'Time'"  formControlName="time"></app-time>            
+          </div>
+          <div class="input-container button">
+            <app-button [title]="'Show'" [type]="'secondarySmallButton'">
+            </app-button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-left padding-right-12">
+          <table
+            mat-table
+            #table1
+            [dataSource]="manualQcData"
+            class="mat-elevation-z8"
+          >
+            <ng-container matColumnDef="compCode">
+              <th mat-header-cell *matHeaderCellDef>Component  Code</th>
+              <td mat-cell *matCellDef="let element">{{ element.compCode }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="compDesc">
+              <th mat-header-cell *matHeaderCellDef>Component Description</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container>
+                  {{ element.compDesc }}
+                </ng-container>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="value">
+              <th mat-header-cell *matHeaderCellDef>Value</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container>
+                  <app-input [(ngModel)]="element.value"></app-input>
+                </ng-container>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="unit">
+                <th mat-header-cell *matHeaderCellDef>Unit</th>
+                <td mat-cell *matCellDef="let element">
+                  <ng-container>
+                    {{ element.unit }}
+                  </ng-container>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="paramCode">
+                <th mat-header-cell *matHeaderCellDef>Param Code</th>
+                <td mat-cell *matCellDef="let element">
+                  <ng-container>
+                    {{ element.paramCode }}
+                  </ng-container>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element;let i = index">
+                  <img
+                  class="img-button"            
+                  (click)="deleteRow(i)"
+                  src="assets/svg images/Trash Bin Trash.svg"
+                />
+                </td>
+              </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr
+              mat-row
+              [hidden]="i % 2 !== 0"
+              *matRowDef="let row; columns: displayColumns; let i = index"
+            ></tr>
+          </table>
+        </div>
+    
+        <div class="table-right padding-left-12">
+          <table
+            mat-table
+            #table2
+            [dataSource]="manualQcData"
+            class="mat-elevation-z8"
+          >
+          <ng-container matColumnDef="compCode">
+            <th mat-header-cell *matHeaderCellDef>Component  Code</th>
+            <td mat-cell *matCellDef="let element">{{ element.compCode }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="compDesc">
+            <th mat-header-cell *matHeaderCellDef>Component Description</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container>
+                {{ element.compDesc }}
+              </ng-container>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef>Value</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container>
+                <app-input [(ngModel)]="element.value"></app-input>
+              </ng-container>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="unit">
+              <th mat-header-cell *matHeaderCellDef>Unit</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container>
+                  {{ element.unit }}
+                </ng-container>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="paramCode">
+              <th mat-header-cell *matHeaderCellDef>Param Code</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container>
+                  {{ element.paramCode }}
+                </ng-container>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="delete">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element;let i = index">
+                <img
+                class="img-button"            
+                (click)="deleteRow(i)"
+                src="assets/svg images/Trash Bin Trash.svg"
+              />
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr
+              mat-row
+              [hidden]="i % 2 === 0"
+              *matRowDef="let row; columns: displayColumns; let i = index"
+            ></tr>
+          </table>
+        </div>
+      </div>
+
+
+  </div>
+  

@@ -54,7 +54,6 @@ export interface updateQc {
 export class UpdateQcComponent implements OnInit {
   @ViewChild('table1') table!: MatTable<any>;
   filterForm!: FormGroup;
-  updateQcForm!: FormGroup;
   displayColumnsData: any;
   records: any;
   showToastr: boolean = false;
@@ -138,20 +137,6 @@ export class UpdateQcComponent implements OnInit {
       fromDate: [''],
       toDate: [''],
     });
-
-    this.updateQcForm = this.fb.group({
-      date: [''],
-      time: [''],
-      compcode: [''],
-      compDesc: [''],
-      value: [''],
-      low: [''],
-      high: [''],
-      remarks: [''],
-      authorize: [''],
-      authorizeBy: [''],
-      a_date_time: [''],
-    });
   }
 
   ngOnInit(): void {
@@ -191,7 +176,7 @@ export class UpdateQcComponent implements OnInit {
     ];
     this.displayColumnsData = {
       action: 'action',
-      helpText: 'Help Text',      
+      helpText: 'Help Text',
     };
     const dialogRef = this.dialog.open(RecordsComponent, {
       data: {
@@ -213,17 +198,35 @@ export class UpdateQcComponent implements OnInit {
   }
   status(ele: any) {
     if (ele.authorization) {
-      ele.authorized_Date_Time =
-        this.datePipe.transform(new Date(), 'dd/MM/yy hh:mm:ss') + '';
+      ele.authorized_Date_Time =  this.datePipe.transform(new Date(), 'dd/MM/yy hh:mm:ss') + '';
+       
     }
   }
   valuestatus(ele: any) {
     this.showToastr =
       ele.value && (ele.value < ele.low || ele.value > ele.high);
-      setTimeout(() => {
-        this.showToastr = false;
-      }, 1000);
+    setTimeout(() => {
+      this.showToastr = false;
+    }, 1000);
   }
 
+  updateQcTableCheckboxChange(event: any, data: any) {
+    let checkedValue = event.target.checked;
+    data.forEach((d: any) => {
+      d.authorization = checkedValue;
+      d.authorized_Date_Time =  this.datePipe.transform(new Date(), 'dd/MM/yy hh:mm:ss') + '';
+    });
+  }
+  updateQcTableChecked(data: any) {
+    let arr: any = [];
+    data.forEach((d: any) => {
+      arr.push(d);
+    });
 
+    if (arr.length === arr.filter((d: any) => d.authorization).length) {
+        return true;
+    }
+
+    return false;
+}
 }

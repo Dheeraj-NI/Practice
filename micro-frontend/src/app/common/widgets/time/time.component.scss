@@ -10,6 +10,9 @@ input {
     border: 1px solid #DDDDDD;
     background-color: transparent;
     padding: 7px;
+    font-size: 12px;
+font-style: normal;
+font-weight: 400;
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
