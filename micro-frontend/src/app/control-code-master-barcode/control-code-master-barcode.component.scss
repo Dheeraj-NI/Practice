@@ -1,0 +1,35 @@
+.main-container {
+    padding: 10px;
+}
+
+.filter-container {
+    margin-top: 12px;
+}
+
+.filter-container .filter-container-left {
+    width: 80%;
+    display: inline-block;
+}
+
+.filter-container .filter-container-left .input-container {
+    width: 30%;
+    display: inline-block;
+    margin-right: 12px;
+    vertical-align: bottom;
+}
+
+.filter-container .filter-container-left .second{
+    width: 12%;
+
+}
+
+.padding-left-12 {
+    padding-left: 12px;
+}
+
+.padding-right-12 {
+    padding-right: 12px;
+}
+.img-button {
+    cursor: pointer;
+}
