@@ -1,0 +1,120 @@
+<mat-sidenav
+  #sidenav
+  class="example-sidenav"
+  mode="side"
+  opened="true"
+  [ngStyle]="{ width: isShowing ? '238px' : '' }"
+
+>
+  <mat-nav-list>
+    <div class="d-flex">
+      <button mat-icon-button (click)="openClose()">
+        <mat-icon class="custom-icon">menu</mat-icon>
+      </button>
+      @if( isShowing){
+      <div class="input-group">
+        <img src="../../assets/media/login/search.svg" alt="">
+        <input
+          type="text"
+          class="searchText"
+          #searchInput
+          
+          placeholder="Search Module"
+          (keyup)="filterMenuItems(searchInput.value)"
+        />
+        <p class="m-0 slash">/</p>
+      </div>
+      }
+    </div>
+    @if(filterMenuList.length > 0 ){
+
+    <div>
+      @for (menu of filterMenuList; track menu;let i = $index) {
+      <mat-list-item
+        class="parent"        
+        (click)="toggleSubmenu(i)"
+        [matMenuTriggerFor]="menu.submenu ? subMenu : null"
+        >
+        <span [ngStyle]="{ 'margin-right': isShowing ? '12px' : 0 }">
+          <img src="assets/media/icons/icon.svg" alt="" />
+        </span>
+        @if( isShowing){
+        <span class="full-width custom-icon">{{ menu.name }}</span>
+      } @if(( isShowing) && menu?.submenu){          
+        <mat-icon class="custom-icon rotated" 
+        [ngClass]="{'rotated' : submenuVisibility[i] }"
+        >keyboard_arrow_down</mat-icon>
+        }
+      </mat-list-item>
+
+      <mat-menu #subMenu="matMenu" class="subMenu">
+        @if(menu.submenu){ @for(submenu of menu.submenu;track submenu){
+        <button
+          mat-menu-item
+          [matMenuTriggerFor]="submenu.childmenu ? childMenu : null"
+          >
+          <span
+            [ngStyle]="{
+              'margin-right': isShowing ? '12px' : 0
+            }"
+          >
+            <img src="assets/media/icons/icon.svg" alt="" />
+          </span>
+          @if( isShowing){
+          <span class="full-width-submenu custom-icon">{{ submenu.name }}</span>
+          }
+        </button>
+        <mat-menu #childMenu="matMenu">
+          @if(submenu.childmenu){ @for(child of submenu.childmenu;track child){
+          <mat-list-item [routerLink]="child.link">
+            <span
+              [ngStyle]="{
+                'margin-right': isShowing ? '12px' : 0
+              }"
+            >
+              <img src="assets/media/icons/icon.svg" alt="" />
+            </span>
+            @if( isShowing){
+            <span class="full-width-child custom-icon">{{ child.name }}</span>
+            }
+          </mat-list-item>
+          } }
+        </mat-menu>
+        } }
+      </mat-menu>
+      }
+    </div>
+    }@else{
+    <div class="text-center pb-2" style="color: #fff;">No records found</div>
+    }
+    <mat-divider class="list-divider"></mat-divider>
+    <mat-list-item (click)="feedback()">
+      <span [ngStyle]="{ 'margin-right': isShowing ? '12px' : 0 }">
+        <img src="assets/media/icons/feedback.svg" alt="" />
+      </span>
+      @if( isShowing){
+
+      <span class="full-width custom-icon">FeedBack</span>
+      }
+    </mat-list-item>
+    <mat-list-item>
+      <span [ngStyle]="{ 'margin-right': isShowing ? '12px' : 0 }">
+        <img src="assets/media/icons/settings-icon.svg" alt="" />
+      </span>
+      @if( isShowing){
+
+      <span class="full-width custom-icon">Settings</span>
+      }
+    </mat-list-item>
+    <mat-list-item>
+      <span [ngStyle]="{ 'margin-right': isShowing ? '12px' : 0 }">
+        <img src="assets/media/icons/settings-icon.svg" alt="" />
+      </span>
+      @if( isShowing){
+
+      <span class="full-width custom-icon"  click="logout()" >LogOut</span>
+      }
+    </mat-list-item>
+  </mat-nav-list>
+</mat-sidenav>
+

@@ -1,0 +1,294 @@
+<app-top-header></app-top-header>
+<div class="container">
+    <div class="margin-top-10 width20">
+        <app-button [title]="'My Primary Button'" (click)="openDialog()"></app-button>
+    </div>
+    <div class="margin-top-10 width20">
+        <app-button [type]="'primarySmallButton'" (click)="openDialog2()" [title]="'My Small Button'"></app-button>
+    </div>
+    <div class="margin-top-10 width20">
+        <app-button [type]="'secondaryButton'" [title]="'My Secondary Button'"></app-button>
+    </div>
+    <div class="margin-top-10 width20">
+        <app-button [type]="'secondarySmallButton'" [title]="'My Small Button'"></app-button>
+    </div>
+    <div class="margin-top-10 width20">
+        <app-button [type]="'primaryIconButton'" [title]="'My Primary Icon Button'"></app-button>
+    </div>
+    <div class="margin-top-10 width20">
+        <app-button [type]="'primaryIconSmallButton'" [title]="'My Primary Icon Small Button'"></app-button>
+    </div>
+
+    <div class="margin-top-10 width20">
+        <app-heading [title]="'Primary Tab Headings'"></app-heading>
+        <app-heading [title]="'Secondary Tab Headings'" [type]="'secondary'"></app-heading>
+        <app-heading [title]="'Tertiary Tab Headings'" [type]="'tertiary'"></app-heading>
+    </div>
+    
+    <div class="margin-top-10 width20">
+        <app-input [title]="'Passport Number'" [(ngModel)]="value" [placeholder]="'1234'"></app-input>
+        {{ value }}
+    </div>
+
+    <div class="margin-top-10 width20">
+        <form [formGroup]="passportNumberForm">
+            <app-input formControlName="number" [title]="'Passport Number'" [placeholder]="'1234'"></app-input>
+        </form>
+    </div>
+
+    <div class="margin-top-10 width20">
+        <app-input [(ngModel)]="passportForm" [type]="'IDInput'" [title]="'Passport Number'" [idPlaceholder]="'123'"></app-input>
+        {{ passportForm | json }}
+    </div>
+    
+    <div class="margin-top-10 width10">
+        <app-select [title]="'User Type'" [options]="options" [(ngModel)]="select"></app-select>
+        {{ select }}
+    </div>
+
+    <div class="margin-top-10 width10">
+        <app-search-bar></app-search-bar>
+    </div>
+
+    <div class="margin-top-10 width10">
+        <app-checkbox [title]="'VIP Flag'"></app-checkbox>
+    </div>
+
+    <div class="margin-top-10">
+        <app-radio [title]="'Account Status'" [radioList]="[{ label: 'Active', value: 'active' }, { label: 'Inactive', value: 'inactive' }]"></app-radio>
+    </div>
+
+    <div class="margin-top-10 width20">
+        <app-date [title]="'Select Date'" [(ngModel)]="date"></app-date>
+        {{ date }}
+    </div>
+
+    <div class="margin-top-10 width20">
+        <app-time [title]="'Select Time'"></app-time>
+    </div>
+
+    <div class="margin-top-10 width20">
+        <app-input [type]="'mobile'" [title]="'Enter Mobile No.'"></app-input>
+    </div>
+
+    <div class="margin-top-10 badges">
+        <app-badges [badgeClass]="'black'" [title]="'No Show'"></app-badges>
+        <app-badges [badgeClass]="'red'" [title]="'Cancelled'"></app-badges>
+        <app-badges [badgeClass]="'blue'" [title]="'Rescheduled'"></app-badges>
+        <app-badges [badgeClass]="'orange'" [title]="'Pending'"></app-badges>
+        <app-badges [badgeClass]="'yellow'" [title]="'Checked In'"></app-badges>
+        <app-badges [badgeClass]="'light-green'" [title]="'In Progress'"></app-badges>
+        <app-badges [badgeClass]="'dark-green'" [title]="'Closed'"></app-badges>
+    </div>
+    
+    <div class="margin-top-10 badges">
+        <app-badges [badgeClass]="'red'" [title]="'Blood: 0'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'blue'" [title]="'Lab: 0'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'light-green'" [title]="'Radiology: 0'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'yellow'" [title]="'Procedure: 0'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'green'" [title]="'Medicine: 1148'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'orange'" [title]="'Ward: 41'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'pink'" [title]="'VIP Patient: 41'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'dark-violet'" [title]="'Sample Rejection: 0'" [type]="2"></app-badges>
+        <app-badges [badgeClass]="'violet'" [title]="'Credit Company Patient: 3'" [type]="2"></app-badges>
+    </div>
+
+    <div class="margin-top-10">
+        <mat-tab-group class="secondary-tab2" mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="In Patient Billing">Content 1</mat-tab>
+            <mat-tab label="Doctors Workbench">Content 2</mat-tab>
+            <mat-tab label="Email">Content 3</mat-tab>
+            <mat-tab label="Med Tree">Content 4</mat-tab>
+            <mat-tab label="Patient Type">Content 4</mat-tab>
+            <mat-tab label="MRD Locn">Content 6</mat-tab>
+            <mat-tab label="Dis. Auth.">Content 7</mat-tab>
+            <mat-tab label="Bank Center Rights">Content 8</mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <div class="margin-top-10">
+        <mat-tab-group class="secondary-tab2" mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab>
+                <ng-template mat-tab-label>In Patient Billing <span class="mat-tab-extra-text">42</span> </ng-template>
+                Content 1
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Doctors Workbench <span class="mat-tab-extra-text">42</span> </ng-template>
+                Content 2
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Email <span class="mat-tab-extra-text">42</span> </ng-template>
+                Content 3
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Med Tree <span class="mat-tab-extra-text">42</span> </ng-template>
+                Content 4
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Patient Type <span class="mat-tab-extra-text">42</span> </ng-template>
+                Content 4
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>MRD Locn <span class="mat-tab-extra-text">42</span> </ng-template>
+                Content 6
+            </mat-tab>
+            
+        </mat-tab-group>
+    </div>
+
+    <div class="margin-top-10">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle primary-dropdown-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Primary Button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/User Rounded.png">Profile
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Key.svg">Change Password
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container last">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Logout 3.svg">Logout
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="margin-top-10">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle primary-small-dropdown-button" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+              Primary Small Button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/User Rounded.png">Profile
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Key.svg">Change Password
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container last">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Logout 3.svg">Logout
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="margin-top-10">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle secondary-dropdown-button" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                Secondary Button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/User Rounded.png">Profile
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Key.svg">Change Password
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container last">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Logout 3.svg">Logout
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="margin-top-10">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle secondary-small-dropdown-button" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                Secondary Small Button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/User Rounded.png">Profile
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Key.svg">Change Password
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="dropdown-container last">
+                            <div class="dropdown-container-items">
+                                <img src="../../assets/Logout 3.svg">Logout
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="margin-top-10 width20">
+        <app-file></app-file>
+    </div>
+
+    <div class="margin-top-10 width20">
+        <app-select [type]="'multiple'" [options]="options"></app-select>
+    </div>
+</div>

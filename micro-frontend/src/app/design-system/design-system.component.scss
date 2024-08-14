@@ -1,0 +1,134 @@
+.container {
+    padding: 15px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.width20 {
+    width: 20%;
+}
+
+.width10 {
+    width: 10%;
+}
+
+.badges {
+    display: flex;
+    gap: 10px;
+}
+
+mat-tab-group {
+    margin-top: 10px;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab {
+    border: none;
+    background-color: #F2EFFD;
+    height: 40px !important;
+    width: fit-content !important;
+    padding: 0px 10px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--active {
+    // background: #FFFFFF;
+    color: #111111;
+    border: none;
+    font-weight: 600;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label {
+    padding: 5px 8px 5px 8px;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+    background-color: #FFF;
+    color: #344054 !important;
+    padding: 5px 8px 5px 8px;
+    font-weight: 600;
+}
+
+::ng-deep .mdc-tab-indicator__content.mdc-tab-indicator__content--underline {
+    border: none;
+}
+
+.mat-tab-extra-text {
+    background-color: #FFF;
+    color: #6366F1;
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0px 2px 0px 2px;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--active .mat-tab-extra-text {
+    background-color: #6366F1;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.primary-dropdown-button {
+    border-radius: 0px;
+    background-color: #6366F1;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.primary-small-dropdown-button {
+    border-radius: 0px;
+    background-color: #6366F1;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.secondary-dropdown-button {
+    border-radius: 0px;
+    background-color: transparent;
+    border: 1px solid #6366F1;
+    color: #6366F1;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.secondary-small-dropdown-button {
+    border-radius: 0px;
+    background-color: transparent;
+    border: 1px solid #6366F1;
+    color: #6366F1;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.dropdown-menu .dropdown-item img {
+    margin-right: 10px;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 0px;
+}
+
+.dropdown-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+.dropdown-container.last {
+    border-bottom: none;
+}
+
+.dropdown-container-items {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 18px;
+}

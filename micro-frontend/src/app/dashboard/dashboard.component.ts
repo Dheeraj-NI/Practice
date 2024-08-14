@@ -10,7 +10,7 @@ import { NavigationHeaderComponent } from '../common/components/navigation-heade
 import { TitleHeaderComponent } from '../common/components/title-header/title-header.component';
 import { TopHeaderComponent } from '../common/components/top-header/top-header.component';
 import { NavbarwithforloopComponent } from '../navbarwithforloop/navbarwithforloop.component';
-import { SidenavComponent } from '../sidenav/sidenav.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 
