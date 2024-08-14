@@ -1,1 +1,125 @@
-<p>review-cumulative-qc-report works!</p>
+<div class="main-container">
+    <app-top-header></app-top-header>
+    <app-navigation-header></app-navigation-header>
+    <app-title-header
+      [title]="'LIS'"
+      [title2]="'Review of Cumulative QC Report'"
+      [isShowPrintButton]="true"
+      [isShowSaveButton]="true"
+      [isShowImportButton]="true"
+      [isShowExportButton]="true"
+      [isShowClearDataButton]="true"
+    ></app-title-header>
+  
+    <div class="filter-container">
+      <div class="filter-container-left">
+        <form [formGroup]="filterForm">
+            <div class="input-container second">
+                <app-select
+                  formControlName="dept"
+                  [title]="'Department'"
+                  [options]="dept"
+                  [placeholder]="'Select'"
+                ></app-select>
+              </div>
+          <div class="input-container date">
+            <app-date
+              formControlName="fromDate"
+              [title]="'From Date'"
+            ></app-date>
+          </div>
+          <div class="input-container date button">
+            <app-date formControlName="toDate" [title]="' To Date'"></app-date>
+          </div>
+          <div class="input-container button">
+            <app-button [title]="'Show Equipments'" [type]="'secondarySmallButton'" (click)="openEquipment()">
+            </app-button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-left padding-right-12">
+          <table
+            mat-table
+            #table1
+            [dataSource]="reviewQcReportData"
+            class="mat-elevation-z8"
+          >
+            <ng-container matColumnDef="compName">
+              <th mat-header-cell *matHeaderCellDef>Component  Code</th>
+              <td mat-cell *matCellDef="let element">{{ element.compName }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="reports">
+              <th mat-header-cell *matHeaderCellDef>Reports</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container>
+                  <a href="" class="reports"> View Reports</a>
+                </ng-container>
+              </td>
+            </ng-container>
+           
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element;let i = index">
+                  <img
+                  class="img-button"            
+                  (click)="exportRow(i)"
+                  src="assets/svg images/export.svg"
+                />
+                </td>
+              </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr
+              mat-row
+              [hidden]="i % 2 !== 0"
+              *matRowDef="let row; columns: displayColumns; let i = index"
+            ></tr>
+          </table>
+        </div>
+    
+        <div class="table-right padding-left-12">
+          <table
+            mat-table
+            #table2
+            [dataSource]="reviewQcReportData"
+            class="mat-elevation-z8"
+          >
+          <ng-container matColumnDef="compName">
+            <th mat-header-cell *matHeaderCellDef>Component  Code</th>
+            <td mat-cell *matCellDef="let element">{{ element.compName }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="reports">
+            <th mat-header-cell *matHeaderCellDef>Reports</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container>
+                <a href="" class="reports">View Reports</a>
+              </ng-container>
+            </td>
+          </ng-container>
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element;let i = index">
+                <img
+                class="img-button"            
+                (click)="exportRow(i)"
+                src="assets/svg images/export.svg"
+              />
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr
+              mat-row
+              [hidden]="i % 2 === 0"
+              *matRowDef="let row; columns: displayColumns; let i = index"
+            ></tr>
+          </table>
+        </div>
+      </div>
+
+
+  </div>
+  

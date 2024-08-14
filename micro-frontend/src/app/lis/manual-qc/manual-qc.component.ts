@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TimeComponent } from '../../common/widgets/time/time.component';
 import { RecordsComponent } from '../../common/popups/records/records.component';
 
-export interface Organism {
+export interface manualQc {
   compCode: string;
   compDesc: string;
   value: string;
@@ -49,7 +49,7 @@ export class ManualQcComponent implements OnInit {
   displayColumnsData: any;
   records: any;
   displayColumns = ['compCode', 'compDesc', 'value', 'unit', 'paramCode', 'delete'];
-  manualQcData: Organism[] = [
+  manualQcData: manualQc[] = [
     { compCode: 'LD', compDesc: 'Lactate Dehryogenase EZ' , unit:'0.92',paramCode:'98',value:''},
     { compCode: 'AN', compDesc: 'Amikacin' , unit:'0.87',paramCode:'83',value:''},
     { compCode: 'LD', compDesc: 'Lactate Dehryogenase EZ' , unit:'0.54',paramCode:'98',value:''},
@@ -83,7 +83,7 @@ export class ManualQcComponent implements OnInit {
     this.displayColumnsData = {
       action: 'action',
       lotNo: 'Lot No.',
-      expiryDate: 'Expriry Date',
+      expiryDate: 'Expiry Date',
     };
     const dialogRef = this.dialog.open(RecordsComponent, {
       data: {

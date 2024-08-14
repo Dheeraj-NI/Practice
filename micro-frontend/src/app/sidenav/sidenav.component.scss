@@ -40,13 +40,13 @@
 .example-sidenav ::ng-deep::-webkit-scrollbar {
   display: none;
 }
-::ng-deep.cdk-overlay-pane ::ng-deep {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-::ng-deep.cdk-overlay-pane ::ng-deep::-webkit-scrollbar {
-  display: none !important;
-}
+// :host ::ng-deep.cdk-overlay-pane ::ng-deep {
+//   scrollbar-width: none !important;
+//   -ms-overflow-style: none !important;
+// }
+// :host ::ng-deep.cdk-overlay-pane ::ng-deep::-webkit-scrollbar {
+//   display: none !important;
+// }
 .example-sidenav {
   background-color: #6366f1;
 }

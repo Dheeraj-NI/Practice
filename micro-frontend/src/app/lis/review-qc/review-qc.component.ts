@@ -63,7 +63,7 @@ export class ReviewQCComponent implements OnInit {
       { lotNo: '41247', expiryDate: '07/12/2027' },
       { lotNo: '65472', expiryDate: '14/10/2029' }
   ];
-  this.displayColumnsData = { action:'action', lotNo: 'Lot No.', expiryDate: 'Expriry Date' };
+  this.displayColumnsData = { action:'action', lotNo: 'Lot No.', expiryDate: 'Expiry Date' };
     const dialogRef = this.dialog.open(RecordsComponent, {
       data: {
         records: this.records,

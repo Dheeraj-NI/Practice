@@ -152,7 +152,7 @@ export class UpdateQcComponent implements OnInit {
     this.displayColumnsData = {
       action: 'action',
       lotNo: 'Lot No.',
-      expiryDate: 'Expriry Date',
+      expiryDate: 'Expiry Date',
     };
     const dialogRef = this.dialog.open(RecordsComponent, {
       data: {

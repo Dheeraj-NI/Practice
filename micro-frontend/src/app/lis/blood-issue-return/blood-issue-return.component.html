@@ -1,0 +1,185 @@
+<div class="main-container">
+  <app-top-header></app-top-header>
+  <app-navigation-header></app-navigation-header>
+  <app-title-header
+    [title]="'LIS'"
+    [title2]="'Blood Issue Return'"
+    [isShowPrintButton]="true"
+    [isShowSaveButton]="true"
+    [isShowImportButton]="true"
+    [isShowExportButton]="true"
+    [isShowClearDataButton]="true"
+  ></app-title-header>
+
+  <div class="filter-container">
+    <div class="filter-container-left">
+      <form [formGroup]="filterForm">
+        <div class="input-container medium">
+          <app-search-bar
+            formControlName="requestNo"
+            [title]="'Request No'"
+            (helpButton)="openRequestDialog()"
+          ></app-search-bar>
+        </div>
+        <div class="input-container medium">
+          <app-input formControlName="bloodId" [title]="'Blood Id'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input formControlName="bloodSr" [title]="'Blood Sr'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input formControlName="issueNo" [title]="'Issue No'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input
+            formControlName="patientNo"
+            value="2000002145"
+            [title]="'Patient No'"
+          ></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-select
+            formControlName="gender"
+            [title]="'Gender'"
+            [options]="gender"
+            [placeholder]="'Gender'"
+          ></app-select>
+        </div>
+        <div class="input-container medium">
+          <app-date formControlName="dob" [title]="'Date of Birth'"></app-date>
+        </div>
+        <div class="input-container medium">
+          <app-input formControlName="civilId" [title]="'Civil Id'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input
+            formControlName="hospNo"
+            [title]="'Hospital No.'"
+          ></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input
+            formControlName="passwordNo"
+            [title]="'Password No.'"
+          ></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-select
+            formControlName="location"
+            [title]="'Location'"
+            [options]="location"
+          ></app-select>
+        </div>
+        <div class="input-container medium">
+          <app-input
+            formControlName="phoneNo"
+            [type]="'mobile'"
+            [title]="'Phone No.'"
+          ></app-input>
+        </div>
+        <div class="input-container small">
+          <app-select
+            formControlName="group"
+            [title]="'Group'"
+            [options]="group"
+          ></app-select>
+        </div>
+        <div class="input-container small">
+          <app-select
+            formControlName="rh"
+            [title]="'RH'"
+            [options]="rh"
+          ></app-select>
+        </div>
+
+        <div class="input-container medium">
+          <app-input formControlName="f_name" [title]="'First Name'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input
+            formControlName="m_name"
+            [title]="'Middle Name'"
+          ></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input formControlName="l_name" [title]="'Last Name'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input formControlName="roomNo" [title]="'Room No.'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-input formControlName="bedNo" [title]="'Bed No.'"></app-input>
+        </div>
+        <div class="input-container notes">
+          <app-input
+            formControlName="notes"
+            [title]="'Notes'"
+            [placeholder]="'Max. 250 characters'"
+          ></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-date
+            formControlName="receivedDate"
+            [title]="'Received Date'"
+          ></app-date>
+        </div>
+        <div class="input-container medium">
+          <app-date
+            formControlName="expiryDate"
+            [title]="'Expiry Date'"
+          ></app-date>
+        </div>
+        <div class="input-container medium">
+          <app-date
+            formControlName="issueDate"
+            [title]="'Issue Date'"
+          ></app-date>
+        </div>
+        <div class="input-container medium">
+          <app-select
+            formControlName="component"
+            [title]="'Component'"
+            [options]="comp"
+          ></app-select>
+        </div>
+        <div class="input-container small">
+          <app-input
+            formControlName="bloodqty"
+            [title]="'Blood Qty'"
+          ></app-input>
+        </div>
+        <div class="input-container small">
+          <app-input formControlName="unit" [title]="'Unit'"></app-input>
+        </div>
+        <div class="input-container medium">
+          <app-select
+            formControlName="returnType"
+            [title]="'Return Type'"
+            [options]="returnType"
+          ></app-select>
+        </div>
+        <div class="input-container medium">
+          <app-select
+            formControlName="fridge"
+            [title]="'Fridge'"
+            [options]="fridge"
+          ></app-select>
+        </div>
+        <div class="input-container medium">
+          <app-select
+            formControlName="shelf"
+            [title]="'Shelf'"
+            [options]="shelf"
+          ></app-select>
+        </div>
+        <div class="input-container remarks ">
+          <app-input
+            formControlName="remarks"
+            [title]="'Remarks'"
+            [placeholder]="'Max. 250 characters'"
+          ></app-input>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
