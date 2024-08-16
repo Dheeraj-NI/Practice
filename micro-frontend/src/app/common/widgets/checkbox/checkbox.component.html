@@ -21,3 +21,21 @@
         </ng-container>
     </div>
 </div>
+<div  *ngIf="type === 'reschedule'">
+    <div class="checkbox-container">
+        <input type="checkbox" id="reschedule"  [(ngModel)]="value" (ngModelChange)="onModelChange(value)">
+        <label for="reschedule"></label>
+    </div>
+</div>
+<div  *ngIf="type === 'noShow'">
+    <div class="checkbox-container">
+        <input type="checkbox" id="noShow"  [(ngModel)]="value" (ngModelChange)="onModelChange(value)">
+        <label for="noShow"></label>
+    </div>
+</div>
+<div  *ngIf="type === 'cancelled'">
+    <div class="checkbox-container">
+        <input type="checkbox" id="cancelled"  [(ngModel)]="value" (ngModelChange)="onModelChange(value)">
+        <label for="cancelled"></label>
+    </div>
+</div>
