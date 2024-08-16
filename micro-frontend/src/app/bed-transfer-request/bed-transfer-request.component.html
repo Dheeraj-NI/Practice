@@ -1,0 +1,123 @@
+<div class="main-container">
+  <app-top-header></app-top-header>
+  <app-navigation-header></app-navigation-header>
+  <app-title-header
+    [title]="'Bed Transfer Request'"    
+    [isShowNewServiceButton]="true"
+    [isShowPrintButton]="true"
+    [isShowSaveButton]="true"
+    [isShowImportButton]="true"
+    [isShowExportButton]="true"
+    [isShowClearDataButton]="true"
+  ></app-title-header>
+
+  <app-heading [type]="'accordionTitle'" [title]="'Patient Information'"></app-heading>
+  <div class="filter-container">
+    <form [formGroup]="patientInfoForm">
+      <div class="filter-container-left">
+
+        <div class="input-container second">
+            <app-input [title]="'IP No.'" formControlName="ipNo"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-search-bar [title]="'Patient No.'" formControlName="patientNo" (helpButton)="patientNoDialog()"></app-search-bar>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Patient Name'" formControlName="patientName"></app-input>
+        </div>
+        <div class="input-container">
+            <app-input
+            formControlName="doctor"
+            [type]="'IDInput'"
+            [title]="'Doctor'"
+            [idPlaceholder]="'3'"
+            [placeholder]="'Dr. Laxmi Ronada'"
+            (helpButton)="openDoctorDialog()"
+          ></app-input>
+        </div>
+        <div class="input-container second">
+          <app-select
+            formControlName="caseType"
+            [title]="'Case Type'"
+            [options]="cases"
+            [placeholder]="'Select'"
+          ></app-select>
+        </div>
+        <div class="input-container second">
+          <app-select
+            formControlName="gender"
+            [title]="'Gender'"
+            [options]="gender"
+            [placeholder]="'Select'"
+          ></app-select>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Age'" formControlName="age"></app-input>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <app-heading [type]="'accordionTitle'" [title]="'Current Bed Information'"></app-heading>
+  <div class="filter-container">
+    <form [formGroup]="currentBedInfoForm">
+      <div class="filter-container-left">
+
+        <div class="input-container second">
+            <app-input [title]="'Wing'" formControlName="wing"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Floor'" formControlName="floor"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Ward'" formControlName="ward"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Room'" formControlName="room"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Bed Id'" formControlName="bedId"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'bedType'" formControlName="bedType"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Cradle No'" formControlName="cradleNo"></app-input>
+        </div>
+       
+      </div>
+
+    </form>
+  </div>
+  <app-heading [type]="'accordionTitle'" [title]="'Request For'"></app-heading>
+  <div class="filter-container">
+    <form [formGroup]="requestForm">
+      <div class="filter-container-left">
+
+        <div class="input-container second">
+            <app-input [title]="'Bed Req No.'" formControlName="bedReqNo"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Floor'" formControlName="floor"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Ward'" formControlName="ward"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Room'" formControlName="room"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Bed Id'" formControlName="bedId"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'bedType'" formControlName="bedType"></app-input>
+        </div>
+        <div class="input-container second">
+            <app-input [title]="'Cradle No'" formControlName="cradleNo"></app-input>
+        </div>
+       
+      </div>
+
+    </form>
+  </div>
+</div>
