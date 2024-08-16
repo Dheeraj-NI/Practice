@@ -1,0 +1,61 @@
+<div class="main-container">
+    <app-top-header></app-top-header>
+    <app-navigation-header></app-navigation-header>
+    <app-title-header
+      [title]="'Consultation Dashboard'"
+      [isShowPrintButton]="true"
+      [isShowSaveButton]="true"
+      [isShowImportButton]="true"
+      [isShowExportButton]="true"
+      [isShowClearDataButton]="true"
+    ></app-title-header>
+  
+
+    <div class="margin-top-10">
+        <mat-tab-group class="secondary-tab2" mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab>
+                <ng-template mat-tab-label>All <span class="mat-tab-extra-text">24</span> </ng-template>
+                Content 1
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Pending Check Ins  <span class="mat-tab-extra-text">2</span> </ng-template>
+                Content 2
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Checked In <span class="mat-tab-extra-text">12</span> </ng-template>
+                Content 3
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Pending <span class="mat-tab-extra-text">8</span> </ng-template>
+                Content 4
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>In Progress<span class="mat-tab-extra-text">2</span> </ng-template>
+                Content 4
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Closed <span class="mat-tab-extra-text">4</span> </ng-template>
+                Content 6
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Rescheduled <span class="mat-tab-extra-text">1</span> </ng-template>
+                Content 7
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Cancelled <span class="mat-tab-extra-text">3</span> </ng-template>
+                Content 8
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Walk ins <span class="mat-tab-extra-text">1</span> </ng-template>
+                Content 9
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>Lab Order <span class="mat-tab-extra-text">1</span> </ng-template>
+                Content 10
+            </mat-tab>
+            
+        </mat-tab-group>
+    </div>
+
+
+  </div>

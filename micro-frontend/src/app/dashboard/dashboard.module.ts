@@ -13,6 +13,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./../lis/lis.module').then((m) => m.LisModule),
       },
+      {
+        path: 'consultation',
+        loadChildren: () =>
+          import('./../consultation/consultation.module').then((m) => m.ConsultationModule),
+      },
     ],
   },
 ];
