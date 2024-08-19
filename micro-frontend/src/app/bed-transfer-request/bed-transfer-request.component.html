@@ -12,20 +12,19 @@
   ></app-title-header>
 
   <app-heading [type]="'accordionTitle'" [title]="'Patient Information'"></app-heading>
-  <div class="filter-container">
     <form [formGroup]="patientInfoForm">
-      <div class="filter-container-left">
+      <div class="filter-container">
 
-        <div class="input-container second">
+        <div class="input-container w-11 pr-12">
             <app-input [title]="'IP No.'" formControlName="ipNo"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-11 pr-12">
             <app-search-bar [title]="'Patient No.'" formControlName="patientNo" (helpButton)="patientNoDialog()"></app-search-bar>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-26 pr-12">
             <app-input [title]="'Patient Name'" formControlName="patientName"></app-input>
         </div>
-        <div class="input-container">
+        <div class="input-container w-26 pr-12">
             <app-input
             formControlName="doctor"
             [type]="'IDInput'"
@@ -35,7 +34,7 @@
             (helpButton)="openDoctorDialog()"
           ></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-26">
           <app-select
             formControlName="caseType"
             [title]="'Case Type'"
@@ -43,7 +42,10 @@
             [placeholder]="'Select'"
           ></app-select>
         </div>
-        <div class="input-container second">
+      </div>
+      <div class="filter-container">
+
+        <div class="input-container w-11 pr-12">
           <app-select
             formControlName="gender"
             [title]="'Gender'"
@@ -51,73 +53,90 @@
             [placeholder]="'Select'"
           ></app-select>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-11 pr-12 ">
             <app-input [title]="'Age'" formControlName="age"></app-input>
         </div>
       </div>
 
     </form>
-  </div>
-  <app-heading [type]="'accordionTitle'" [title]="'Current Bed Information'"></app-heading>
-  <div class="filter-container">
+  
+  <app-heading [type]="'accordionTitle'" [title]="'Current Bed Information'"></app-heading>  
     <form [formGroup]="currentBedInfoForm">
-      <div class="filter-container-left">
+      <div class="filter-container">
 
-        <div class="input-container second">
+        <div class="input-container w-12 pr-12">
             <app-input [title]="'Wing'" formControlName="wing"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-11 pr-12">
             <app-input [title]="'Floor'" formControlName="floor"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-17 pr-12">
             <app-input [title]="'Ward'" formControlName="ward"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-14 pr-12">
             <app-input [title]="'Room'" formControlName="room"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-11 pr-12">
             <app-input [title]="'Bed Id'" formControlName="bedId"></app-input>
         </div>
-        <div class="input-container second">
-            <app-input [title]="'bedType'" formControlName="bedType"></app-input>
+        <div class="input-container w-18 pr-12">
+            <app-input [title]="'Bed Type'" formControlName="bedType"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-17">
             <app-input [title]="'Cradle No'" formControlName="cradleNo"></app-input>
         </div>
        
       </div>
 
     </form>
-  </div>
-  <app-heading [type]="'accordionTitle'" [title]="'Request For'"></app-heading>
-  <div class="filter-container">
+  
+  <app-heading [type]="'accordionTitle'" [title]="'Request For'"></app-heading>  
     <form [formGroup]="requestForm">
-      <div class="filter-container-left">
+      <div class="filter-container">
 
-        <div class="input-container second">
+        <div class="input-container w-12 pr-12">
             <app-input [title]="'Bed Req No.'" formControlName="bedReqNo"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-11 pr-12">
             <app-input [title]="'Floor'" formControlName="floor"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-17 pr-12">
             <app-input [title]="'Ward'" formControlName="ward"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-14 pr-12">
             <app-input [title]="'Room'" formControlName="room"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-11 pr-12">
             <app-input [title]="'Bed Id'" formControlName="bedId"></app-input>
         </div>
-        <div class="input-container second">
-            <app-input [title]="'bedType'" formControlName="bedType"></app-input>
+        <div class="input-container w-18 pr-12">
+            <app-input [title]="'Bed Type'" formControlName="bedType"></app-input>
         </div>
-        <div class="input-container second">
+        <div class="input-container w-17 ">
             <app-input [title]="'Cradle No'" formControlName="cradleNo"></app-input>
         </div>
        
       </div>
+      <div class=" d-flex justify-content-end  filter-container">
+        <app-button [title]="'Select Bed'" [type]="'secondarySmallButton'"></app-button>
+      </div>
 
-    </form>
-  </div>
+    </form>  
+  <app-heading [type]="'accordionTitle'" [title]="'Expected Transfer Date & Time'"></app-heading>  
+    <form [formGroup]="TransferForm">
+      <div class="filter-container">
+
+        <div class="input-container w-12 pr-12">
+            <app-date [title]="'Date'" formControlName="date"></app-date>
+        </div>
+        <div class="input-container w-11 pr-12">
+            <app-time [title]="'Time'" formControlName="time"></app-time>
+        </div>
+        <div class="input-container w-77">
+            <app-input [title]="'Remarks'" formControlName="remarks"></app-input>
+        </div>
+       
+      </div>
+
+    </form>  
 </div>

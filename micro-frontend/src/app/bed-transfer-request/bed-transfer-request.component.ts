@@ -14,6 +14,8 @@ import { RadioComponent } from '../common/widgets/radio/radio.component';
 import { SearchBarComponent } from '../common/widgets/search-bar/search-bar.component';
 import { HeadingComponent } from '../common/widgets/heading/heading.component';
 import { SelectComponent } from '../common/widgets/select/select.component';
+import { DateComponent } from '../common/widgets/date/date.component';
+import { TimeComponent } from '../common/widgets/time/time.component';
 
 @Component({
   selector: 'app-bed-transfer-request',
@@ -33,7 +35,10 @@ import { SelectComponent } from '../common/widgets/select/select.component';
     BadgesComponent,
     CheckboxComponent,
     HeadingComponent,
-  SelectComponent],
+    SelectComponent,
+    DateComponent,
+    TimeComponent,
+  ButtonComponent],
   templateUrl: './bed-transfer-request.component.html',
   styleUrl: './bed-transfer-request.component.scss'
 })
@@ -64,7 +69,7 @@ export class BedTransferRequestComponent implements OnInit {
       ipNo: [''],
       patientNo: [''],
       patientName: [''],
-      doctor: [''],
+      doctor: [{ id: '', value: '' }],
       caseType: [''],
       gender: [''],
       age: [''],
@@ -93,6 +98,7 @@ export class BedTransferRequestComponent implements OnInit {
     this.TransferForm = this.fb.group({
       date: [''],
       time: [''],
+      remarks:['']
   })
   }
   patientNoDialog() { }
