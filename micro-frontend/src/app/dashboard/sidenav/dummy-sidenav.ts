@@ -42,7 +42,7 @@ export const dummy=[
       {
         name: 'Accession',link:'', childmenu: [
           { name: 'Lab Reception' ,link:'',},
-          { name: 'Accession Barcode' ,link:'',},
+          { name: 'Accession Barcode' ,link:'lis/accession-barcode',},
           { name: 'Modify Accession' ,link:'',},
           { name: 'Edit Patient Dempgraphics' ,link:'',},
           { name: 'Extra Barcode' ,link:'',},

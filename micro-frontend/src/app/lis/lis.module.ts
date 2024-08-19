@@ -16,6 +16,7 @@ import { ManualQcComponent } from './manual-qc/manual-qc.component';
 import { ControlCodeMasterBarcodeComponent } from './control-code-master-barcode/control-code-master-barcode.component';
 import { ReviewCumulativeQcReportComponent } from './review-cumulative-qc-report/review-cumulative-qc-report.component';
 import { BloodIssueReturnComponent } from './blood-issue-return/blood-issue-return.component';
+import { AccessionBarcodeComponent } from './accession/accession-barcode/accession-barcode.component';
 
 export const routes: Routes = [
   {
@@ -73,6 +74,10 @@ export const routes: Routes = [
   {
     path: 'blood-issue-return',
     component: BloodIssueReturnComponent,
+  },
+  {
+    path: 'accession-barcode',
+    component: AccessionBarcodeComponent,
   },
   {
     path: 'master',
