@@ -11,19 +11,16 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { NavigationHeaderComponent } from '../common/components/navigation-header/navigation-header.component';
 import { TitleHeaderComponent } from '../common/components/title-header/title-header.component';
 import { TopHeaderComponent } from '../common/components/top-header/top-header.component';
-import { BadgesComponent } from '../common/widgets/badges/badges.component';
 import { ButtonComponent } from '../common/widgets/button/button.component';
-import { CheckboxComponent } from '../common/widgets/checkbox/checkbox.component';
-import { InputComponent } from '../common/widgets/input/input.component';
-import { RadioComponent } from '../common/widgets/radio/radio.component';
-import { SearchBarComponent } from '../common/widgets/search-bar/search-bar.component';
-import { HeadingComponent } from '../common/widgets/heading/heading.component';
-import { SelectComponent } from '../common/widgets/select/select.component';
 import { DateComponent } from '../common/widgets/date/date.component';
+import { HeadingComponent } from '../common/widgets/heading/heading.component';
+import { InputComponent } from '../common/widgets/input/input.component';
+import { SearchBarComponent } from '../common/widgets/search-bar/search-bar.component';
+import { SelectComponent } from '../common/widgets/select/select.component';
 import { TimeComponent } from '../common/widgets/time/time.component';
 
 @Component({
-  selector: 'app-bed-transfer-request',
+  selector: 'app-class-transfer-request',
   standalone: true,
   imports: [
     TopHeaderComponent,
@@ -43,10 +40,10 @@ import { TimeComponent } from '../common/widgets/time/time.component';
     TimeComponent,
     ButtonComponent,
   ],
-  templateUrl: './bed-transfer-request.component.html',
-  styleUrl: './bed-transfer-request.component.scss',
+  templateUrl: './class-transfer-request.component.html',
+  styleUrl: './class-transfer-request.component.scss',
 })
-export class BedTransferRequestComponent implements OnInit {
+export class ClassTransferRequestComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
   }
@@ -70,6 +67,27 @@ export class BedTransferRequestComponent implements OnInit {
       value: '2',
     },
   ];
+  p_class: any[] = [
+    {
+      label: 'Class1',
+      value: '1',
+    },
+    {
+      label: 'Class2',
+      value: '2',
+    },
+  ];
+  creitCompany: any[] = [
+    {
+      label: 'Comp1',
+      value: '1',
+    },
+    {
+      label: 'Comp2',
+      value: '2',
+    },
+  ];
+
   createForm() {
     this.patientInfoForm = this.fb.group({
       ipNo: [''],
@@ -91,18 +109,11 @@ export class BedTransferRequestComponent implements OnInit {
       cradleNo: [''],
     });
     this.requestForm = this.fb.group({
-      bedReqNo: [''],
-      floor: [''],
-      ward: [''],
-      room: [''],
-      bedId: [''],
-      bedType: [''],
-      cradleNo: [''],
+      patientClass: [''],
     });
     this.TransferForm = this.fb.group({
       date: [''],
       time: [''],
-      remarks: [''],
     });
   }
   patientNoDialog() {}

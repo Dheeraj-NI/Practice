@@ -1,0 +1,134 @@
+<div class="main-container">
+  <app-top-header></app-top-header>
+  <app-navigation-header></app-navigation-header>
+  <app-title-header
+    [title]="'Request for Class Transfer'"
+    [isShowNewServiceButton]="true"
+    [isShowPrintButton]="true"
+    [isShowSaveButton]="true"
+    [isShowImportButton]="true"
+    [isShowExportButton]="true"
+    [isShowClearDataButton]="true"
+  ></app-title-header>
+
+  <app-heading
+    [type]="'accordionTitle'"
+    [title]="'Patient Information'"
+  ></app-heading>
+  <form [formGroup]="patientInfoForm">
+    <div class="filter-container">
+      <div class="input-container w-11 pr-12">
+        <app-input [title]="'IP No.'" formControlName="ipNo"></app-input>
+      </div>
+      <div class="input-container w-11 pr-12">
+        <app-search-bar
+          [title]="'Patient No.'"
+          formControlName="patientNo"
+          (helpButton)="patientNoDialog()"
+        ></app-search-bar>
+      </div>
+      <div class="input-container w-26 pr-12">
+        <app-input
+          [title]="'Patient Name'"
+          formControlName="patientName"
+        ></app-input>
+      </div>
+      <div class="input-container w-26 pr-12">
+        <app-input
+          formControlName="doctor"
+          [type]="'IDInput'"
+          [title]="'Doctor'"
+          [idPlaceholder]="'3'"
+          [placeholder]="'Dr. Laxmi Ronada'"
+          (helpButton)="openDoctorDialog()"
+        ></app-input>
+      </div>
+      <div class="input-container w-26">
+        <app-select
+          formControlName="caseType"
+          [title]="'Case Type'"
+          [options]="cases"
+          [placeholder]="'Select'"
+        ></app-select>
+      </div>
+    </div>
+    <div class="filter-container">
+      <div class="input-container w-11 pr-12">
+        <app-select
+          formControlName="gender"
+          [title]="'Gender'"
+          [options]="gender"
+          [placeholder]="'Select'"
+        ></app-select>
+      </div>
+      <div class="input-container w-11 pr-12">
+        <app-input [title]="'Age'" formControlName="age"></app-input>
+      </div>
+      <div class="input-container w-26 ">
+        <app-select
+          formControlName="creditComp"
+          [title]="'Credit Company'"
+          [options]="creitCompany"          
+        ></app-select>
+      </div>
+    </div>
+  </form>
+
+  <app-heading
+    [type]="'accordionTitle'"
+    [title]="'Current Bed Information'"
+  ></app-heading>
+  <form [formGroup]="currentBedInfoForm">
+    <div class="filter-container">
+      <div class="input-container w-12 pr-12">
+        <app-input [title]="'Wing'" formControlName="wing"></app-input>
+      </div>
+      <div class="input-container w-11 pr-12">
+        <app-input [title]="'Floor'" formControlName="floor"></app-input>
+      </div>
+      <div class="input-container w-17 pr-12">
+        <app-input [title]="'Ward'" formControlName="ward"></app-input>
+      </div>
+      <div class="input-container w-14 pr-12">
+        <app-input [title]="'Room'" formControlName="room"></app-input>
+      </div>
+      <div class="input-container w-11 pr-12">
+        <app-input [title]="'Bed Id'" formControlName="bedId"></app-input>
+      </div>
+      <div class="input-container w-18 pr-12">
+        <app-input [title]="'Bed Type'" formControlName="bedType"></app-input>
+      </div>
+      <div class="input-container w-17">
+        <app-input [title]="'Cradle No'" formControlName="cradleNo"></app-input>
+      </div>
+    </div>
+  </form>
+
+  <app-heading [type]="'accordionTitle'" [title]="'Request For'"></app-heading>
+  <form [formGroup]="requestForm">
+    <div class="filter-container">
+      <div class="input-container w-26 ">
+        <app-select
+          formControlName="patientClass"
+          [title]="'Patient Class'"
+          [options]="p_class"
+          [placeholder]="'Select Class'"
+        ></app-select>
+      </div>
+    </div>
+  </form>
+  <app-heading
+    [type]="'accordionTitle'"
+    [title]="'Expected Transfer Date & Time'"
+  ></app-heading>
+  <form [formGroup]="TransferForm">
+    <div class="filter-container">
+      <div class="input-container w-12 pr-12">
+        <app-date [title]="'Date'" formControlName="date"></app-date>
+      </div>
+      <div class="input-container w-11 ">
+        <app-time [title]="'Time'" formControlName="time"></app-time>
+      </div>
+    </div>
+  </form>
+</div>

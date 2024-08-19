@@ -130,12 +130,7 @@ export class ReviewCumulativeQcReportComponent implements OnInit{
         ]
       },
     ]
-    this.records =
-      [
-      { lotNo: '401283', expiryDate: '31/08/2024' },
-      { lotNo: '41247', expiryDate: '07/12/2027' },
-      { lotNo: '65472', expiryDate: '14/10/2029' },
-    ];
+
     this.displayColumnsData = {
       action: 'action',
       controlCode: 'Control Code',

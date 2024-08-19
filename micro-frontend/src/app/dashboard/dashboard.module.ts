@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { BedTransferRequestComponent } from '../bed-transfer-request/bed-transfer-request.component';
 import { ConsultationDashboardComponent } from '../consultation/consultation-dashboard/consultation-dashboard.component';
+import { ClassTransferRequestComponent } from '../class-transfer-request/class-transfer-request.component';
+import { AssignDoctorRequestComponent } from '../assign-doctor-request/assign-doctor-request.component';
+import { ServiceMasterComponent } from '../service-master/service-master.component';
 
 const routes: Routes = [
   {
@@ -22,6 +25,18 @@ const routes: Routes = [
       {
         path: 'bed-transfer',
       component:BedTransferRequestComponent
+      },
+      {
+        path: 'class-transfer',
+      component:ClassTransferRequestComponent
+      },
+      {
+        path: 'assign-doctor',
+      component:AssignDoctorRequestComponent
+      },
+      {
+        path: 'service-master',
+      component:ServiceMasterComponent
       },
     ],
   },
