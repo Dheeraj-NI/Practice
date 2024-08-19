@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { BedTransferRequestComponent } from '../bed-transfer-request/bed-transfer-request.component';
+import { ConsultationDashboardComponent } from '../consultation/consultation-dashboard/consultation-dashboard.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'consultation',
-        loadChildren: () =>
-          import('./../consultation/consultation.module').then((m) => m.ConsultationModule),
+        component:ConsultationDashboardComponent
       },
       {
         path: 'bed-transfer',
