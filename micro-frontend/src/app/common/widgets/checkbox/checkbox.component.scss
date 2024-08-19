@@ -60,21 +60,28 @@ input {
     cursor: pointer;
     position: relative;
   }
-  .checkbox-container input#reschedule:checked + label {
+  .checkbox-container input.reschedule:checked + label {
     background-image: url("../../../../assets/svg images/reschedule_checkbox.svg"); 
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
+    padding: 0;
+    height: 18px;
+    width: 18px;
   }
-  .checkbox-container input#noShow:checked + label {
+  .checkbox-container input.noShow:checked + label {
     background-image: url("../../../../assets/svg images/noShow_checkbox.svg"); 
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
+    height: 18px;
+    width: 18px;
   }
-  .checkbox-container input#cancelled:checked + label {
+  .checkbox-container input.cancelled:checked + label {
     background-image: url("../../../../assets/svg images/cancelled_checkbox.svg"); 
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
+    height: 18px;
+    width: 18px;
   }

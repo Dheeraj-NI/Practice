@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export interface CheckboxInput {
@@ -25,6 +25,8 @@ export class CheckboxComponent implements ControlValueAccessor {
     @Input() title = '';
     @Input() type = 'block';
     @Input() checkboxes: CheckboxInput[] = [];
+    @Input() index = '';
+    @Output() helpButton = new EventEmitter();
 
     value: any = '';
     selectedOptions: any[] = [];
@@ -59,5 +61,7 @@ export class CheckboxComponent implements ControlValueAccessor {
     setDisabledState?(isDisabled: boolean): void {
         // Handle the component's disabled state
     }
-
+    changeStatus(event:any) {
+        this.helpButton.emit(event);
+ }
 }

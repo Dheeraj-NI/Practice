@@ -29,7 +29,7 @@
             
                         </th>
                         <td mat-cell *matCellDef="let element; let i = index">
-                         <input type="radio">
+                         <input type="radio" name="consultant">
                         </td>
                       </ng-container>
                         <ng-container matColumnDef="ipNo">
@@ -84,21 +84,21 @@
                         <ng-container matColumnDef="cancel">
                           <th mat-header-cell *matHeaderCellDef>Cancel</th>
                           <td mat-cell *matCellDef="let element; let i = index">                  
-                            <app-checkbox [type]="'cancelled'" ></app-checkbox>
+                            <app-checkbox [type]="'cancelled'" [(ngModel)]="element.cancel" [index]="i" (helpButton)="updateValue($event, i,'cancelled')"></app-checkbox>
                                                       
                           </td>
                         </ng-container>
                         <ng-container matColumnDef="reschedule">
                           <th mat-header-cell *matHeaderCellDef>Reschedule</th>
                           <td mat-cell *matCellDef="let element; let i = index">                  
-                            <app-checkbox [type]="'reschedule'" ></app-checkbox>
+                            <app-checkbox [type]="'reschedule'" [(ngModel)]="element.reschedule" [index]="i" (helpButton)="updateValue($event, i,'reschedule')" ></app-checkbox>
                             
                         </td>
                     </ng-container>
                     <ng-container matColumnDef="noShow">
                         <th mat-header-cell *matHeaderCellDef>No Show</th>
                         <td mat-cell *matCellDef="let element; let i = index">                  
-                              <app-checkbox [type]="'noShow'"></app-checkbox>
+                              <app-checkbox [type]="'noShow'" [(ngModel)]="element.noShow" [index]="i"  (helpButton)="updateValue($event, i,'noShow')" ></app-checkbox>
                             
                             
                           </td>

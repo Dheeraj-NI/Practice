@@ -44,60 +44,87 @@ export interface Note {
     SearchBarComponent,
     MatTabsModule,
     BadgesComponent,
-    CheckboxComponent
+    CheckboxComponent,
   ],
   templateUrl: './consultation-dashboard.component.html',
-  styleUrl: './consultation-dashboard.component.scss'
+  styleUrl: './consultation-dashboard.component.scss',
 })
 export class ConsultationDashboardComponent {
   @ViewChild('table1') table!: MatTable<any>;
-  displayColumns = ['action','ipNo', 'patientName', 'token', 'checkIn', 'call', 'status', 'closed', 'cancel', 'reschedule', 'noShow', 'doctor', 'speciality'];
+  displayColumns = [
+    'action',
+    'ipNo',
+    'patientName',
+    'token',
+    'checkIn',
+    'call',
+    'status',
+    'closed',
+    'cancel',
+    'reschedule',
+    'noShow',
+    'doctor',
+    'speciality',
+  ];
   consultationData: Note[] = [
     {
-      ipNo: '7797461279',      
-      patientName:
-        'Nysaa Paresh Gala',
+      ipNo: '7797461279',
+      patientName: 'Nysaa Paresh Gala',
       token: '21',
       checkIn: '23:49',
-      call:'23:58',
+      call: '23:58',
       status: 'Rescheduled',
       closed: '16:47',
-      cancel: false,
-      reschedule: true,
+      cancel: true,
+      reschedule: false,
       noShow: false,
       doctor: 'Dr. Castellino Neil Wilbur',
-      speciality:'General Medicine'      
+      speciality: 'General Medicine',
     },
     {
-      ipNo: '7797443679',      
-      patientName:
-        'Mukesh J. Sharma',
+      ipNo: '7797443679',
+      patientName: 'Mukesh J. Sharma',
       token: '21',
       checkIn: '23:49',
-      call:'23:58',
+      call: '23:58',
       status: 'In Progress',
       closed: '16:47',
       cancel: false,
       reschedule: false,
       noShow: false,
       doctor: 'Dr. Castellino Neil Wilbur',
-      speciality:'General Medicine'      
+      speciality: 'General Medicine',
     },
     {
-      ipNo: '7797561279',      
-      patientName:
-        'Abhijeet Shantilal Kumar',
+      ipNo: '7797561279',
+      patientName: 'Abhijeet Shantilal Kumar',
       token: '21',
       checkIn: '23:49',
-      call:'23:58',
+      call: '23:58',
       status: 'Cancelled',
       closed: '16:47',
-      cancel: true,
+      cancel: false,
       reschedule: true,
       noShow: false,
       doctor: 'Dr. Castellino Neil Wilbur',
-      speciality:'General Medicine'      
+      speciality: 'General Medicine',
     },
-
   ];
+  updateValue(event: any, row: any, type: string) {
+    this.consultationData[row].reschedule = false;
+    this.consultationData[row].noShow = false;
+    this.consultationData[row].cancel = false;
+    let status = event.target.checked;
+
+    if (status) {
+      if (type === 'cancelled') {
+        this.consultationData[row].cancel = status;
+      } else if (type === 'reschedule') {
+        this.consultationData[row].reschedule = status;
+      } else if (type === 'noShow') {
+        this.consultationData[row].noShow = status;
+      }
+    }
+    this.table.renderRows();
+  }
 }
