@@ -1,0 +1,10 @@
+<div class="form-container main-input">
+    <div class="input-title" *ngIf="title">{{ title }}</div>
+    <div class="input-container">
+        <img class="search-img" src="../../../assets/Magnifer.png">
+        <div class="input-badge-container" *ngFor="let s of searchList; let i = index;">
+            {{ s }} <img (click)="deleteSearch(i)" class="input-badge-cross-button" src="../../../assets/Close Circle.svg">
+        </div>
+        <input type="text" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" [placeholder]="placeholder" (keydown.enter)="search()" class="multiple-search-input">
+    </div>
+</div>

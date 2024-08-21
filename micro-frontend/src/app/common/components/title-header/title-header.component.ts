@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,6 +25,7 @@ export class TitleHeaderComponent {
     @Input() isShowBarcodePrintButton = false;
     @Input() isShowCreateButton = false;
     @Input() isShowClearDataButton = false;
+    @Output() NewServiceButton = new EventEmitter();
 
     constructor(private router: Router) {}
 
@@ -34,5 +35,8 @@ export class TitleHeaderComponent {
 
     back() {
         window.history.back();
+    }
+    emitNewServiceButton() {
+        this.NewServiceButton.emit();
     }
 }

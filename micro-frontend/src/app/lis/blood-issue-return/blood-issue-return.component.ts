@@ -140,7 +140,9 @@ export class BloodIssueReturnComponent implements OnInit {
       data: {
         records: this.records,
         displayColumnsData: this.displayColumnsData,
-        title: 'Request No Leave',        
+        title: 'Request No Leave', 
+        titleImg: 'assets/Database.png',
+        btnType:'select'
         
       },
       width: '50%'

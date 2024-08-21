@@ -1,0 +1,188 @@
+.main-container {
+    padding: 10px;
+}
+.mt-12{
+    margin-top: 12px;
+}
+.filter-container {
+    width: 100%;    
+    display: inline-block;
+}
+
+.filter-container .input-container {
+    display: inline-block;    
+    vertical-align: bottom;
+}
+
+
+.filter-container .input-container.w-11 {
+    width: 11%;
+}
+.filter-container .input-container.w-12 {
+    width: 12%;
+}
+.filter-container .input-container.w-14 {
+    width: 14%;
+}
+.filter-container .input-container.w-16 {
+    width: 16%;
+}
+.filter-container .input-container.w-17 {
+    width: 17%;
+}
+.filter-container .input-container.w-18 {
+    width: 18%;
+}
+.filter-container .input-container.w-22 {
+    width: 22%;
+}
+.filter-container .input-container.w-26 {
+    width: 26%;
+}
+.filter-container .input-container.w-33 {
+    width: 33%;
+}
+.filter-container .input-container.w-34 {
+    width: 34%;
+}
+.pr-12 {
+    padding-right: 12px;
+}
+
+//accordion
+
+.accoridion-container {
+    margin-top: 12px;
+}
+
+mat-expansion-panel {
+    border: 1px solid #CCCCCC;
+    margin-bottom: 8px;
+    // box-shadow: 0px 1px 2px 0px #E4E5E73D;   
+}
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+    box-shadow: none;
+    box-shadow: 0px 1px 2px 0px #E4E5E73D;
+}
+.mat-title {
+    color: #6366F1;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+}
+.expansion-header .input-container {
+    width: 25%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.expansion-header .input-container:last-child {
+    margin-left: 8px;
+}
+
+table {
+    border: 1px solid #E3E3E3;
+}
+
+::ng-deep table thead {
+    background-color: #EEF2FF !important;
+    color: #525866;
+    font-size: 12px;
+}
+
+::ng-deep table thead tr, ::ng-deep table tbody tr {
+    height: 40px !important;
+}
+
+::ng-deep table thead tr th {
+    color: #525866;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+::ng-deep table tbody tr td {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif !important; 
+    font-optical-sizing: auto; 
+    font-style: normal; 
+    font-variation-settings: "slnt" 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.table-checkbox {
+    padding-right: 5px;
+}
+
+.table-checkbox-title {
+    padding-left: 5px;
+}
+
+.table-header-title {
+    display: flex;
+    align-items: center;
+}
+
+table {
+    box-shadow: none;
+}
+
+// Mat table CSS End
+
+.table-container {
+    margin-top: 12px;
+}
+.table-container .table-left {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px dashed #E3E3E3;
+}
+
+.table-container .table-right {
+    width: 50%;
+    display: inline-block;
+    padding-left: 12px;
+    vertical-align: top;
+}
+
+.table-input-container {
+    padding: 0px 10px 0px 10px;
+}
+
+.table-input-container.code {
+    width: 12%;
+}
+
+.table-input-container.sort-order {
+    width: 15%;
+}
+
+.table-input-container.add-button {
+    text-align: center;
+}
+
+.table-input-container.add-button i {
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.img-button {
+    cursor: pointer;
+}
+
+

@@ -1,7 +1,7 @@
 <div class="input-text input-area" *ngIf="type === 'normal'">
     <div class="input-label" *ngIf="title">{{ title }}</div>
     <div class="inputs">
-        <select class="input-select placeholder-color" [(ngModel)]="value" (ngModelChange)="onModelChange(value)" [ngClass]="selectClass">
+        <select class="input-select placeholder-color" [(ngModel)]="value" (ngModelChange)="onModelChange(value)" [ngClass]="selectClass" [disabled]="disabled">
             <option value="" selected="selected" disabled>{{ placeholder }}</option>
             <option *ngFor="let opt of options" [value]="opt.value">{{ opt.label }}</option>
         </select>
@@ -23,4 +23,20 @@
           </label>
         </div>
       </div>
+</div>
+
+<div class="input-text input-area input-select-multiple-mat" *ngIf="type === 'multiple2'">
+  <div class="input-label" *ngIf="title">{{ title }}</div>
+    <!-- <mat-form-field class="custom-mat-form-field" appearance="outline"> -->
+      <div class="multi-select-area">
+        <mat-select multiple [placeholder]="placeholder" class="custom-mat-multi-select">
+            <mat-option value="biochemistry">Biochemistry</mat-option>
+            <mat-option value="colourDoppler">Colour Doppler</mat-option>
+            <mat-option value="mri">MRI</mat-option>
+            <mat-option value="pft">PFT</mat-option>
+            <mat-option value="ultraSound">Ultra Sound</mat-option>
+            <mat-option value="xRay">X-Ray</mat-option>
+        </mat-select>
+      </div>
+    <!-- </mat-form-field> -->
 </div>

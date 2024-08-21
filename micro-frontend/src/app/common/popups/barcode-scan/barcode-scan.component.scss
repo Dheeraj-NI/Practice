@@ -1,0 +1,54 @@
+.main-container {
+  padding: 10px;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialog-header .dialog-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.dialog-header .dialog-header-left .icon-container {
+  border: 1px solid #e3e3e3;
+  display: inline-block;
+  padding: 6px;
+  margin-right: 10px;
+}
+
+.dialog-header .dialog-header-left .icon-container img {
+  width: 20px;
+  height: 20px;
+}
+
+.dialog-header .dialog-header-left .dialog-title {
+  margin: 0px;
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight: 600;
+}
+
+.dialog-header .dialog-header-right img {
+  cursor: pointer;
+}
+
+.main-container hr {
+  border: 1px solid #e3e3e3;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.padding-left-12 {
+  padding-left: 12px;
+}
+
+.dialog-footer app-button {
+    margin-left: 12px;
+}

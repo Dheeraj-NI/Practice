@@ -1,0 +1,47 @@
+<div class="main-container">
+    <div class="dialog-header">
+        <div class="dialog-header-left">
+            <div class="icon-container">
+                <img src="assets/Database.png">
+            </div>
+            <div class="dialog-title">{{ title }}</div>
+        </div>
+        <div class="dialog-header-right">
+            <img (click)="closeDialog()" src="assets/Close Square.png">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="dialog-body">
+        <div>
+            <app-checkbox [type]="'inlineMultiple'" [title]="'Service Help'" [checkboxes]="[{ label: 'All' }, { label: 'Radiology' }, { label: 'Laboratory' }]"></app-checkbox>
+        </div>
+        <div class="search-container multiple-search-container">
+            <div class="input-container first">
+                <app-select [title]="'Department'" [placeholder]="'Select'" [type]="'multiple2'"></app-select>
+            </div>
+            <div class="input-container padding-left-12 second">
+                <app-multiple-search [title]="'Search Services'" [placeholder]="'Multiple Search'"></app-multiple-search>
+            </div>
+            <div class="input-container padding-left-12 third">
+                <app-search-bar [title]="'Search Keywords'" [placeholder]="'Search Keywords'"></app-search-bar>
+            </div>
+        </div>
+        <div class="list-data">
+            <div class="list">
+                <div class="list-details" *ngFor="let data of list1"> {{ data }} </div>
+            </div>
+            <div class="list">
+                <div class="list-details" *ngFor="let data of list2"> {{ data }} </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="dialog-footer">
+        <app-button (click)="closeDialog()" [type]="'secondarySmallButton'" [title]="'Cancel'" [extraClass]="'width-fit-content'"></app-button>
+        <app-button [type]="'primarySmallButton'" [title]="'Select'" [extraClass]="'width-fit-content'"></app-button>
+    </div>
+</div>

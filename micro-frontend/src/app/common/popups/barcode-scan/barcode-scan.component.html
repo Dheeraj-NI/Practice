@@ -1,0 +1,46 @@
+<div class="main-container">
+  <div class="dialog-header">
+    <div class="dialog-header-left">
+      <div class="icon-container">
+        <img src="assets/svg images/barcode.svg" />
+      </div>
+      <div class="dialog-title">{{ title }}</div>
+    </div>
+    <div class="dialog-header-right">
+      <img (click)="closeDialog(false)" src="assets/Close Square.png" />
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="dialog-body">
+    <app-input [title]="'Barcode Data'" [(ngModel)]="barcodeData"></app-input>
+  </div>
+
+  <hr />
+
+  <div class="dialog-footer">
+    <div>
+        <app-button
+        (click)="barcodeData = ''"
+        [type]="'secondarySmallButton'"
+        [title]="'Clear Data'"
+        [extraClass]="'width-fit-content'"
+      ></app-button>
+    </div>
+    <div>
+      <app-button
+        (click)="closeDialog(false)"
+        [type]="'secondarySmallButton'"
+        [title]="'Cancel'"
+        [extraClass]="'width-fit-content'"
+      ></app-button>
+      <app-button
+        [type]="'primarySmallButton'"
+        [title]="'Select'"
+        [extraClass]="'width-fit-content'"
+        (click)="closeDialog(true)"
+      ></app-button>
+    </div>
+  </div>
+</div>

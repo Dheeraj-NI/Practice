@@ -1,0 +1,102 @@
+.main-container {
+    padding: 10px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-header .dialog-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.dialog-header .dialog-header-left .icon-container {
+    border: 1px solid #E3E3E3;
+    display: inline-block;
+    padding: 6px;
+    margin-right: 10px;
+}
+
+.dialog-header .dialog-header-left .icon-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.dialog-header .dialog-header-left .dialog-title {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 19.36px;
+    font-weight: 600;
+}
+
+.dialog-header .dialog-header-right img {
+    cursor: pointer;
+}
+
+
+.main-container hr {
+    border: 1px solid #E3E3E3;
+}
+
+.dialog-footer {
+    text-align: right;
+}
+
+.dialog-body .search-container {
+    width: 40%;
+    margin-bottom: 12px;
+}
+
+.padding-left-12 {
+    padding-left: 12px;
+}
+
+.dialog-body .search-container.multiple-search-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.search-container.multiple-search-container .input-container {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search-container.multiple-search-container .input-container.first {
+    width: 25%;
+}
+
+.search-container.multiple-search-container .input-container.second {
+    width: 50%;
+}
+
+.search-container.multiple-search-container .input-container.third {
+    width: 25%;
+}
+
+.dialog-footer app-button {
+    margin-left: 12px;
+}
+
+.list-data {
+    padding-left: calc(25% + 12px);
+    display: flex;
+    gap: 12px;
+}
+
+.list-data .list {
+    display: inline-block;
+    width: 50%;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.list-data .list .list-details {
+    border: 1px solid #E3E3E3;
+    padding: 12px;
+}

@@ -39,9 +39,9 @@ export class ForgotPasswordComponent implements OnInit {
 
     if (value.length === 1 && this.otpValues.length > 3) {
       
-      // setTimeout(() => {
-      //   this.dialogRef.close('reset_password');
-      // }, 5000);
+      setTimeout(() => {
+        this.dialogRef.close('reset_password');
+      }, 5000);
       
     }
   }

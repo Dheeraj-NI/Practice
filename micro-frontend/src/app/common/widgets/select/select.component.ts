@@ -1,11 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, forwardRef, HostListener, Input } from '@angular/core';
 import { ControlValueAccessor, FormGroup, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
     selector: 'app-select',
     standalone: true,
-    imports: [FormsModule, CommonModule],
+    imports: [
+        FormsModule, 
+        CommonModule,
+        MatFormFieldModule,
+        MatSelectModule
+    ],
     templateUrl: './select.component.html',
     styleUrl: './select.component.scss',
     providers: [
@@ -23,6 +30,7 @@ export class SelectComponent implements ControlValueAccessor {
     @Input() type = 'normal';
     @Input() options: any = [];
     @Input() placeholder: string = 'Select';
+    @Input() disabled: boolean = false;
 
     @HostListener('document:click', ['$event'])
     onClickOutside(event: MouseEvent) {
